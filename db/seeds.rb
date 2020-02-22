@@ -3,7 +3,8 @@ User.destroy_all
 Shop.destroy_all
 Job.destroy_all
 Service.destroy_all
-# Booking.destroy_all
+Booking.destroy_all
+Review.destroy_all
 
 puts "Creating some cool Fixr stuff..."
 
@@ -13,29 +14,29 @@ puts 'Creating users'
 users_attributes = [
 
   {
-    # first_name: "Charlie",
-    # last_name: "Watson",
+    first_name: "Charlie",
+    last_name: "Watson",
     email: "charlie@bricklanebikes.com",
     password: "charlie"
   },
 
     {
-    # first_name: "Yasmin",
-    # last_name: "Jones-Sheehan",
+    first_name: "Yasmin",
+    last_name: "Jones-Sheehan",
     email: "yasmin@sbcycles.com",
     password: "yasmin"
   },
 
     {
-    # first_name: "Csaba",
-    # last_name: "Krisztan",
+    first_name: "Csaba",
+    last_name: "Krisztan",
     email: "csaba@fixr.com",
     password: "csaba1"
   },
 
   {
-    # first_name: "Charlotte",
-    # last_name: "Waller",
+    first_name: "Charlotte",
+    last_name: "Waller",
     email: "charlotte@demoday.com",
     password: "charlotte"
   },
@@ -105,27 +106,32 @@ jobs_attributes = [
 
   {
     name: "Puncture Repair",
-    description: "Puncture repairs (including tube)"
+    description: "Puncture repairs (including tube)",
+    price: 15
   },
 
   {
     name: "Gear Service",
-    description: "Full gear service for road and racing bikes"
+    description: "Full gear service for road and racing bikes",
+    price: 20
   },
 
   {
     name: "Brake Service",
-    description: "Does not include parts, priced per brake"
+    description: "Does not include parts, priced per brake",
+    price: 25
   },
 
   {
     name: "Full Service",
-    description: "Tune up: Brakes, gears, wheels, tyres and chains covered"
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
+    price: 45
   },
 
   {
     name: "Bike Build",
-    description: "Complete build or frame shop"
+    description: "Complete build or frame shop",
+    price: 140
   },
 
 ]
@@ -134,38 +140,38 @@ Job.create!(jobs_attributes)
 
 puts 'Jobs created'
 
+
 puts 'Creating services'
 
 services_attributes = [
 
   {
-    price: 15,
     shop_id: 1,
-    job_id: (0..5).to_a.sample
+    job_id: 1
   },
 
+
   {
-    price: 20,
     shop_id: 2,
-    job_id: (0..5).to_a.sample
+    job_id: 2
   },
 
+
   {
-    price: 25,
     shop_id: 3,
-    job_id: (0..5).to_a.sample
+    job_id: 3
   },
 
-  {
-    price: 45,
-    shop_id: 4,
-    job_id: (0..5).to_a.sample
-  },
 
   {
-    price: 120,
     shop_id: 4,
-    job_id: (0..5).to_a.sample
+    job_id: 4
+  },
+
+
+  {
+    shop_id: 5,
+    job_id: 5
   },
 
 ]
@@ -174,45 +180,83 @@ Service.create!(services_attributes)
 
 puts 'Services created'
 
+
 puts 'Creating bookings'
 
-# bookings_attributes [
+bookings_attributes = [
 
-#   # {
-#   #   date: DateTime.new(2020,9,1),
-#   #   user_id: 1,
-#   #   service_id: (0..5).to_a.sample
-#   # },
+  {
+    date: Time.now,
+    user_id: 1,
+    service_id: 1
+  },
 
-#   {
-#     date: (03-26-2020),
-#     user_id: 2,
-#     service_id: (0..5).to_a.sample
-#   },
+  # {
+  #   date: 03-26-2020,
+  #   user_id: 2,
+  #   service_id: 1
+  # },
 
-#   {
-#     date: 04-03-2020,
-#     user_id: 3,
-#     service_id: (0..5).to_a.sample
-#   },
+  # {
+  #   date: 04-03-2020,
+  #   user_id: 3,
+  #   service_id: 1
+  # },
 
-#   {
-#     date: 04-03-2020,
-#     user_id: 4,
-#     service_id: (0..5).to_a.sample
-#   },
+  # {
+  #   date: 04-03-2020,
+  #   user_id: 4,
+  #   service_id: 2
+  # },
 
-#   {
-#     date: 11-24-2020,
-#     user_id: 4,
-#     service_id: (0..5).to_a.sample
-#   },
+  # {
+  #   date: 11-24-2020,
+  #   user_id: 4,
+  #   service_id: 3
+  # },
 
-# ]
+]
 
-# Booking.create!(bookings_attributes)
+Booking.create!(bookings_attributes)
 
 puts 'Bookings created'
+
+puts 'Creating reviews'
+
+reviews_attributes = [
+
+  {
+
+    description: "Put my bike in for its annual service. Quick, responsive and did a great job",
+    rating: 5,
+    user_id: 1,
+    shop_id: 1
+
+  },
+
+  {
+
+    description: "Quite slow but now my brakes are as good as new = no more squeaking!",
+    rating: 4,
+    user_id: 2,
+    shop_id: 1
+
+  },
+
+  {
+
+    description: "Didn't actually fix my bike!!",
+    rating: 2,
+    user_id: 3,
+    shop_id: 2
+
+  },
+
+]
+
+Review.create!(reviews_attributes)
+
+puts 'Reviews created'
 
 puts "All done!"
 
