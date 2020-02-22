@@ -3,8 +3,8 @@ require 'date'
 puts "Cleaning the Fixr database"
 User.destroy_all
 Shop.destroy_all
-Job.destroy_all
 Service.destroy_all
+Job.destroy_all
 Booking.destroy_all
 Review.destroy_all
 
@@ -147,6 +147,66 @@ Shop.create!(shops_attributes)
 
 puts 'Shops created'
 
+puts 'Creating services'
+
+services_attributes = [
+
+  {
+    shop_id: 1,
+  },
+
+
+  {
+    shop_id: 2,
+  },
+
+
+  {
+    shop_id: 3,
+  },
+
+
+  {
+    shop_id: 4,
+  },
+
+
+  {
+    shop_id: 5,
+  },
+
+
+  {
+    shop_id: 6,
+  },
+
+
+  {
+    shop_id: 7,
+  },
+
+
+  {
+    shop_id: 8,
+  },
+
+
+  {
+    shop_id: 9,
+  },
+
+
+  {
+    shop_id: 10,
+  },
+
+]
+
+Service.create!(services_attributes)
+
+puts 'Services created'
+
+
 puts 'Creating jobs'
 
 jobs_attributes = [
@@ -229,64 +289,6 @@ Job.create!(jobs_attributes)
 puts 'Jobs created'
 
 
-puts 'Creating services'
-
-services_attributes = [
-
-  {
-    shop_id: 1,
-  },
-
-
-  {
-    shop_id: 2,
-  },
-
-
-  {
-    shop_id: 3,
-  },
-
-
-  {
-    shop_id: 4,
-  },
-
-
-  {
-    shop_id: 5,
-  },
-
-
-  {
-    shop_id: 6,
-  },
-
-
-  {
-    shop_id: 7,
-  },
-
-
-  {
-    shop_id: 8,
-  },
-
-
-  {
-    shop_id: 9,
-  },
-
-
-  {
-    shop_id: 10,
-  },
-
-]
-
-Service.create!(services_attributes)
-
-puts 'Services created'
 
 
 puts 'Creating bookings'

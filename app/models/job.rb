@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  belongs_to :shop, through: :service, dependent: :destroy
+  belongs_to :service
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true

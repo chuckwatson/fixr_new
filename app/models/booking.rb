@@ -1,6 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :service
-  belongs_to :shop, through: :service
-  validates :booking_date, presence: true
+  validates :date, presence: true
 end

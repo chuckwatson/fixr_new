@@ -1,7 +1,7 @@
 class Shop < ApplicationRecord
 
   has_one_attached :photo
-  belongs_to :favorite
+  # belongs_to favorite
   belongs_to :user
   has_many :jobs, through: :services
   has_many :bookings, through: :service, dependent: :destroy
