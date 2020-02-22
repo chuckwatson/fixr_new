@@ -105,27 +105,27 @@ jobs_attributes = [
 
   {
     name: "Puncture Repair",
-    decription: "Puncture repairs (including tube)"
+    description: "Puncture repairs (including tube)"
   },
 
   {
     name: "Gear Service",
-    decription: "Full gear service for road and racing bikes"
+    description: "Full gear service for road and racing bikes"
   },
 
   {
     name: "Brake Service",
-    decription: "Does not include parts, priced per brake"
+    description: "Does not include parts, priced per brake"
   },
 
   {
     name: "Full Service",
-    decription: "Tune up: Brakes, gears, wheels, tyres and chains covered"
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered"
   },
 
   {
     name: "Bike Build",
-    decription: "Complete build or frame shop"
+    description: "Complete build or frame shop"
   },
 
 ]
