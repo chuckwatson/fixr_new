@@ -3,13 +3,13 @@ class ShopsController < ApplicationController
 
   # Geocode once front end begins
   def index
-    @campervans = Shop.geocoded
+    @shops = Shop.geocoded
 
     @markers = @shops.map do |shop|
       {
         lat: shop.latitude,
         lng: shop.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { campervan: campervan })
+        # infoWindow: render_to_string(partial: "info_window", locals: { shop: shop })
       }
     end
 

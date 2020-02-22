@@ -1,11 +1,11 @@
 import mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-// [...]
-if (mapElement) {
-  // [...]
-  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                      mapboxgl: mapboxgl }));
-}
+// import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+// // [...]
+// if (mapElement) {
+//   // [...]
+//   map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+//                                       mapboxgl: mapboxgl }));
+// }
 
 const mapElement = document.getElementById('map');
 
@@ -20,8 +20,18 @@ const buildMap = () => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage =
+    'url(https://kitt.lewagon.com/placeholder/cities/random)';
+    el.style.backgroundSize = 'cover';
+    el.style.width = '100px';
+    el.style.height = '100px';
 
-    new mapboxgl.Marker()
+    // el.addEventListener('click', () => {
+    //   window.alert(marker.properties.message);
+    // });
+    new mapboxgl.Marker(el)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup) // add this
       .addTo(map);

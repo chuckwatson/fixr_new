@@ -1,22 +1,21 @@
-<<<<<<< HEAD
 <h1>Shops#index</h1>
 
 <p>Find me in app/views/shops/index.html.erb</p>
 
-  <div
-  id="map"
-  style="width: 1400px;
-  height: 1000px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
->
-=======
 <div class="index-container">
   <div>
     <h1>Select Bike Shop</h1>
   </div>
 
 <!-- Where map should go -->
+  <div
+  id="map"
+  style="width: 1400px;
+  height: 1000px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
 
 <!-- CARDS FOR INDEX LIST -->
   <% @shops.each do |shop| %>
@@ -32,5 +31,4 @@
       <% end %>
     </div>
   <% end %>
->>>>>>> master
 </div>
