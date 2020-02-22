@@ -155,70 +155,70 @@ jobs_attributes = [
     name: "Puncture Repair",
     description: "Puncture repairs (including tube)",
     price: 15,
-    job_id: 1
+    service_id: 1
   },
 
   {
     name: "Gear Service",
     description: "Full gear service for road and racing bikes",
     price: 20,
-    job_id: 2
+    service_id: 2
   },
 
   {
     name: "Brake Service",
     description: "Does not include parts, priced per brake",
     price: 25,
-    job_id: 3
+    service_id: 3
   },
 
   {
     name: "Basic Service",
     description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
     price: 45,
-    job_id: 2
+    service_id: 2
   },
 
   {
     name: "Bike Build",
     description: "Complete build or frame shop",
     price: 140,
-    job_id: 2
+    service_id: 2
   },
 
   {
     name: "Hourly Rate",
     description: "Bespoke fixes at an hourly price. Final costs estimated only",
     price: 60,
-    job_id: 5
+    service_id: 5
   },
 
   {
     name: "Frame Alignment",
     description: "Adjustment service for full frame alignment",
     price: 20,
-    job_id: 7
+    service_id: 7
   },
 
   {
     name: "Rack Fitting",
     description: "Build and fit of bike racks",
     price: 10,
-    job_id: 9
+    service_id: 9
   },
 
   {
     name: "Enhanced Service",
     description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
     price: 110,
-    job_id: 1
+    service_id: 1
   },
 
   {
     name: "Full Monty Service",
     description: "Complete strip down and rebuild of cycle - replace of items if necessary",
     price: 180,
-    job_id: 3
+    service_id: 3
   },
 
 ]
@@ -254,6 +254,31 @@ services_attributes = [
 
   {
     shop_id: 5,
+  },
+
+
+  {
+    shop_id: 6,
+  },
+
+
+  {
+    shop_id: 7,
+  },
+
+
+  {
+    shop_id: 8,
+  },
+
+
+  {
+    shop_id: 9,
+  },
+
+
+  {
+    shop_id: 10,
   },
 
 ]
