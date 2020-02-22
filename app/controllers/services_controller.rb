@@ -21,6 +21,17 @@ class ServicesController < ApplicationController
       render :new
   end
 
+  def update
+    @service = Service.find(params[:id])
+    @service.update(service_params)
+  end
+
+  def destroy
+    @service = Service.find(params[:id])
+    @service.destroy
+    redirect_to shop_path(@shop)
+  end
+
   private
 
   def service_params
