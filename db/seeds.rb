@@ -334,6 +334,18 @@ bookings_attributes = [
     service_id: 1
   },
 
+  {
+    date: Date.new(2020,6,1),
+    user_id: 4,
+    service_id: 1
+  },
+
+  {
+    date: Date.new(2020,7,14),
+    user_id: 4,
+    service_id: 1
+  },
+
 ]
 
 Booking.create!(bookings_attributes)
