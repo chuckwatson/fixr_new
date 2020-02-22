@@ -9,11 +9,10 @@ class ShopsController < ApplicationController
       {
         lat: shop.latitude,
         lng: shop.longitude,
+        id: shop.id
         # infoWindow: render_to_string(partial: "info_window", locals: { shop: shop })
       }
     end
-
-    @shops = Shop.all
   end
 
   # Update once bookings controller is done
