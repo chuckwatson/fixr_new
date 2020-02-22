@@ -53,15 +53,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_122228) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "service_bookings", force: :cascade do |t|
-    t.date "date"
-    t.string "shop_service_item"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_service_bookings_on_user_id"
-  end
-
   create_table "services", force: :cascade do |t|
     t.bigint "shop_id"
     t.bigint "job_id"
@@ -102,7 +93,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_122228) do
   add_foreign_key "favorites", "users"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
-  add_foreign_key "service_bookings", "users"
   add_foreign_key "services", "jobs"
   add_foreign_key "services", "shops"
   add_foreign_key "shops", "users"
