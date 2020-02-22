@@ -1,3 +1,5 @@
+require 'date'
+
 puts "Cleaning the Fixr database"
 User.destroy_all
 Shop.destroy_all
@@ -94,6 +96,51 @@ shops_attributes = [
     close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4pm"
 
   },
+
+  {
+    user_id: 1,
+    name: "Cloud 9 Cycles",
+    address: "38 Store Street, Bloomsbury, London, WC1E 7DB",
+    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 9am",
+    close_hours: "Monday to Friday: 5pm, Saturday to Sunday: 5pm"
+
+  },
+
+  {
+    user_id: 2,
+    name: "Fully Charged Electric Bike Shop",
+    address: "37 Bermondsey Street, Bermondsey, London, SE1 3JW",
+    open_hours: "Monday to Friday: 10am, Saturday to Sunday: 10.30am",
+    close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4.30pm"
+
+  },
+
+  {
+    user_id: 3,
+    name: "London Bike Kitchen",
+    address: "28 Whitmore Road, London, N1 5QA",
+    open_hours: "Monday to Friday: 10am, Saturday to Sunday: 12am",
+    close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 3pm"
+
+  },
+
+  {
+    user_id: 3,
+    name: "Cycle Surgery Bishops Square",
+    address: "12-13 Bishops Square, Spitalfields, London, E1 6EG",
+    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 11am",
+    close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 4pm"
+
+  },
+
+  {
+    user_id: 4,
+    name: "Sargent and Co",
+    address: "74 Mountgrove Road, Finsbury Park, London, N5 2LT",
+    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 10.30am",
+    close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4.30pm"
+
+  },
 ]
 
 Shop.create!(shops_attributes)
@@ -107,31 +154,72 @@ jobs_attributes = [
   {
     name: "Puncture Repair",
     description: "Puncture repairs (including tube)",
-    price: 15
+    price: 15,
+    service_id: 1
   },
 
   {
     name: "Gear Service",
     description: "Full gear service for road and racing bikes",
-    price: 20
+    price: 20,
+    service_id: 2
   },
 
   {
     name: "Brake Service",
-    description: "Does not include parts, priced per brake",
-    price: 25
+    description: "Does
+     not include parts, priced per brake",
+    price: 25,
+    service_id: 3
   },
 
   {
-    name: "Full Service",
+    name: "Basic Service",
     description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
-    price: 45
+    price: 45,
+    service_id: 2
   },
 
   {
     name: "Bike Build",
     description: "Complete build or frame shop",
-    price: 140
+    price: 140,
+    service_id: 2
+  },
+
+  {
+    name: "Hourly Rate",
+    description: "Bespoke fixes at an hourly price. Final costs estimated only",
+    price: 60,
+    service_id: 5
+  },
+
+  {
+    name: "Frame Alignment",
+    description: "Adjustment service for full frame alignment",
+    price: 20,
+    service_id: 7
+  },
+
+  {
+    name: "Rack Fitting",
+    description: "Build and fit of bike racks",
+    price: 10,
+    service_id: 9
+  },
+
+  {
+    name: "Enhanced Service",
+    description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
+    price: 110,
+    service_id: 1
+  },
+
+  {
+    name: "Full Monty Service",
+    description: "Complete strip down and rebuild of cycle - replace of items if necessary",
+    price: 180,
+    service_id: 3
   },
 
 ]
@@ -147,31 +235,51 @@ services_attributes = [
 
   {
     shop_id: 1,
-    job_id: 1
   },
 
 
   {
     shop_id: 2,
-    job_id: 2
   },
 
 
   {
     shop_id: 3,
-    job_id: 3
   },
 
 
   {
     shop_id: 4,
-    job_id: 4
   },
 
 
   {
     shop_id: 5,
-    job_id: 5
+  },
+
+
+  {
+    shop_id: 6,
+  },
+
+
+  {
+    shop_id: 7,
+  },
+
+
+  {
+    shop_id: 8,
+  },
+
+
+  {
+    shop_id: 9,
+  },
+
+
+  {
+    shop_id: 10,
   },
 
 ]
@@ -186,34 +294,58 @@ puts 'Creating bookings'
 bookings_attributes = [
 
   {
-    date: Time.now,
+    date: Date.new(2020,3,5),
     user_id: 1,
     service_id: 1
   },
 
-  # {
-  #   date: 03-26-2020,
-  #   user_id: 2,
-  #   service_id: 1
-  # },
+  {
+    date: Date.new(2020,2,3),
+    user_id: 2,
+    service_id: 1
+  },
 
-  # {
-  #   date: 04-03-2020,
-  #   user_id: 3,
-  #   service_id: 1
-  # },
+  {
+    date: Date.new(2020,12,7),
+    user_id: 1,
+    service_id: 1
+  },
 
-  # {
-  #   date: 04-03-2020,
-  #   user_id: 4,
-  #   service_id: 2
-  # },
+  {
+    date: Date.new(2020,3,25),
+    user_id: 1,
+    service_id: 1
+  },
 
-  # {
-  #   date: 11-24-2020,
-  #   user_id: 4,
-  #   service_id: 3
-  # },
+  {
+    date: Date.new(2020,6,12),
+    user_id: 1,
+    service_id: 1
+  },
+
+  {
+    date: Date.new(2020,12,3),
+    user_id: 2,
+    service_id: 1
+  },
+
+  {
+    date: Date.new(2020,6,17),
+    user_id: 3,
+    service_id: 1
+  },
+
+  {
+    date: Date.new(2020,6,1),
+    user_id: 4,
+    service_id: 1
+  },
+
+  {
+    date: Date.new(2020,7,14),
+    user_id: 4,
+    service_id: 1
+  },
 
 ]
 
@@ -238,7 +370,7 @@ reviews_attributes = [
 
     description: "Quite slow but now my brakes are as good as new = no more squeaking!",
     rating: 4,
-    user_id: 2,
+    user_id: 1,
     shop_id: 1
 
   },
@@ -249,6 +381,42 @@ reviews_attributes = [
     rating: 2,
     user_id: 3,
     shop_id: 2
+
+  },
+
+  {
+
+    description: "Stole my bike... not ideal. Would not recommend",
+    rating: 1,
+    user_id: 2,
+    shop_id: 5
+
+  },
+
+  {
+
+    description: "Cost less than I thought and could pay before I brought in my bike",
+    rating: 5,
+    user_id: 2,
+    shop_id: 4
+
+  },
+
+  {
+
+    description: "It looks like brand new!!",
+    rating: 4,
+    user_id: 1,
+    shop_id: 2
+
+  },
+
+  {
+
+    description: "Fixed and cleaned - superb service",
+    rating: 5,
+    user_id: 3,
+    shop_id: 3
 
   },
 
