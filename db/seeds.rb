@@ -167,7 +167,8 @@ jobs_attributes = [
 
   {
     name: "Brake Service",
-    description: "Does not include parts, priced per brake",
+    description: "Does
+     not include parts, priced per brake",
     price: 25,
     service_id: 3
   },
