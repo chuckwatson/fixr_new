@@ -22,11 +22,7 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
     var el = document.createElement('div');
     el.className = 'marker';
-    el.style.backgroundImage =
-    'url(https://kitt.lewagon.com/placeholder/cities/random)';
-    el.style.backgroundSize = 'cover';
-    el.style.width = '100px';
-    el.style.height = '100px';
+
 
     // el.addEventListener('click', () => {
     //   window.alert(marker.properties.message);
