@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_204353) do
+ActiveRecord::Schema.define(version: 2020_02_22_101913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id"
+    t.bigint "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_favorites_on_shop_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "name"
+    t.text "decription"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_reviews_on_shop_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.integer "price"
+    t.bigint "shop_id"
+    t.bigint "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_services_on_job_id"
+    t.index ["shop_id"], name: "index_services_on_shop_id"
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string "name"
@@ -24,13 +71,6 @@ ActiveRecord::Schema.define(version: 2020_02_20_204353) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_shops_on_user_id"
-  create_table "service_bookings", force: :cascade do |t|
-    t.date "date"
-    t.string "shop_service_item"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_service_bookings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,7 +85,13 @@ ActiveRecord::Schema.define(version: 2020_02_20_204353) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "services"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "favorites", "shops"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "reviews", "shops"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "services", "jobs"
+  add_foreign_key "services", "shops"
   add_foreign_key "shops", "users"
-  
-  add_foreign_key "service_bookings", "users"
 end
