@@ -1,0 +1,55 @@
+.index-container {
+  width: 85vw;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  padding: 5vh 0;
+}
+
+// HAVEN'T TESTED THIS VVV
+.campervan-link {
+  color: black;
+  text-decoration: none;
+  width: 100%;
+}
+
+.shop-card {
+  background-color: white;
+  width: 85vw;
+  height: 30vh;
+  display: flex;
+  justify-flex: flex-wrap;
+  align-items: center;
+  border-radius: 3%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 4vh 0;
+
+  .shop-card-image {
+    background-color: #7CFC00;
+    width: 37vw;
+    height: 100%;
+  }
+  .shop-card-text {
+    width: 63vw;
+    height: 100%;
+    padding-top: 5vh;
+    padding-left: 6vw;
+    h5, p {
+      padding: 1vh;
+      margin-bottom: 0;
+      padding-bottom: 2vh;
+    }
+    h5 {
+      font-size: 20px;
+      font-style: italic;
+    }
+    p {
+      color: #505050;
+      font-size: 12px;
+    }
+  }
+}
