@@ -17,6 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
+gem 'cloudinary', '~> 1.12.0'
+
 
 
 group :development do
