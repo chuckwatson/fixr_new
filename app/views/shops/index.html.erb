@@ -21,7 +21,7 @@
 <!-- CARDS FOR INDEX LIST -->
   <% @shops.each do |shop| %>
 <!--     <div class="shop-card"> -->
-      <%= link_to shop_path(shop), class: 'card-link' do %>
+      <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" />
         <div class="shop-card-text">
           <h5><%= shop.name %></h5>
