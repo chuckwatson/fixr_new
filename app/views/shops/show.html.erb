@@ -1,7 +1,25 @@
 
+<h1><%= @shop.name %></h1>
 
-<%= @shop.name %>
+
+<% @shop.jobs.each  do |job|%>
+<li>
+  <%= job.name %> <%= job.price %>
+</li>
+
+<% end %>
+
+<h2>Services</h2>
 
 
-<%= @shop.service %>
-
+ <div class="form-group">
+        <%= simple_form_for [@shop, @job] do |f| %>
+        <%= f.input :name, as: :radio_buttoms %>
+    </div>
+  <div class="form-group">
+        <%= f.input :name, as: :radio_buttons %>
+  </div>
+    <br>
+      <div class=form-submit >
+      <%= f.button :submit %>
+           <% end %>
