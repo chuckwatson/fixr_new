@@ -1,34 +1,27 @@
-<h1>Shops#index</h1>
-
-<p>Find me in app/views/shops/index.html.erb</p>
-
 <div class="index-container">
   <div>
     <h1>Select Bike Shop</h1>
   </div>
 
-<!-- Where map should go -->
   <div
   id="map"
-  style="width: 1400px;
-  height: 1000px;"
+  style="width: 85%;
+  height: 200px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
   </div>
 
-<!-- CARDS FOR INDEX LIST -->
   <% @shops.each do |shop| %>
-    <div class="shop-card">
-      <% link_to shop_path(shop), class: "shop-link" do %>
-        <div class="shop-card-image">
-        </div>
+<!--     <div class="shop-card"> -->
+      <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" />
         <div class="shop-card-text">
           <h5><%= shop.name %></h5>
-          <p>Distance: 1.1 miles - CHANGE ONCE MAP DONE</p>
-          <p>Rating: 4.9* - CHANGE ONCE REVIEWS DONE</p>
+          <p>Distance: CHANGE</p>
+          <p>Rating: CHANGE</p>
         </div>
       <% end %>
-    </div>
+<!--     </div> -->
   <% end %>
 </div>

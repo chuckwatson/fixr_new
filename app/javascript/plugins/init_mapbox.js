@@ -19,17 +19,15 @@ const buildMap = () => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
     var el = document.createElement('div');
     el.className = 'marker';
-
-
+    el.setAttribute('data-id', marker.id);
     // el.addEventListener('click', () => {
     //   window.alert(marker.properties.message);
     // });
     new mapboxgl.Marker(el)
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup) // add this
       .addTo(map);
   });
 };
@@ -44,8 +42,15 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    document.querySelectorAll('.marker').forEach((marker) => {
+      const card = document.getElementById(`shop_${marker.dataset.id}`);
+      marker.addEventListener('click', (event) => {
+        card.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+      })
+    })
   }
 };
 
