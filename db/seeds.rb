@@ -3,7 +3,6 @@ require 'date'
 puts "Cleaning the Fixr database"
 User.destroy_all
 Shop.destroy_all
-Service.destroy_all
 Job.destroy_all
 Booking.destroy_all
 Review.destroy_all
@@ -147,65 +146,6 @@ Shop.create!(shops_attributes)
 
 puts 'Shops created'
 
-puts 'Creating services'
-
-services_attributes = [
-
-  {
-    shop_id: 1,
-  },
-
-
-  {
-    shop_id: 2,
-  },
-
-
-  {
-    shop_id: 3,
-  },
-
-
-  {
-    shop_id: 4,
-  },
-
-
-  {
-    shop_id: 5,
-  },
-
-
-  {
-    shop_id: 6,
-  },
-
-
-  {
-    shop_id: 7,
-  },
-
-
-  {
-    shop_id: 8,
-  },
-
-
-  {
-    shop_id: 9,
-  },
-
-
-  {
-    shop_id: 10,
-  },
-
-]
-
-Service.create!(services_attributes)
-
-puts 'Services created'
-
 
 puts 'Creating jobs'
 
@@ -215,14 +155,14 @@ jobs_attributes = [
     name: "Puncture Repair",
     description: "Puncture repairs (including tube)",
     price: 15,
-    service_id: 1
+    shop_id: 1
   },
 
   {
     name: "Gear Service",
     description: "Full gear service for road and racing bikes",
     price: 20,
-    service_id: 2
+    shop_id: 2
   },
 
   {
@@ -230,56 +170,56 @@ jobs_attributes = [
     description: "Does
      not include parts, priced per brake",
     price: 25,
-    service_id: 3
+    shop_id: 3
   },
 
   {
     name: "Basic Service",
     description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
     price: 45,
-    service_id: 2
+    shop_id: 2
   },
 
   {
     name: "Bike Build",
     description: "Complete build or frame shop",
     price: 140,
-    service_id: 2
+    shop_id: 2
   },
 
   {
     name: "Hourly Rate",
     description: "Bespoke fixes at an hourly price. Final costs estimated only",
     price: 60,
-    service_id: 5
+    shop_id: 5
   },
 
   {
     name: "Frame Alignment",
     description: "Adjustment service for full frame alignment",
     price: 20,
-    service_id: 7
+    shop_id: 7
   },
 
   {
     name: "Rack Fitting",
     description: "Build and fit of bike racks",
     price: 10,
-    service_id: 9
+    shop_id: 9
   },
 
   {
     name: "Enhanced Service",
     description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
     price: 110,
-    service_id: 1
+    shop_id: 1
   },
 
   {
     name: "Full Monty Service",
     description: "Complete strip down and rebuild of cycle - replace of items if necessary",
     price: 180,
-    service_id: 3
+    shop_id: 3
   },
 
 ]
@@ -298,55 +238,55 @@ bookings_attributes = [
   {
     date: Date.new(2020,3,5),
     user_id: 1,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,2,3),
     user_id: 2,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,12,7),
     user_id: 1,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,3,25),
     user_id: 1,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,6,12),
     user_id: 1,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,12,3),
     user_id: 2,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,6,17),
     user_id: 3,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,6,1),
     user_id: 4,
-    service_id: 1
+    job_id: 1
   },
 
   {
     date: Date.new(2020,7,14),
     user_id: 4,
-    service_id: 1
+    job_id: 1
   },
 
 ]
