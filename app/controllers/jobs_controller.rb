@@ -3,6 +3,10 @@ class JobsController < ApplicationController
     @job = Job.new
   end
 
+  def index
+    @jobs = Job.where(params[:service_id])
+  end
+
   def create
     @service = Service.find(params[:service_id])
     @job = Job.new(job_params)
@@ -32,6 +36,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:name, :description, :price)
+    params.require(:job).permit(:name, :description, :price, :service_id)
   end
 end
