@@ -1,0 +1,23 @@
+<h1>This is where we'll put all our past and pending bookings...</h1>
+<br>
+
+<ul>
+
+
+  <% @bookings.each do |booking| %>
+
+<!--   Booking Date: -->
+        <li><%= booking.date %></li>
+
+
+      <% @bookings.each do |service| %>
+
+      <%= service.job %>
+
+      <% end %>
+<!--   Booked Service: -->
+
+
+
+  <% end %>
+</ul>

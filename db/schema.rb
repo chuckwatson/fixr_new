@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_155925) do
+ActiveRecord::Schema.define(version: 2020_02_25_201051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,9 @@ ActiveRecord::Schema.define(version: 2020_02_22_155925) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.bigint "user_id"
-    t.bigint "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.integer "job_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -61,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_155925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
-    t.integer "service_id"
+    t.integer "shop_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -73,13 +72,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_155925) do
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_reviews_on_shop_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
-  end
-
-  create_table "services", force: :cascade do |t|
-    t.bigint "shop_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["shop_id"], name: "index_services_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -110,12 +102,10 @@ ActiveRecord::Schema.define(version: 2020_02_22_155925) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "services"
   add_foreign_key "bookings", "users"
   add_foreign_key "favorites", "shops"
   add_foreign_key "favorites", "users"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
-  add_foreign_key "services", "shops"
   add_foreign_key "shops", "users"
 end

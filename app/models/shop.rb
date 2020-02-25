@@ -3,8 +3,8 @@ class Shop < ApplicationRecord
   has_one_attached :photo
   # belongs_to favorite
   belongs_to :user
-  has_many :jobs, through: :services
-  has_many :bookings, through: :service, dependent: :destroy
+  has_many :jobs
+  has_many :bookings, through: :jobs, dependent: :destroy
   has_many :reviews, dependent: :destroy
   validates :name, presence: true
   validates :address, presence: true
