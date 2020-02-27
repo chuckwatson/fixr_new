@@ -1,19 +1,18 @@
 class BookingsController < ApplicationController
+
   def new
-    @shop = Shop.find(params[:shop_id])
+    @shop = Shop.find(params[:id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @shop = Shop.find(params[:shop_id])
-    @job = Job.find(params[:job_id])
+    @job = Job.find(params[:booking][:job_id][1])
     @booking.job = @job
-    @booking.shop = @shop
     @booking.user = current_user
 
     if @booking.save
-      redirect_to shop_booking_path(@shop, @booking)
+      redirect_to shops_path
     else
       render 'shops/show'
     end
@@ -37,6 +36,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:date, :job_id, :user_id)
   end
+
 end
