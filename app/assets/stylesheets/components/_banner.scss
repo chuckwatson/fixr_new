@@ -1,0 +1,15 @@
+.temporary-banner {
+  width: 100%;
+  height: 70vw;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  h2 {
+    padding-top: 80px;
+    padding-left: 40px;
+  }
+  p {
+    padding-top: 96px;
+    padding-left: 20px;
+  }
+}
