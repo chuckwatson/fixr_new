@@ -1,0 +1,14 @@
+index.html.erb
+
+
+<div class="form-group">
+        <%= simple_form_for [@shop, @job] do |f| %>
+        <%= f.input :name, as: :radio_buttoms %>
+    </div>
+  <div class="form-group">
+        <%= f.input :name, as: :radio_buttons %>
+  </div>
+    <br>
+      <div class=form-submit >
+      <%= f.button :submit %>
+           <% end %>

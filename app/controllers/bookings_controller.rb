@@ -5,10 +5,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Shop.new(booking_params)
+    @booking = Booking.new(booking_params)
     @shop = Shop.find(params[:shop_id])
+    @job = Job.find(params[:job_id])
+    @booking.job = @job
     @booking.shop = @shop
     @booking.user = current_user
+
     if @booking.save
       redirect_to shop_booking_path(@shop, @booking)
     else

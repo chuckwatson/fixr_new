@@ -37,7 +37,10 @@ class ShopsController < ApplicationController
 
   # Update show method once booking controller is done.
   def show
+    @booking = Booking.new
     @shop = Shop.find(params[:id])
+    @job = Job.where(shop: @shop.id)
+    # @bookings = Booking.where(job: @job, user: current_user)
   end
 
   def update
@@ -56,4 +59,5 @@ class ShopsController < ApplicationController
   def shop_params
     params.require(:shop).permit(:name, :address, :open_hours, :close_hours, :user_id)
   end
+
 end

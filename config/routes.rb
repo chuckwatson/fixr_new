@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'services/new'
-  get 'services/create'
-  get 'services/update'
-  get 'services/edit'
-  get 'services/destroy'
-  get 'services/index'
-  get 'services/show'
+
   devise_for :users
   root to: 'pages#home'
 
@@ -19,11 +13,15 @@ Rails.application.routes.draw do
   end
 
   resources :shops do #index #show #new/create #delete #update
-    resources :services, only: [:new, :create, :destroy]
+    resources :jobs, only: [:new, :create, :destroy, :index, :show]
   end
 
   resources :users do
     resources :bookings, only: [:index]
-  end
+end
+
+resources :shops do
+  resources :bookings, only: [:new, :create, :destroy, :index, :show]
+end
 
 end
