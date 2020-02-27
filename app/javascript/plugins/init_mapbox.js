@@ -20,9 +20,14 @@ const buildMap = () => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-    var el = document.createElement('div');
+    const el = document.createElement('div');
     el.className = 'marker';
     el.setAttribute('data-id', marker.id);
+    el.style.backgroundImage = `url(${marker.image_url})`;
+    el.style.backgroundSize = 'contain';
+    el.style.width = '25px';
+    el.style.height = '25px';
+
     // el.addEventListener('click', () => {
     //   window.alert(marker.properties.message);
     // });
