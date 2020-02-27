@@ -1,4 +1,5 @@
 require 'date'
+require 'open-uri'
 
 puts "Cleaning the Fixr database"
 User.destroy_all
@@ -50,101 +51,119 @@ puts 'Users created'
 
 puts 'Creating shops'
 
-shops_attributes = [
 
-  {
-    user_id: 1,
-    name: "Brick Lane Bikes",
-    address: "118 Bethnal Green Road, Shoreditch, London, E2 6DG",
-    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 10am",
-    close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 4pm"
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386953/t1mmjhngcq6g6qabdrtj.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "Brick Lane Bikes",
+  address: "118 Bethnal Green Rd, Shoreditch, London E2 6DG",
+  open_hours: "Monday to Friday: 9am, Saturday to Sunday: 10am",
+  close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 4pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 2,
-    name: "SBC Cycles",
-    address: "41 Cropley Street, Hoxton, London, N1 7HT",
-    open_hours: "Monday to Friday: 11am, Saturday:1 10am, Sunday: 11am",
-    close_hours: "Monday to Friday: 7pm, Saturday: 5pm, Sunday: 4pm"
 
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387495/jjteoukgsmsikim6d2qy.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "SBC Cycles",
+  address: "41 Cropley Street, Hoxton, London, N1 7HT",
+  open_hours: "Monday to Friday: 11am, Saturday:1 10am, Sunday: 11am",
+  close_hours: "Monday to Friday: 7pm, Saturday: 5pm, Sunday: 4pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 3,
-    name: "Bikefix",
-    address: "48 Lamb's Conduit Street, Holborn, London, WC1N 3LH",
-    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 10am",
-    close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 4pm"
 
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387044/r4t94dypphotyn1puuba.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "Bikefix",
+  address: "48 Lamb's Conduit Street, Holborn, London, WC1N 3LH",
+  open_hours: "Monday to Friday: 9am, Saturday to Sunday: 10am",
+  close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 4pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 4,
-    name: "Condor Cycles",
-    address: "49-53 Gray's Inn Road, Holborn, London, WC1X 8PP",
-    open_hours: "Monday to Friday: 7.30am, Saturday to Sunday: 9am",
-    close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 5pm"
 
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386767/des6zikzdra1be0s7zrl.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "Condor Cycles",
+  address: "49-53 Gray's Inn Road, Holborn, London, WC1X 8PP",
+  open_hours: "Monday to Friday: 7.30am, Saturday to Sunday: 9am",
+  close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 5pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 4,
-    name: "Brixton Cycles",
-    address: "296-298 Brixton Road, Ferndale, London, SW9 6AG",
-    open_hours: "Monday to Friday: 9.30am, Saturday to Sunday: 11am",
-    close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4pm"
 
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386767/des6zikzdra1be0s7zrl.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "Brixton Cycles",
+  address: "296-298 Brixton Road, Ferndale, London, SW9 6AG",
+  open_hours: "Monday to Friday: 9.30am, Saturday to Sunday: 11am",
+  close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 1,
-    name: "Cloud 9 Cycles",
-    address: "38 Store Street, Bloomsbury, London, WC1E 7DB",
-    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 9am",
-    close_hours: "Monday to Friday: 5pm, Saturday to Sunday: 5pm"
 
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386820/inw7zbddjwvqzczs7890.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "Cloud 9 Cycles",
+  address: "38 Store Street, Bloomsbury, London, WC1E 7DB",
+  open_hours: "Monday to Friday: 9am, Saturday to Sunday: 9am",
+  close_hours: "Monday to Friday: 5pm, Saturday to Sunday: 5pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 2,
-    name: "Fully Charged Electric Bike Shop",
-    address: "37 Bermondsey Street, Bermondsey, London, SE1 3JW",
-    open_hours: "Monday to Friday: 10am, Saturday to Sunday: 10.30am",
-    close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4.30pm"
 
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386857/nqsi1eflz2xnsagogtwu.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "Fully Charged Electric Bike Shop",
+  address: "37 Bermondsey Street, Bermondsey, London, SE1 3JW",
+  open_hours: "Monday to Friday: 10am, Saturday to Sunday: 10.30am",
+  close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4.30pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 3,
-    name: "London Bike Kitchen",
-    address: "28 Whitmore Road, London, N1 5QA",
-    open_hours: "Monday to Friday: 10am, Saturday to Sunday: 12am",
-    close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 3pm"
 
-  },
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387124/glsewjxcpk5ddr0nemyi.jpg')
+shop = Shop.new(
+  user_id: 1,
+  name: "London Bike Kitchen",
+  address: "28 Whitmore Road, London, N1 5QA",
+  open_hours: "Monday to Friday: 10am, Saturday to Sunday: 12am",
+  close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 3pm")
+shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
+shop.save!
 
-  {
-    user_id: 3,
-    name: "Cycle Surgery Bishops Square",
-    address: "12-13 Bishops Square, Spitalfields, London, E1 6EG",
-    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 11am",
-    close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 4pm"
 
-  },
+#   {
+#     user_id: 3,
+#     name: "Cycle Surgery Bishops Square",
+#     address: "12-13 Bishops Square, Spitalfields, London, E1 6EG",
+#     open_hours: "Monday to Friday: 9am, Saturday to Sunday: 11am",
+#     close_hours: "Monday to Friday: 6pm, Saturday to Sunday: 4pm",
+#     photo: open("https://res.cloudinary.com/nationwide/image/upload/v1582386953/t1mmjhngcq6g6qabdrtj.jpg")
 
-  {
-    user_id: 4,
-    name: "Sargent and Co",
-    address: "74 Mountgrove Road, Finsbury Park, London, N5 2LT",
-    open_hours: "Monday to Friday: 9am, Saturday to Sunday: 10.30am",
-    close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4.30pm"
+#   },
 
-  },
-]
+#   {
+#     user_id: 4,
+#     name: "Sargent and Co",
+#     address: "74 Mountgrove Road, Finsbury Park, London, N5 2LT",
+#     open_hours: "Monday to Friday: 9am, Saturday to Sunday: 10.30am",
+#     close_hours: "Monday to Friday: 5.30pm, Saturday to Sunday: 4.30pm",
+#     photo: open("https://res.cloudinary.com/nationwide/image/upload/v1582386953/t1mmjhngcq6g6qabdrtj.jpg")
 
-Shop.create!(shops_attributes)
+#   },
+# ]
 
-puts 'Shops created'
+# Shop.create!(shops_attributes)
+
+# puts 'Shops created'
 
 
 puts 'Creating jobs'
@@ -370,8 +389,6 @@ Job.create!(jobs_attributes)
 puts 'Jobs created'
 
 
-
-
 puts 'Creating bookings'
 
 bookings_attributes = [
@@ -510,6 +527,4 @@ Review.create!(reviews_attributes)
 puts 'Reviews created'
 
 puts "All done!"
-
-
 
