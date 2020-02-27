@@ -1,25 +1,32 @@
 
-<h1><%= @shop.name %></h1>
+<div class="shop-container">
+  <div class="shop-banner">
 
-
-<% @shop.jobs.each  do |job|%>
-<li>
-  <%= job.name %> <%= job.price %>
-</li>
-
-<% end %>
-
-<h2>Services</h2>
-
-
- <div class="form-group">
-        <%= simple_form_for [@shop, @job] do |f| %>
-        <%= f.input :name, as: :radio_buttoms %>
-    </div>
-  <div class="form-group">
-        <%= f.input :name, as: :radio_buttons %>
+    <h1><%= @shop.name %></h1>
   </div>
-    <br>
-      <div class=form-submit >
-      <%= f.button :submit %>
-           <% end %>
+  <div class="job-list">
+      <% @shop.jobs.each  do |job|%>
+    <ul>
+      <li>
+        <%= job.name %> <%= job.price %>
+      </li>
+    </ul>
+      <% end %>
+  </div>
+
+    <div class=job-booking>
+      <h2>Services</h2>
+
+        <%= simple_form_for [@shop, @booking] do |f| %>
+            <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          </p>
+          <p>
+            <%= f.label 'job_id', 'Job' %>
+            <%= f.collection_select :job_id, Job.where(shop: @shop), :id, :name %>
+          </p>
+          <%= f.submit 'Submit' %>
+        <% end %>
+    </div>
+</div>
+
+

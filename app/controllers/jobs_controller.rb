@@ -1,21 +1,26 @@
 class JobsController < ApplicationController
+  before_action :set_shop
   def new
     @job = Job.new
   end
 
   def index
-    @jobs = Job.where(params[:service_id])
+    @jobs = Job.where(shop: @shop.id)
   end
 
   def create
-    @service = Service.find(params[:service_id])
+    @shop = Shop.find(params[:shop_id])
     @job = Job.new(job_params)
-    @job.service = @service
+    @job.shop = @shop
     if @job.save
       redirect_to shop_path(@shop)
     else
       render "shop/show"
     end
+  end
+
+  def show
+    @jobs = Job.find(parmas[:id])
   end
 
   def edit
@@ -36,6 +41,10 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:name, :description, :price, :service_id)
+    params.require(:job).permit(:name, :description, :price, :shop_id)
+  end
+
+  def set_shop
+    @shop = Shop.find(params[:id])
   end
 end
