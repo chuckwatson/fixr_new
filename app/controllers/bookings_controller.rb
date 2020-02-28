@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def new
-    @shop = Shop.find(params[:id])
+    @shop = Shop.find(params[:shop_id])
     @booking = Booking.new
   end
 
