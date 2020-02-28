@@ -3,6 +3,7 @@
   <div class="shop-banner">
 
     <h1><%= @shop.name %></h1>
+     <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %>
   </div>
   <div class="job-list">
       <% @shop.jobs.each  do |job|%>
@@ -11,6 +12,7 @@
         <%= job.name %> <%= job.price %>
       </li>
     </ul>
+
       <% end %>
   </div>
 
