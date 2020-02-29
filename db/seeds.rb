@@ -52,7 +52,7 @@ puts 'Users created'
 puts 'Creating shops'
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386953/t1mmjhngcq6g6qabdrtj.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387044/r4t94dypphotyn1puuba.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "Brick Lane Bikes",
@@ -63,7 +63,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387495/jjteoukgsmsikim6d2qy.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386857/nqsi1eflz2xnsagogtwu.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "SBC Cycles",
@@ -74,7 +74,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387044/r4t94dypphotyn1puuba.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582975939/Fixr/cool-shop-2_thmf5x.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "Bikefix",
@@ -85,7 +85,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386767/des6zikzdra1be0s7zrl.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582975939/Fixr/cool-shop-1_kjbbh7.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "Condor Cycles",
@@ -96,7 +96,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386767/des6zikzdra1be0s7zrl.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582975939/Fixr/cool-shop-1_kjbbh7.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "Brixton Cycles",
@@ -107,7 +107,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386820/inw7zbddjwvqzczs7890.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582974684/Fixr/dEcy9s9jouGmVdaxXjuvHtgF.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "Cloud 9 Cycles",
@@ -118,7 +118,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386857/nqsi1eflz2xnsagogtwu.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582972390/Fixr/M82mVT7RzL4L74JNnT14um4w.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "Fully Charged Electric Bike Shop",
@@ -129,7 +129,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387124/glsewjxcpk5ddr0nemyi.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582976118/Fixr/cool-shop-4_rmxhae.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "London Bike Kitchen",
