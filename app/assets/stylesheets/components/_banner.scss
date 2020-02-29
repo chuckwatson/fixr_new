@@ -3,6 +3,9 @@
   height: 70vw;
   // CURRENTLY IT'S ON REPEAT AND SIZE OF IMAGE JUST FITS THE PAGE. NEED TO FIX
   background-image: url('temp-homepage-banner.jpg');
+  
+  background-repeat: no-repeat;
+  
   background-size: cover;
   display: flex;
   align-items: center;
