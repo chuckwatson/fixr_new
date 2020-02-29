@@ -13,11 +13,18 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
+    center:
     style: 'mapbox://styles/kcsaba/ck6xiz8zm0jms1is210ohjkx8'
   });
 };
 
 const addMarkersToMap = (map, markers) => {
+  markers.push({
+    lat: 51.532438,
+    lng: -0.0767668,
+    id: 100,
+    image_url: "https://via.placeholder.com/150"
+  })
   markers.forEach((marker) => {
     // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
     const el = document.createElement('div');
@@ -40,7 +47,9 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 20, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 25, maxZoom: 15 });
+  // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+  //                                     mapboxgl: mapboxgl }));
 };
 
 
@@ -60,6 +69,41 @@ const initMapbox = () => {
     })
   }
 };
+
+function geoFindMe() {
+
+  const status = document.querySelector('#status');
+  const mapLink = document.querySelector('#map-link');
+
+  mapLink.href = '';
+  mapLink.textContent = '';
+
+  function success(position) {
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    console.log(latitude)
+    console.log(Longitude)
+    status.textContent = '';
+    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+
+    // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating…';
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+}
+
+document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
 
 export { initMapbox };
 
