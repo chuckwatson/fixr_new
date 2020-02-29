@@ -1,32 +1,26 @@
-
 <div class="shop-container">
-  <div class="shop-banner">
+    <div align=center class="shop-banner">
+      <h1><%= @shop.name %></h1>
 
-    <h1><%= @shop.name %></h1>
-     <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %>
-  </div>
-  <div class="job-list">
-      <% @shop.jobs.each  do |job|%>
-    <ul>
-      <li>
-        <%= job.name %> <%= job.price %>
-      </li>
-    </ul>
+      <%= cl_image_tag(@shop.photo.key,
+        :transformation=>
 
-      <% end %>
+      [{:width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
+        :responsive=>true, :gravity=>"center", :font_size=>40, :font_weight=>"bold", :text=>"Love",
+        :image_id=>"fixr_map.png" }, {}]
 
-  </div>
+        ) %>
 
-    <div class=job-booking>
-      <h2>Services</h2>
 
+    </div>
+</div>
+<div class=job-booking>
+    <h2>Services</h2>
+        <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %>
         <%= simple_form_for [@shop, @booking] do |f| %>
-          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.association :job, as: :check_boxes, collection: Job.where(shop: @shop) %>
-          <%= f.submit 'Make Booking' %>
-
+        <%= f.association :job, as: :check_boxes, collection: Job.where(shop: @shop) %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, style: "width:200px" %>
+        <%= f.submit 'Make Booking' %>
         <% end %>
     </div>
 </div>
-
-
