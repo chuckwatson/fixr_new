@@ -13,6 +13,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
+    center:
     style: 'mapbox://styles/kcsaba/ck6xiz8zm0jms1is210ohjkx8'
   });
 };
@@ -81,7 +82,7 @@ function geoFindMe() {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
     console.log(latitude)
-    console.log(longitude)
+    console.log(Longitude)
     status.textContent = '';
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
 
