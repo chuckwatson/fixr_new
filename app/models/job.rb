@@ -2,5 +2,5 @@ class Job < ApplicationRecord
   belongs_to :shop
   validates :name, presence: true
   validates :description, presence: true
-  validates :price, presence: true
+  monetize :price_cents
 end

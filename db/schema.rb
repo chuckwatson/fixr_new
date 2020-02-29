@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_201051) do
+ActiveRecord::Schema.define(version: 2020_02_29_122956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,15 @@ ActiveRecord::Schema.define(version: 2020_02_25_201051) do
   end
 
   create_table "bookings", force: :cascade do |t|
+    t.string "state"
     t.date "date"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.bigint "user_id"
+    t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "job_id"
+    t.index ["job_id"], name: "index_bookings_on_job_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -59,8 +63,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_201051) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price"
     t.integer "shop_id"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -102,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_201051) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "jobs"
   add_foreign_key "bookings", "users"
   add_foreign_key "favorites", "shops"
   add_foreign_key "favorites", "users"
