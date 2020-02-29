@@ -55,7 +55,7 @@ const initMapbox = () => {
       const card = document.getElementById(`shop_${marker.dataset.id}`);
       marker.addEventListener('click', (event) => {
         card.classList.toggle('highlight-card');
-        card.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+        card.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       })
     })
   }
