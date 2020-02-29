@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.homepage-container {
+  padding: 20px 40px;
+  background-color: white;
+
+  // .homepage-login-buttons {
+  //   display: inline-flex;
+  //   display: flex;
+  //   justify-content: space-evenly;
+  // }
+}
+
+.form-actions {
+  display: inline-block;
+  display: flex;
+  justify-content: space-evenly;
+  a {
+    // REMOVE THIS WHEN BUTTON IS DONE
+    padding-top: 7px;
+  }
+}
+
+.form-control {
+  border-color: #1edd88;
+}
+
+
