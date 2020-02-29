@@ -1,0 +1,21 @@
+.footer {
+    position: sticky;
+    bottom: 0px;
+    // width: 100%;
+    padding: 16px 24px;
+    display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // align-self: center;
+    background: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    margin: 8px;
+    border: 4px solid #86f09f;
+
+}
+
+#footertext{
+  width: 100%;
+  text-align: center;
+}
