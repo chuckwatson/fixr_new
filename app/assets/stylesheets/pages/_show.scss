@@ -1,13 +1,93 @@
-.job-booking{
-  text-align: center;
-}
-.job-list {
-  text-align: center;
-  list-style: none;
+.shop-show-container {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  h1 {
+    padding: 28px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+  }
 }
 
-.shop-bannner-img
-{
-  height: 500px;
+// .shop-show-title h1 {
+//   text-align: center;
+//   text-transform: uppercase;
+//   padding: 24px 0 16px 0;
+// }
+
+.shop-show-image {
   width: 100%;
+  height: 50vh;
+  padding-bottom: 20px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
+
+.show-services-title, label.string {
+  text-align: center;
+  padding: 40px 0 10px 0;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: 'Spartan', ;
+}
+
+label.string {
+  padding: 32px 0 16px 0;
+}
+
+.card-services {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  .btn-show {
+    margin: 20px;
+    font-size: 28px;
+  }
+}
+
+.col-form-label {
+  color: transparent;
+  font-size: 1px;
+  font-family: 'Spartan', ;
+}
+
+.form-check-label {
+  font-family: 'Roboto', ;
+  font-size: 24px;
+  text-align: right;
+  padding: 5px 0;
+}
+
+.form-check-input {
+  margin-left: auto
+}
+
+.cb-list {
+  display: flex;
+  justify-content: space-between;
+}
+.service-list {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-control {
+  background-color: white;
+}
+// .job-booking{
+//   text-align: center;
+// }
+// .job-list {
+//   text-align: center;
+//   list-style: none;
+// }
+
+// .shop-bannner-img
+// {
+//   height: 500px;
+//   width: 100%;
+// }
