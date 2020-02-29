@@ -1,13 +1,14 @@
 // Specific CSS for your home-page
-.homepage-container {
-  padding: 20px 40px;
-  background-color: white;
 
-  // .homepage-login-buttons {
-  //   display: inline-flex;
-  //   display: flex;
-  //   justify-content: space-evenly;
-  // }
+.homepage-container {
+  background-image: linear-gradient(rgba(255,255,255,0.6)), url('smaller-bike-bg.jpg');
+  position: relative;
+  padding: 20px 40px;
+}
+
+.form-inputs {
+  background-color: white;
+  z-index: 10 !important;
 }
 
 .form-actions {
