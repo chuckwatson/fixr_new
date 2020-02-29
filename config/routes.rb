@@ -1,32 +1,27 @@
-Rails.application.routes.draw do
 
+  Rails.application.routes.draw do
 
-  get 'favorites/update'
   devise_for :users
-  root to: 'pages#home'
-
-  resources :shops do #index #show #new/create #delete #update
-    resources :bookings, only: [:new, :create, :show]
-  end
-
+  get 'favorites/update'
   resources :shops do #index #show #new/create #delete #update
     resources :reviews, only: [:new, :create, :destroy]
-  end
-
-  resources :shops do #index #show #new/create #delete #update
     resources :jobs, only: [:new, :create, :destroy, :index, :show]
+    resources :bookings, only: [:new, :create, :destroy, :index, :show]
+  end
+  # resources :users do
+  #   resources :bookings, only: [:index]
+  # end
+  resources :bookings, only: [:show, :create] do
+    resources :payments, only: :new
   end
 
-  resources :users do
-    resources :bookings, only: [:index]
+  resource :user do
+    resources :bookings, only: [:index, :show]
+    end
+
+
+
+  root to: 'shops#index'
 end
 
-resources :shops do
-  resources :bookings, only: [:new, :create, :destroy, :index, :show]
-end
 
-resources :bookings, only: [:show, :create] do
-  resources :payments, only: :new
-end
-
-end
