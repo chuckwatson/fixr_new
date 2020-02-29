@@ -25,7 +25,7 @@ resources :shops do
   resources :bookings, only: [:new, :create, :destroy, :index, :show]
 end
 
-resources :orders, only: [:show, :create] do
+resources :bookings, only: [:show, :create] do
   resources :payments, only: :new
 end
 

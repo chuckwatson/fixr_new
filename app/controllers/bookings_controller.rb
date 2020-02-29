@@ -10,12 +10,9 @@ class BookingsController < ApplicationController
     @job = Job.find(params[:booking][:job_id][1])
     @booking.job = @job
     @booking.user = current_user
+    @booking.state = 'pending'
+    @booking.save
 
-    # if @booking.save
-    #   redirect_to shops_path
-    # else
-    #   render 'shops/show'
-    # end
 
   session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
@@ -25,12 +22,13 @@ class BookingsController < ApplicationController
       currency: 'gbp',
       quantity: 1
     }],
-    success_url: order_url(@booking),
-    cancel_url: order_url(@booking)
+    success_url: booking_url(@booking),
+    cancel_url: booking_url(@booking)
   )
 
-  booking.update(checkout_session_id: session.id)
-  redirect_to new_order_payment_path(@booking)
+    @booking.update(checkout_session_id: session.id)
+    redirect_to new_booking_payment_path(@booking)
+
 
   end
 
