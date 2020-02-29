@@ -18,6 +18,8 @@ gem 'webpacker'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
 gem 'jquery-rails'
+gem 'material_icons'
+gem 'material_design_lite-sass'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

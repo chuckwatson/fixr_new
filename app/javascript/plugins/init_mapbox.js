@@ -20,9 +20,14 @@ const buildMap = () => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-    var el = document.createElement('div');
+    const el = document.createElement('div');
     el.className = 'marker';
     el.setAttribute('data-id', marker.id);
+    el.style.backgroundImage = `url(${marker.image_url})`;
+    el.style.backgroundSize = 'contain';
+    el.style.width = '25px';
+    el.style.height = '25px';
+
     // el.addEventListener('click', () => {
     //   window.alert(marker.properties.message);
     // });
@@ -35,8 +40,9 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 20, maxZoom: 15 });
 };
+
 
 const initMapbox = () => {
   if (mapElement) {
@@ -48,12 +54,12 @@ const initMapbox = () => {
     document.querySelectorAll('.marker').forEach((marker) => {
       const card = document.getElementById(`shop_${marker.dataset.id}`);
       marker.addEventListener('click', (event) => {
+        card.classList.toggle('highlight-card');
         card.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
       })
     })
   }
 };
-
 
 export { initMapbox };
 

@@ -9,7 +9,8 @@ class ShopsController < ApplicationController
       {
         lat: shop.latitude,
         lng: shop.longitude,
-        id: shop.id
+        id: shop.id,
+        image_url: helpers.asset_url('https://image.flaticon.com/icons/svg/1473/1473250.svg')
         # infoWindow: render_to_string(partial: "info_window", locals: { shop: shop })
       }
     end

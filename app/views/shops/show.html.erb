@@ -14,19 +14,17 @@
     </ul>
 
       <% end %>
+
   </div>
 
     <div class=job-booking>
       <h2>Services</h2>
 
         <%= simple_form_for [@shop, @booking] do |f| %>
-            <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          </p>
-          <p>
-            <%= f.label 'job_id', 'Job' %>
-            <%= f.collection_select :job_id, Job.where(shop: @shop), :id, :name %>
-          </p>
-          <%= f.submit 'Submit' %>
+          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.association :job, as: :check_boxes, collection: Job.where(shop: @shop) %>
+          <%= f.submit 'Make Booking' %>
+
         <% end %>
     </div>
 </div>
