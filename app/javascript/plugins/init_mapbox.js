@@ -14,7 +14,7 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: 'map',
     center:
-    style: 'mapbox://styles/kcsaba/ck6xiz8zm0jms1is210ohjkx8'
+
   });
 };
 
