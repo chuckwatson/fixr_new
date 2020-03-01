@@ -13,8 +13,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    center:
-
+    style: 'mapbox://styles/kcsaba/ck6xiz8zm0jms1is210ohjkx8'
   });
 };
 
