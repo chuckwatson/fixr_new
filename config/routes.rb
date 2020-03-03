@@ -22,6 +22,7 @@
 
 
   root to: 'shops#index'
+
 end
 
 

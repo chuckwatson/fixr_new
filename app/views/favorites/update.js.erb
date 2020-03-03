@@ -1,1 +1,4 @@
-$('#favorite_link').text("<%= favorite_text %>");
+var icon = $('#favorite_link i')
+console.log(icon)
+icon.removeClass();
+icon.addClass("<%= favorite_text %>");
