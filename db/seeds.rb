@@ -64,7 +64,7 @@ shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582386857/nqsi1eflz2xnsagogtwu.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1583049318/1cDjkYnsrF3iAcMuy1S9XNj1.jpg')
 shop = Shop.new(
   user_id: 1,
   name: "SBC Cycles",
