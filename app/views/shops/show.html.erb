@@ -12,13 +12,14 @@
 <!--     <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %> -->
     <%= simple_form_for [@shop, @booking] do |f| %>
       <div class="service-list">
-        <%= f.association :job, as: :check_boxes, collection: Job.where(shop: @shop), input_html: {class: "cb-list"} %>
+        <%= f.association :job, as: :radio_buttons, collection: Job.where(shop: @shop), input_html: { data: :price, class: "cb-list"} %>
       </div>
       <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, style: "width:200px" %>
       <%= f.submit 'Go To Checkout', class: "btn-show" %>
     <% end %>
   </div>
 </div>
+
 
 <!--
 :width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
