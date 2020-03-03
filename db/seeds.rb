@@ -58,8 +58,8 @@ shop = Shop.new(
   name: "Brick Lane Bikes",
   address: "118 Bethnal Green Rd, Shoreditch, London E2 6DG",
   open_hours: "Monday to Friday: 9am-6pm, Saturday to Sunday: 10am-4pm",
-  email: "info@bricklanebikes.co.uk"
-  phone: 02073336666
+  email: "info@bricklanebikes.co.uk",
+  phone: '02073336666')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -70,8 +70,8 @@ shop = Shop.new(
   name: "SBC Cycles",
   address: "41 Cropley Street, Hoxton, London, N1 7HT",
   open_hours: "Monday to Friday: 11am-7pm, Saturday: 10am, Sunday: 11am-4pm",
-  email: "info@sbc-cycles.co.uk"
-  phone: 02075558888
+  email: "info@sbc-cycles.co.uk",
+  phone: '02075558888')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -82,8 +82,8 @@ shop = Shop.new(
   name: "Bikefix",
   address: "48 Lamb's Conduit Street, Holborn, London, WC1N 3LH",
   open_hours: "Monday to Friday: 9am-6pm, Saturday to Sunday: 10am-4pm",
-  email: "info@bikefix.com"
-  phone: 02074449999
+  email: "info@bikefix.com",
+  phone: '02074449999')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -94,8 +94,8 @@ shop = Shop.new(
   name: "Condor Cycles",
   address: "49-53 Gray's Inn Road, Holborn, London, WC1X 8PP",
   open_hours: "Monday to Friday: 7.30am-5.30pm, Saturday to Sunday: 9am-5pm",
-  email: "info@condor-cycles.com"
-  phone: 02074447777
+  email: "info@condor-cycles.com",
+  phone: '02074447777')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -106,8 +106,8 @@ shop = Shop.new(
   name: "Brixton Cycles",
   address: "296-298 Brixton Road, Ferndale, London, SW9 6AG",
   open_hours: "Monday to Friday: 9.30am-5.30pm, Saturday to Sunday: 11am-4pm",
-  email: "info@brixtoncycles.co.uk"
-  phone: 02072225555
+  email: "info@brixtoncycles.co.uk",
+  phone: '02072225555')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -118,8 +118,8 @@ shop = Shop.new(
   name: "Cloud 9 Cycles",
   address: "38 Store Street, Bloomsbury, London, WC1E 7DB",
   open_hours: "Monday to Friday: 9am-5pm, Saturday to Sunday: 9am-5pm",
-  email: "info@cloud9bikes.co.uk"
-  phone: 02072223333
+  email: "info@cloud9bikes.co.uk",
+  phone: '02072223333')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -130,8 +130,8 @@ shop = Shop.new(
   name: "Fully Charged Electric Bike Shop",
   address: "37 Bermondsey Street, Bermondsey, London, SE1 3JW",
   open_hours: "Monday to Friday: 10am-5.30pm, Saturday to Sunday: 10.30am-4.30pm",
-  email: "info@fullychargedbikes.co.uk"
-  phone: 02071112222
+  email: "info@fullychargedbikes.co.uk",
+  phone: '02071112222')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -142,8 +142,8 @@ shop = Shop.new(
   name: "London Bike Kitchen",
   address: "28 Whitmore Road, London, N1 5QA",
   open_hours: "Monday to Friday: 10am-6pm, Saturday to Sunday: 12am-3pm",
-  email: "info@londonbikekitchen.co.uk"
-  phone: 02075469795
+  email: "info@londonbikekitchen.co.uk",
+  phone: '02075469795')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
