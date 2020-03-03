@@ -1,19 +1,18 @@
 <div class="shop-show-container">
   <div class="shop-show-title">
     <h1><%= @shop.name %></h1>
+    <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
+      <i class="<%= favorite_text %>", style="color:red; width:100px"></i>
+    <% end %>
   </div>
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
 
-    <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
-      <i class="<%= favorite_text %>"></i>
-    <% end %>
   <div class="show-services-title">
     <h2>Services</h2>
   </div>
 
   <div class="card-services">
-<!--     <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %> -->
     <%= simple_form_for [@shop, @booking] do |f| %>
       <div class="service-list">
         <%= f.association :job, as: :radio_buttons, collection: Job.where(shop: @shop), input_html: { data: :price, class: "cb-list"} %>
