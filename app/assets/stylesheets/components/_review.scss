@@ -1,13 +1,26 @@
-.review_container {
-  width: 800px;
+.review-container {
+  // width: 80%;
+  padding: 20px;
+  margin: 20px;
+
   // height: 70vw;
 }
 
+.review-info {
+  width: 80vw;
+  h1 {
+    font-size: 20px;
+  }
+}
 
 .review {
-  text-color: red;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
+  text-align: left;
+  // width: 400px;
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.review_form {
+  // width: 400px;
+  align-content: center;
 }
