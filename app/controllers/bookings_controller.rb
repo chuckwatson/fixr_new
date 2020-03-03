@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @job = Job.find(params[:booking][:job_id][1])
+    @job = Job.find(params[:booking][:job_id])
     @booking.job = @job
     @booking.user = current_user
     @booking.state = 'pending'

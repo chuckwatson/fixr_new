@@ -10,13 +10,13 @@
 
   <div class="card-services">
 <!--     <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %> -->
-    <%= simple_form_for [@shop, @booking] do |f| %>
-      <div class="service-list">
-        <%= f.association :job, as: :check_boxes, collection: Job.where(shop: @shop), input_html: {class: "cb-list"} %>
-      </div>
-      <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, style: "width:200px" %>
-      <%= f.submit 'Go To Checkout', class: "btn-show" %>
-    <% end %>
+      <%= simple_form_for [@shop, @booking] do |f| %>
+        <div class="service-list">
+          <%= f.association :job, as: :radio_buttons, collection: @jobs_with_prices, input_html: {class: "rb-list"} %>
+        </div>
+          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit 'Go To Checkout', class: "btn-show" %>
+      <% end %>
   </div>
 </div>
 
