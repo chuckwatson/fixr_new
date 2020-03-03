@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
       if @review.save
         respond_to do |format|
           format.html { redirect_to shop_path(@shop) }
-          format.js  # <-- will render `app/views/reviews/create.js.erb`
+          format.js # <-- will render `app/views/reviews/create.js.erb`
         end
         # redirect_to shop_path(@shop)
       else
