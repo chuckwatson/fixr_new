@@ -18,12 +18,6 @@ const buildMap = () => {
 };
 
 const addMarkersToMap = (map, markers) => {
-  markers.push({
-    lat: 51.532438,
-    lng: -0.0767668,
-    id: 100,
-    image_url: "https://via.placeholder.com/150"
-  })
   markers.forEach((marker) => {
     // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
     const el = document.createElement('div');
@@ -56,7 +50,6 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
-    console.log(markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
     document.querySelectorAll('.marker').forEach((marker) => {
@@ -69,23 +62,69 @@ const initMapbox = () => {
   }
 };
 
-function geoFindMe() {
+// function geoFindMe() {
 
+//   const status = document.querySelector('#status');
+//   // const mapLink = document.querySelector('#map-link');
+
+//   // mapLink.href = '';
+//   // mapLink.textContent = '';
+
+//   function success(position) {
+//     const latitude  = position.coords.latitude;
+//     const longitude = position.coords.longitude;
+//     console.log(latitude)
+//     console.log(longitude)
+//     status.textContent = '';
+//     return [latitude, longitude]
+
+//     // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+
+//     // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+//   }
+
+//   function error() {
+//     status.textContent = 'Unable to retrieve your location';
+//   }
+
+//   if (!navigator.geolocation) {
+//     status.textContent = 'Geolocation is not supported by your browser';
+//   } else {
+//     status.textContent = 'Locating…';
+//     navigator.geolocation.getCurrentPosition(success, error);
+//   }
+
+// }
+
+document.querySelector('#find-me').addEventListener('click', (event) => {
   const status = document.querySelector('#status');
-  const mapLink = document.querySelector('#map-link');
-
-  mapLink.href = '';
-  mapLink.textContent = '';
 
   function success(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log(latitude)
-    console.log(Longitude)
     status.textContent = '';
-    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-
-    // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    const userMarker = [latitude, longitude]
+    const markers = JSON.parse(mapElement.dataset.markers);
+    const fullUserMarker = {
+      lat: userMarker[0],
+      lng: userMarker[1],
+      id: 100,
+      image_url: "https://via.placeholder.com/150"
+    }
+    markers.push(fullUserMarker)
+    document.querySelector('#map').innerHTML = "";
+    const map = buildMap();
+    addMarkersToMap(map, markers);
+    const bounds = new mapboxgl.LngLatBounds();
+    [fullUserMarker].forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+    map.fitBounds(bounds, { padding: 80, maxZoom: 13 });
+    document.querySelectorAll('.marker').forEach((marker) => {
+      const card = document.getElementById(`shop_${marker.dataset.id}`);
+      marker.addEventListener('click', (event) => {
+        card.classList.toggle('highlight-card');
+        card.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      })
+    })
   }
 
   function error() {
@@ -99,13 +138,7 @@ function geoFindMe() {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 
-}
-
-const element = document.querySelector('#find-me')
-if (element) {
-  element.addEventListener('click', geoFindMe);
-}
-
+});
 
 export { initMapbox };
 
