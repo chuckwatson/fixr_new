@@ -101,7 +101,10 @@ function geoFindMe() {
 
 }
 
-document.querySelector('#find-me').addEventListener('click', geoFindMe);
+const element = document.querySelector('#find-me')
+if (element) {
+  element.addEventListener('click', geoFindMe);
+}
 
 
 export { initMapbox };

@@ -4,7 +4,10 @@
   </div>
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
-    <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %>
+
+    <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
+      <i class="<%= favorite_text %>"></i>
+    <% end %>
   <div class="show-services-title">
     <h2>Services</h2>
   </div>
