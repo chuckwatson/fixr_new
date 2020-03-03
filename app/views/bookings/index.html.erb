@@ -1,16 +1,29 @@
-<h1>This is where we'll put all our past and pending bookings...</h1>
-<br>
-<ul>
+
+<div class=bookings-container>
+   <h1 style="text-align: center">Order History</h1>
+ <br>
+<div class=bookings-orders>
+  <ul>
   <% @bookings.each do |booking| %>
     <li><%= booking.date %> - <%= booking.job.name %>: £<%= booking.job.price %></li>
   <% end %>
 </ul>
+</div>
 
 
+<h1>Top Shops</h1>
 
+<% current_user.favorites.each do |favorite| %>
+      <%= link_to shop_path(favorite.shop), class: 'card-link', id: "shop_#{favorite.shop.id}" do %>
+        <%= cl_image_tag(favorite.shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
+        <div class="shop-card-text">
+          <h5><%= favorite.shop.name %></h5>
+          <p>Open Hours: <%= favorite.shop.open_hours%></p>
+          <p>Close Hours: <%= favorite.shop.close_hours%></p>
+          <p>Rating: CHANGE</p>
+        </div>
+      <% end %>
+  <% end %>
+</div>
 
-
-<!--     <div class="shop-card"> -->
-
-<!--     </div> -->
 
