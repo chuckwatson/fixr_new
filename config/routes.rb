@@ -4,7 +4,7 @@
   devise_for :users
   get 'favorites/update'
   resources :shops do #index #show #new/create #delete #update
-    resources :reviews, only: [:new, :create, :destroy]
+    resources :reviews, only: [:new, :create, :destroy, :show]
     resources :jobs, only: [:new, :create, :destroy, :index, :show]
     resources :bookings, only: [:new, :create, :destroy, :index, :show]
   end
