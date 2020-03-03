@@ -1,6 +1,5 @@
 class FavoritesController < ApplicationController
 
-
   def update
     favorite = Favorite.where(shop: Shop.find(params[:shop]), user: current_user)
     if favorite == []
