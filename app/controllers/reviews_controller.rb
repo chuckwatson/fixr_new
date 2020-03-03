@@ -13,9 +13,17 @@ class ReviewsController < ApplicationController
     @review.shop = @shop
     @review.user = current_user
       if @review.save
-        redirect_to shop_path(@shop)
+        respond_to do |format|
+          format.html { redirect_to shop_path(@shop) }
+          format.js  # <-- will render `app/views/reviews/create.js.erb`
+        end
+        # redirect_to shop_path(@shop)
       else
-        render "shops/show"
+        respond_to do |format|
+          format.html { render 'shops/show' }
+          format.js
+          render "shops/show"
+        end
       end
   end
 
