@@ -16,11 +16,12 @@ class ReviewsController < ApplicationController
         redirect_to shop_path(@shop)
       else
         render "shops/show"
+      end
   end
 
-  def show
+  # def show
 
-  end
+  # end
 
   private
 

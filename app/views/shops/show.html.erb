@@ -25,3 +25,19 @@
 <!--
 :width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
       :responsive=>true, :gravity=>"center", :font_size=>40, :font_weight=>"bold", -->
+
+<h1><%= @shop.name %>  <small><%= @restaurant.address %></small></h1>
+<h2>
+  <%= pluralize @shop.reviews.size, "review" %>
+</h2>
+<div id="reviews">
+  <% if @shop.reviews.blank? %>
+    Be the first to leave a review for <%= @shop.name %>
+  <% else %>
+    <% @shop.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= render 'reviews/form', shop: @shop, review: @review %>
