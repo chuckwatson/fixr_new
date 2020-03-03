@@ -2,11 +2,12 @@
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   h1 {
     padding: 28px 0;
     text-align: center;
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: 30px;
   }
 }
 
@@ -30,8 +31,13 @@
   text-align: center;
   padding: 40px 0 10px 0;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 22px;
   font-family: 'Spartan', ;
+  color: $sea-green;
+}
+
+.show-services-title h2 {
+  font-size: 22px;
 }
 
 label.string {
@@ -57,21 +63,30 @@ label.string {
 .form-check-label {
   font-family: 'Roboto', ;
   font-size: 24px;
-  text-align: right;
+  display: flex;
+  justify-content: center;
+  // text-align: right;
   padding: 5px 0;
 }
 
-.form-check-input {
-  margin-left: auto
+
+.rb-list {
+  display: flex;
 }
+
+// .form-check-label {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 .cb-list {
   display: flex;
   justify-content: space-between;
 }
+
 .service-list {
   background-color: white;
-  padding: 10px;
+  padding: 10px 60px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
