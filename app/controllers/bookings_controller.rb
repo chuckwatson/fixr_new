@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
 
+
   def new
     @shop = Shop.find(params[:shop_id])
     @booking = Booking.new
@@ -33,18 +34,23 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @review = Review.new
     @user = current_user
     @bookings = @user.bookings
-    # @shop = Shop.find(params[:shop_id])
-    # @jobs = Job.where(shop_id: @shop.id)
+    @shop = @user.shops
+    @jobs = Job.where(shop: @shop)
+    # if @bookings.job_id == @jobs.job_id
+    #   return
+    # end
+# raise
     # @job = @booking.job
     # @shop = @job.shop
-    # @orders = Booking.where(job_id: @jobs.ids)
-  end
 end
 
   def show
     @booking = current_user.bookings.find(params[:id])
+
+
   end
 
   def destroy
@@ -56,7 +62,7 @@ end
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :job_id, :user_id)
+    params.require(:booking).permit(:date, :job_id, :user_id, :shop_id)
   end
 
 end

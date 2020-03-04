@@ -1,16 +1,33 @@
 <div class="shop-show-container">
   <div class="shop-show-title">
-    <h1><%= @shop.name %></h1>
-    <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
+    <div class="shop-name">
+        <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
       <i class="<%= favorite_text %>", style="color:red; width:100px"></i>
     <% end %>
+        <h1><%= @shop.name %></h1>
+    </div>
+
   </div>
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
+      <div
+  id="map"
+  style="width: 85%;
+  height: 200px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  <button id = "find-me">Show my location</button><br/>
+    <p id = "status"></p>
+    <a id = "map-link" target="_blank"></a>
+  </div>
 
-  <div class="show-services-title">
     <h2>Services</h2>
   </div>
+
+  <div class="show-services-title">
+
+
 
   <div class="card-services">
 
@@ -50,7 +67,7 @@
       </div>
 </div>
 
-<%= render 'reviews/form', shop: @shop, review: @review %>
+<%= render 'reviews/new', shop: @shop, review: @review %>
 
 
 

@@ -137,10 +137,8 @@ document.querySelector('#find-me').addEventListener('click', (event) => {
     status.textContent = 'Locating…';
     navigator.geolocation.getCurrentPosition(success, error);
   }
-
 });
 
+
 export { initMapbox };
-
-
 

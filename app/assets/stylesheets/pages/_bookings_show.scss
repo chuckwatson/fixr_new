@@ -7,7 +7,7 @@
     flex-direction: row;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin: 10px 0;
+    margin: 5px auto;
     text-decoration: none;
 
     .shop-card-text {
@@ -33,12 +33,56 @@
   }
 
 
-.bookings-title h1 {
+.bookings-title {
   text-align: center;
   display: block;
   margin: auto;
 }
 
 .bookings-container {
+display: flex;
+flex-flow: column;
+
+}
+
+.bookings-orders ul {
+  padding: 0px 0px;
+  margin: 0px 0px;
+// display: flex;
+// flex-flow: column;
+// align-items: center;
+
+}
+
+.bookings-order-cards {
+  border: 1px solid $sea-green;
+  list-style-type: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px auto;
+  width: 95%;
+
+    p {
+      font-size: 16px;
+    }
+}
+
+.favorite-cards {
+  margin: 5px auto;
+
+}
+
+
+.order-shop li {
+  margin-right: auto;
+}
+
+.bookings-title h1 {
   text-align: center;
+}
+
+.favorite-shops-title h1 {
+  text-align: center;
+  display: block;
 }
