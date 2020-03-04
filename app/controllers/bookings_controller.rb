@@ -35,7 +35,13 @@ class BookingsController < ApplicationController
   def index
     @user = current_user
     @bookings = @user.bookings
+    # @shop = Shop.find(params[:shop_id])
+    # @jobs = Job.where(shop_id: @shop.id)
+    # @job = @booking.job
+    # @shop = @job.shop
+    # @orders = Booking.where(job_id: @jobs.ids)
   end
+end
 
   def show
     @booking = current_user.bookings.find(params[:id])

@@ -16,6 +16,7 @@ class ShopsController < ApplicationController
     end
   end
 
+
   # Update once bookings controller is done
   def new
     @shop = Shop.new
@@ -46,8 +47,11 @@ class ShopsController < ApplicationController
     # @bookings = Booking.where(job: @job, user: current_user)
     @jobs_with_prices = Job.where(shop: @shop).map do |job|
       ["#{job.name} £#{job.price.to_i}", job.id]
+    @description = Job.where(shop: @shop).map do |job|
+      ["#{job.description}"]
     end
   end
+end
 
   def update
     @shop = Shop.find(params[:id])

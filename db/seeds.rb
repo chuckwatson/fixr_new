@@ -43,6 +43,11 @@ users_attributes = [
     password: "charlotte"
   },
 
+    first_name: "Bradley",
+    last_name: "Wiggins",
+    email: "brad@wiggins.com",
+    password: "bradley"
+
 ]
 
 User.create!(users_attributes)
@@ -54,7 +59,7 @@ puts 'Creating shops'
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387044/r4t94dypphotyn1puuba.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 5,
   name: "Brick Lane Bikes",
   address: "118 Bethnal Green Rd, Shoreditch, London E2 6DG",
   open_hours: "Monday to Friday: 9am-6pm, Saturday to Sunday: 10am-4pm",
@@ -404,55 +409,65 @@ bookings_attributes = [
   {
     date: Date.new(2020,3,5),
     user_id: 1,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
+
   },
 
   {
     date: Date.new(2020,2,3),
     user_id: 2,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,12,7),
     user_id: 1,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,3,25),
     user_id: 1,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,6,12),
     user_id: 1,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,12,3),
     user_id: 2,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,6,17),
     user_id: 3,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,6,1),
     user_id: 4,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,7,14),
     user_id: 4,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
 ]

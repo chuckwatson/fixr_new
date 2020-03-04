@@ -18,6 +18,11 @@
           <%= link_to "My Account", user_bookings_path(current_user), class: "nav-link", style: "color:black" %>
         </li>
         <li class="nav-item">
+          <%# if current_user == @shop.user %>
+          <%= link_to "Shop Admin", user_bookings_path(current_user), class: "nav-link", style: "color:black" %>
+
+        </li>
+        <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
