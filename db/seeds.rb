@@ -143,7 +143,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582976118/Fixr/cool-shop-4_rmxhae.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 4,
   name: "London Bike Kitchen",
   address: "28 Whitmore Road, London, N1 5QA",
   open_hours: "Monday to Friday: 10am-6pm, Saturday to Sunday: 12am-3pm",
@@ -393,6 +393,84 @@ jobs_attributes = [
     description: "Complete strip down and rebuild of cycle - replace of items if necessary",
     price: 180,
     shop_id: 3
+  },
+
+{
+    name: "Full Monty Service",
+    description: "Complete strip down and rebuild of cycle - replace of items if necessary",
+    price: 180,
+    shop_id: 2
+  },
+
+  {
+    name: "Puncture Repair",
+    description: "Puncture repairs (including tube)",
+    price: 15,
+    shop_id: 3
+  },
+
+  {
+    name: "Gear Service",
+    description: "Full gear service for road and racing bikes",
+    price: 20,
+    shop_id: 4
+  },
+
+  {
+    name: "Brake Service",
+    description: "Does
+     not include parts, priced per brake",
+    price: 25,
+    shop_id: 8
+  },
+
+  {
+    name: "Basic Service",
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
+    price: 45,
+    shop_id: 8
+  },
+
+  {
+    name: "Bike Build",
+    description: "Complete build or frame shop",
+    price: 140,
+    shop_id: 8
+  },
+
+  {
+    name: "Wheel rebuild",
+    description: "Bespoke wheel construction service and wheel trueing",
+    price: 60,
+    shop_id:8
+  },
+
+  {
+    name: "Frame Alignment",
+    description: "Adjustment service for full frame alignment",
+    price: 20,
+    shop_id: 8
+  },
+
+  {
+    name: "Rack Fitting",
+    description: "Build and fit of bike racks",
+    price: 10,
+    shop_id: 8
+  },
+
+  {
+    name: "Enhanced Service",
+    description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
+    price: 110,
+    shop_id: 8
+  },
+
+  {
+    name: "Full Monty Service",
+    description: "Complete strip down and rebuild of cycle - replace of items if necessary",
+    price: 180,
+    shop_id: 8
   },
 
 ]
