@@ -2,13 +2,14 @@
 
 console.log("hello ajax peeps!");
 
-// function refreshForm(innerHTML) {
-//   const newReviewForm = document.getElementById('new_review');
-//   newReviewForm.innerHTML = innerHTML;
-// }
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
 
 function addReview(reviewHTML) {
-  const reviews = document.getElementById('reviews');
+  const reviews = document.querySelector('.reviews');
+  console.log('reviews',reviews)
   reviews.insertAdjacentHTML('beforeend', reviewHTML);
 }
 
