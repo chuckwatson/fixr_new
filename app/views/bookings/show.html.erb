@@ -1,3 +1,12 @@
 <div class="booking-show-container">
-  <h1>Booking Confirmed</h1>
+  <div class="booking-show-title">
+    <h1>Booking Confirmed!</h1>
+  </div>
+
+  <div class="booking-show-details">
+    <p>You've booked <%= @job.name %> - <%= @job.description %></p>
+    <p>See you at <%= @shop.name %> on <%= @booking.date %>!</p>
+
+  </div>
+
 </div>

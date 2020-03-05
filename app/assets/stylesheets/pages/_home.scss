@@ -21,6 +21,10 @@
   }
 }
 
+.form-check-label {
+  font-size: 16px;
+}
+
 .form-control {
   border-color: $sea-green;
 }
@@ -28,7 +32,7 @@
 .form-control:focus {
   border-color: $sea-green;
   background-color: $white;
-  box-shadow: 0 0 0 0.2rem rgba(8, 152, 33, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 153, 0, 0.25);
 }
 
 .remember-line {
