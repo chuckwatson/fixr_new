@@ -3,6 +3,8 @@
   padding: 20px;
   margin: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0%;
+  background-color: white;
   // height: 70vw;
 }
 
@@ -24,9 +26,12 @@
 .review_form {
   // width: 400px;
   align-content: center;
+  border-radius: 3%;
   padding: 20px;
   margin: 20px;
-    width: 70vw;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #e5f2e5;
+    width: 80vw;
   h1 {
     font-size: 20px;
   }
