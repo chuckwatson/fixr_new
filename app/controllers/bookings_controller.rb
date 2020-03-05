@@ -37,8 +37,7 @@ class BookingsController < ApplicationController
     @review = Review.new
     @user = current_user
     @bookings = @user.bookings
-    @shop = @user.shops
-    @jobs = Job.where(shop: @shop)
+    @orders = @user.shops.first.bookings
     # if @bookings.job_id == @jobs.job_id
     #   return
     # end
