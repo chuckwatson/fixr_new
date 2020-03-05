@@ -1,20 +1,5 @@
 
 
-<h1>Service Tracker</h1>
-      <% @orders.each do |order| %>
-          <ul>
-             <div class="bookings-order-cards">
-                <div class="order-info">
-                   <li><%= order.job.name %> Customer: <%= order.user.first_name%> <%= order.user.last_name %></li>
-                   <li><%= order.date %></li>
-                <div class="order-shop">
-                </div>
-                </div>
-                 </ul>
-      <% end %>
-            </div>
-
-
 <div class="bookings-container">
   <div class="bookings-title">
                  <h1>Order History</h1>

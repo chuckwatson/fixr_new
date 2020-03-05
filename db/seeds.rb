@@ -71,7 +71,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1583049318/1cDjkYnsrF3iAcMuy1S9XNj1.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 5,
   name: "SBC Cycles",
   address: "41 Cropley Street, Hoxton, London, N1 7HT",
   open_hours: "Monday to Friday: 11am-7pm, Saturday: 10am, Sunday: 11am-4pm",
@@ -486,7 +486,7 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,3,5),
-    user_id: 1,
+    user_id: 2,
     job_id: 1,
     job_complete: false
 
@@ -501,21 +501,21 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,12,7),
-    user_id: 1,
+    user_id: 2,
     job_id: 1,
     job_complete: false
   },
 
   {
     date: Date.new(2020,3,25),
-    user_id: 1,
+    user_id: 2,
     job_id: 1,
     job_complete: false
   },
 
   {
     date: Date.new(2020,6,12),
-    user_id: 1,
+    user_id: 2,
     job_id: 1,
     job_complete: false
   },
