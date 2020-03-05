@@ -3,12 +3,12 @@
   height: 70vw;
   // CURRENTLY IT'S ON REPEAT AND SIZE OF IMAGE JUST FITS THE PAGE. NEED TO FIX
   background-image: url('black-bike.jpg');
-
   background-repeat: no-repeat;
-
   background-size: cover;
   display: flex;
   align-items: center;
+  border-top: 1px solid rgba(00, 152, 00, 1);
+  border-bottom: 1px solid rgba(00, 152, 00, 1);
   h2 {
     padding-top: 80px;
     padding-left: 40px;
