@@ -1,7 +1,11 @@
-<div class="review_form">
-    <%= simple_form_for([ shop, review ], remote: true) do |form| %>
-    <%= form.input :description, as: :text %>
-    <%= form.button :submit %>
-  <% end %>
+<div class="review-container">
+  <div class="review_form">
+    <p><strong>Leave your review below:</strong></p>
+      <%= simple_form_for([ shop, review ], remote: true) do |form| %>
+      <%= form.input :description, as: :text %>
+      <%= form.input :rating, as: :integer %>
+      <%= form.button :submit %>
+      <% end %>
+  </div>
 </div>
 

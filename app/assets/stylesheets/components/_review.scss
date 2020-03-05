@@ -2,12 +2,13 @@
   // width: 80%;
   padding: 20px;
   margin: 20px;
-
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // height: 70vw;
 }
 
 .review-info {
   width: 80vw;
+  align: center;
   h1 {
     font-size: 20px;
   }
@@ -23,4 +24,10 @@
 .review_form {
   // width: 400px;
   align-content: center;
+  padding: 20px;
+  margin: 20px;
+    width: 70vw;
+  h1 {
+    font-size: 20px;
+  }
 }
