@@ -5,3 +5,7 @@
 @import "./components/banner";
 @import "./config/fonts";
 @import "./config/colors";
+
+.index-container {
+background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
+}
