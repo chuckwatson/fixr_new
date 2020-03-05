@@ -44,6 +44,9 @@
   </div>
 </div>
 
+ <% if current_user.id == @shop.user.id %>
+<%= link_to "Shop Admin", shop_bookings_path(@shop), class: "nav-link", style: "color:black" %>
+<% end %>
 
 <!--
 :width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
