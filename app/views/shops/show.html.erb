@@ -2,8 +2,19 @@
   <div class="shop-show-title">
     <h1><%= @shop.name %></h1>
     <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
-      <i class="<%= favorite_text %>", style="color:red; width:100px"></i>
+      <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
+  </div>
     <% end %>
+
+
+
+    <div id="show_review" role="alert">
+      <div id="show_reviewtext"><span><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: <i class="fas fa-star"></i></span>
+    </div>
+
+
+
+
   </div>
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
@@ -15,7 +26,6 @@
   <div class="card-services">
 
 <!--     <%= link_to favorite_text, favorites_update_path(shop: @shop), id: 'favorite_link', remote: true %> -->
-
       <%= simple_form_for [@shop, @booking] do |f| %>
         <div class="service-list">
           <%= f.association :job, as: :radio_buttons, collection: @jobs_with_prices, input_html: {class: "rb-list"} %>
@@ -32,13 +42,14 @@
 :width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
       :responsive=>true, :gravity=>"center", :font_size=>40, :font_weight=>"bold", -->
 <div class="review-container">
+
   <div class="review-info">
-    <h1><%= @shop.name %></h1>
-    <h1><%= @shop.address %></h1>
+    <h1><%= @shop.name %> - Have your say!</h1>
   </div>
+
       <div class="reviews">
         <h2>
-          <%= pluralize @shop.reviews.size, "review" %>
+          <%= pluralize @shop.reviews.size, "review" %></div>
         </h2>
           <% if @shop.reviews.blank? %>
             Be the first to leave a review for <%= @shop.name %>
@@ -47,10 +58,9 @@
             <%= render 'reviews/show', review: review %>
           <% end %>
         <% end %>
+<%= render 'reviews/form', shop: @shop, review: @review %>
       </div>
 </div>
-
-<%= render 'reviews/form', shop: @shop, review: @review %>
 
 
 

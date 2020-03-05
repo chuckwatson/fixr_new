@@ -20,6 +20,7 @@ gem 'geocoder'
 gem 'jquery-rails'
 gem 'money-rails'
 gem 'stripe'
+# gem 'rating', '~> 0.11.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
