@@ -6,22 +6,30 @@
 //    behavior: 'smooth'
 //   });
 // }
-$(window).scroll(function() {
-    var height = $(window).scrollBottom();
-    if (height > 100) {
-        $('#show_footer').fadeIn();
-    } else {
-        $('#show_footer').fadeOut();
-    }
-});
-$(document).ready(function() {
-    $("#show_footer").click(function(event) {
-        event.preventDefault();
-        document.querySelectorAll('#reviews').forEach((element) => {
-          element.classList.remove('reviews')
-        });
-        $("html, body").animate({ scrollBottom: 0 }, "slow");
-        return false;
-    });
+// $(window).scroll(function() {
+//     var height = $(window).scrollBottom();
+//     if (height > 100) {
+//         $('#show_footer').fadeIn();
+//     } else {
+//         $('#show_footer').fadeOut();
+//     }
+// });
+// $(document).ready(function() {
+//     $("#show_footer").click(function(event) {
+//         event.preventDefault();
 
-});
+
+//         document.querySelectorAll('#reviews').forEach((element) => {
+//           element.classList.remove('reviews')
+//         });
+
+
+//         $("html, body").animate({ scrollBottom: 0 }, "slow");
+//         return false;
+//     });
+
+// });
+
+document.querySelector('#show_footer').addEventListener('click', (event) => {
+        document.querySelector('.review-container').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      })

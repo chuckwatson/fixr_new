@@ -6,9 +6,13 @@
   </div>
     <% end %>
 
+
+
     <div id="show_footer" role="alert">
-      <div id="show_footertext"><span><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: 🌍 (stars)</span>
+      <div id="show_footertext"><span><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: <i class="fas fa-star"></i></span>
     </div>
+
+
 
 
   </div>

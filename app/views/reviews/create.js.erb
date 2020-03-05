@@ -13,11 +13,12 @@ function addReview(reviewHTML) {
   reviews.insertAdjacentHTML('beforeend', reviewHTML);
 }
 
-addReview();
+// addReview();
+// refreshForm();
 
 <% if @review.errors.any? %>
   refreshForm('<%= j render "reviews/form", shop: @shop, review: @review %>');
 <% else %>
   addReview('<%= j render "reviews/show", review: @review %>');
-  refreshForm('<%= j render "reviews/form", shop: @shop, review: Review.new %>');
+  // refreshForm('<%= j render "reviews/form", shop: @shop, review: Review.new %>');
 <% end %>
