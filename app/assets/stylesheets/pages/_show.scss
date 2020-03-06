@@ -47,9 +47,9 @@ label.string {
 }
 
 .card-services {
-  text-align: center;
+  // text-align: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 0 0;
   .btn-show {
     margin: 20px;
     font-size: 28px;
@@ -73,7 +73,8 @@ label.string {
 
 
 .rb-list {
-  display: flex;
+  // display: flex;
+  font-size: 1em;
 }
 
 // .form-check-label {
@@ -88,12 +89,16 @@ label.string {
 
 .service-list {
   background-color: white;
-  padding: 10px 60px;
+  padding: 10px 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .form-control {
   background-color: white;
+}
+
+.form-check-label {
+  font-size: 1em;
 }
 // .job-booking{
 //   text-align: center;

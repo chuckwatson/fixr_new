@@ -73,6 +73,7 @@
 display: flex;
 flex-flow: column;
 
+
 }
 
 .bookings-orders ul {
@@ -90,8 +91,9 @@ flex-flow: column;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  margin: 5px auto;
+  margin: 10px auto;
   width: 95%;
+  height: 5em;
 
     p {
       font-size: 16px;
@@ -132,6 +134,9 @@ flex-flow: column;
   align-items: center;
 }
 
+.order-price {
+  margin-left: auto;
+}
 
 // .card-link {
 //   background-color: white;
