@@ -5,7 +5,8 @@
   get 'favorites/update'
 
   scope module: 'shops' do
-    resources :shops, only: [:show] do #index #show #new/create #delete #update
+    resources :shops, only: [:show, :create] do
+    resource :reviews, only: [:new, :create, :show, :destroy] #index #show #new/create #delete #update
       resources :bookings, only: [:new, :create, :destroy, :index, :show]
     end
   end

@@ -62,6 +62,7 @@ const initMapbox = () => {
   }
 };
 
+
 // function geoFindMe() {
 
 //   const status = document.querySelector('#status');
