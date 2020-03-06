@@ -3,8 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
-
   h1 {
     padding: 28px 0;
     text-align: center;
@@ -47,9 +45,9 @@ label.string {
 }
 
 .card-services {
-  // text-align: center;
+  text-align: center;
   width: 100%;
-  padding: 0 0;
+  padding: 20px 0;
   .btn-show {
     margin: 20px;
     font-size: 28px;
@@ -73,8 +71,7 @@ label.string {
 
 
 .rb-list {
-  // display: flex;
-  font-size: 1em;
+  display: flex;
 }
 
 // .form-check-label {
@@ -89,7 +86,7 @@ label.string {
 
 .service-list {
   background-color: white;
-  padding: 10px 10px;
+  padding: 10px 60px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
