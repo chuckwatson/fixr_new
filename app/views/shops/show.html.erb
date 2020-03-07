@@ -7,7 +7,7 @@
     <% end %>
   </div>
     <div id="show_review" role="alert">
-      <div id="show_reviewtext"><span><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: <i class="fas fa-star"></i></span></div>
+      <div id="show_reviewtext"><p><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: <%= @shop.reviews.average(:rating) %><i><div class="fas fa-star"></div></i></p></div>
     </div>
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
