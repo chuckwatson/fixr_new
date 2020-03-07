@@ -47,7 +47,6 @@ class ShopsController < ApplicationController
     # @bookings = Booking.where(job: @job, user: current_user)
     @jobs_with_prices = Job.where(shop: @shop).map do |job|
       ["#{job.name} £#{job.price.to_i}", job.id]
-
   end
 end
 

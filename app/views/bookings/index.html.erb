@@ -1,14 +1,15 @@
 
-
 <div class="bookings-container">
   <div class="bookings-title">
-                 <h1>Order History</h1>
+                 <h1>Service Tracker</h1>
   </div>
 
   <br>
     <div class="bookings-orders">
+      <% @bookings = @bookings.sort_by { |b| b.date } %>
       <% @bookings.each do |booking| %>
           <ul>
+            <% if booking.date >= Date.today %>
              <div class="bookings-order-cards">
                 <div class="order-info">
                    <li>Order Date:<%= booking.date %><%= booking.job.name %>:</li>
@@ -21,26 +22,15 @@
 
          </ul>
       <% end %>
+      <% end %>
                </div>
            </div>
-        <div class="favorite-shops-title">
-          <h1>Top Shops</h1>
-        </div>
-        </div>
 
-    <% current_user.favorites.each do |favorite| %>
-        <div class="favorite-cards">
-           <%= link_to shop_path(favorite.shop), class: 'card-link', id: "shop_#{favorite.shop.id}" do %>
-                <%= cl_image_tag(favorite.shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
-                <div class="shop-card-text">
-                  <h5><%= favorite.shop.name %></h5>
-                  <p>Open Hours: <%= favorite.shop.open_hours%></p>
-                  <p>Rating: CHANGE</p>
-                </div>
-              <% end %>
-          <% end %>
+
+
+
+
+
         </div>
 
 </div>
-
-
