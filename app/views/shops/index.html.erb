@@ -25,10 +25,14 @@
               <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
               <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
               <div class="shop-card-text">
+                <br>
                 <h5><%= shop.name %></h5>
-                <p>Distance: CHANGE</p>
-                <p>Rating: CHANGE</p>
-              </div>
+                <% if shop.reviews.blank? %>
+                  <p>No reviews yet.</p>
+                <% else %>
+                  <p>Rating: <%= shop.reviews.average(:rating) %></p>
+                <% end %>
+               </div>
             <% end %>
         <% end %>
 
