@@ -39,6 +39,7 @@ class ShopsController < ApplicationController
 
   # Update show method once booking controller is done.
   def show
+      raise
     @booking = Booking.new
     @shop = Shop.find(params[:id])
     @job = Job.where(shop: @shop.id)

@@ -1,4 +1,7 @@
 .shop-show-container {
+  background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
+  background-position: center center;
+  background-repeat: repeat;
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
@@ -86,7 +89,7 @@ label.string {
 
 .service-list {
   background-color: white;
-  padding: 10px 60px;
+  padding: 10px 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
