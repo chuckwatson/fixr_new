@@ -110,7 +110,7 @@ document.querySelector('#find-me').addEventListener('click', (event) => {
       lat: userMarker[0],
       lng: userMarker[1],
       id: 100,
-      image_url: "https://via.placeholder.com/150"
+      image_url: "https://www.flaticon.com/premium-icon/icons/svg/2196/2196448.svg"
     }
     markers.push(fullUserMarker)
     document.querySelector('#map').innerHTML = "";
