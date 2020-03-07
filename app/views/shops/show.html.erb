@@ -1,11 +1,11 @@
 <div class="shop-show-container">
+      <% if current_user == @shop.user %>
+        <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
+    <% end %>
   <div class="shop-show-title">
     <h1><%= @shop.name %></h1>
     <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
       <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
-    <% end %>
-       <% if current_user == @shop.user %>
-        <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
     <% end %>
   </div>
   <div id="show_review" role="alert">
