@@ -1,9 +1,13 @@
 <div class="booking-show-container">
   <div class="booking-show-title">
-    <h3><strong>- Booking Confirmed -</strong></h3>
+    <br>
+    <h5><strong>Booking Confirmed</strong></h5>
   </div>
 
+ <!--  <p id="line"> ________________________________ </p> -->
+
   <div class ="booking-show-details">
+    <br>
     <p>You have booked</p>
     <h4><%= @booking.job.name %></h4>
     <p>at</p>
@@ -12,8 +16,8 @@
     <h4><%= @booking.date %></h4>
   </div>
 
+  <p id="line"> ________________________________ </p>
   <br>
-  <p> ________________________________ </p>
 
   <p>Thanks for booking with: <div class="fixr">FIXR</div></p>
     <div class="booking-show-title">
@@ -23,6 +27,7 @@
     </div>
   <div class="booking-show-buttons">
     <%= link_to "Bike shops", shops_path, class: "btn-basic" %>
+    <br>
     <%= link_to "View your account", bookings_path(current_user), class: "btn-basic" %>
   </div>
 </div>
