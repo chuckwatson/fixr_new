@@ -1,21 +1,19 @@
+<h1>Hello</h1>
 <div class="shop-show-container">
   <div class="shop-show-title">
     <h1><%= @shop.name %></h1>
     <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
       <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
-  </div>
     <% end %>
+  </div>
 
 
 
     <div id="show_review" role="alert">
-      <div id="show_reviewtext"><span><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: <i class="fas fa-star"></i></span>
+      <div id="show_reviewtext"><span><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: <i class="fas fa-star"></i></span></div>
     </div>
 
 
-
-
-  </div>
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
 
@@ -34,34 +32,33 @@
         <%= f.submit 'Go To Checkout', class: "btn-show" %>
       <% end %>
 
-  </div>
 </div>
 
 
 <!--
 :width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
       :responsive=>true, :gravity=>"center", :font_size=>40, :font_weight=>"bold", -->
-<div class="review-container">
+  <div class="review-container">
 
-  <div class="review-info">
-    <h1><%= @shop.name %> - Have your say!</h1>
-  </div>
+    <div class="review-info">
+      <h1><%= @shop.name %> - Have your say!</h1>
+    </div>
 
-      <div class="reviews">
-        <h2>
-          <%= pluralize @shop.reviews.size, "review" %></div>
-        </h2>
-          <% if @shop.reviews.blank? %>
-            Be the first to leave a review for <%= @shop.name %>
-          <% else %>
-            <% @shop.reviews.each do |review| %>
-            <%= render 'reviews/show', review: review %>
-          <% end %>
+    <div class="reviews">
+      <h2>
+        <%= pluralize @shop.reviews.size, "review" %>
+      </h2>
+      <% if @shop.reviews.blank? %>
+        Be the first to leave a review for <%= @shop.name %>
+      <% else %>
+        <% @shop.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
         <% end %>
- <%#= render 'reviews/form', shop: @shop, review: @review %>
-      </div>
+      <% end %>
+      <%= render 'reviews/form', shop: @shop, review: @review %>
+    </div>
+  </div>
 </div>
-
 
 
 
