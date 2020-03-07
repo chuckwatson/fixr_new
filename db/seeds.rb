@@ -57,7 +57,7 @@ puts 'Users created'
 puts 'Creating shops'
 
 
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387044/r4t94dypphotyn1puuba.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1583443504/S8kRDygRyNHLjd7nbHYstgKo.jpg')
 shop = Shop.new(
   user_id: 5,
   name: "Brick Lane Bikes",
