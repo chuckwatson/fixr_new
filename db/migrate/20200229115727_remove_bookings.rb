@@ -1,6 +1,6 @@
-class AddMonetiseToBookings < ActiveRecord::Migration[5.2]
+class RemoveBookings< ActiveRecord::Migration[5.2]
   def change
-    drop_table :bookings
+    # drop_table :bookings
   end
 
 
