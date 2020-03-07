@@ -14,13 +14,13 @@
                     input_html: { autocomplete: "current-password", class: "homepage-form-input" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", class: "btn-basic homepage-buttons" %>
+      <div class="form-actions-login">
+        <%= f.button :submit, "Log in", class: "btn-show homepage-buttons" %>
+      </div>
+      <div class="form-actions-signup">
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn-basic homepage-buttons" %>
         <%= link_to "Skip", shops_path, class: "btn-basic homepage-buttons" %>
       </div>
     <% end %>
-  <!--   <div class="homepage-login-buttons">
-      <%= render "devise/shared/links" %>
-    </div> -->
   </div>
 </div>

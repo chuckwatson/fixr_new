@@ -1,9 +1,21 @@
 // Specific CSS for your home-page
 
 .homepage-container {
+  // background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
+  // position: relative;
+  // padding: 20px 40px;
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
-  position: relative;
-  padding: 20px 40px;
+  background-position: center center;
+  background-repeat: repeat;
+  padding: 40px 40px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: -webkit-fill-available;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
 .form-inputs {
@@ -11,12 +23,20 @@
   z-index: 10 !important;
 }
 
-.form-actions {
+.form-actions-login {
+  display: flex;
+  justify-content: center;
+  a {
+    // REMOVE THIS WHEN BUTTON IS DONE
+    padding-top: 7px;
+  }
+}
+.form-actions-signup {
+  margin-top: 24px;
   display: inline-block;
   display: flex;
   justify-content: space-evenly;
   a {
-    // REMOVE THIS WHEN BUTTON IS DONE
     padding-top: 7px;
   }
 }
