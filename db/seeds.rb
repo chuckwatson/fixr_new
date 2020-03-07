@@ -43,6 +43,11 @@ users_attributes = [
     password: "charlotte"
   },
 
+    first_name: "Bradley",
+    last_name: "Wiggins",
+    email: "brad@wiggins.com",
+    password: "bradley"
+
 ]
 
 User.create!(users_attributes)
@@ -54,7 +59,7 @@ puts 'Creating shops'
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582387044/r4t94dypphotyn1puuba.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 5,
   name: "Brick Lane Bikes",
   address: "118 Bethnal Green Rd, Shoreditch, London E2 6DG",
   open_hours: "Monday to Friday: 9am-6pm, Saturday to Sunday: 10am-4pm",
@@ -66,7 +71,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1583049318/1cDjkYnsrF3iAcMuy1S9XNj1.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 5,
   name: "SBC Cycles",
   address: "41 Cropley Street, Hoxton, London, N1 7HT",
   open_hours: "Monday to Friday: 11am-7pm, Saturday: 10am, Sunday: 11am-4pm",
@@ -138,7 +143,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582976118/Fixr/cool-shop-4_rmxhae.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 4,
   name: "London Bike Kitchen",
   address: "28 Whitmore Road, London, N1 5QA",
   open_hours: "Monday to Friday: 10am-6pm, Saturday to Sunday: 12am-3pm",
@@ -390,6 +395,84 @@ jobs_attributes = [
     shop_id: 3
   },
 
+{
+    name: "Full Monty Service",
+    description: "Complete strip down and rebuild of cycle - replace of items if necessary",
+    price: 180,
+    shop_id: 2
+  },
+
+  {
+    name: "Puncture Repair",
+    description: "Puncture repairs (including tube)",
+    price: 15,
+    shop_id: 3
+  },
+
+  {
+    name: "Gear Service",
+    description: "Full gear service for road and racing bikes",
+    price: 20,
+    shop_id: 4
+  },
+
+  {
+    name: "Brake Service",
+    description: "Does
+     not include parts, priced per brake",
+    price: 25,
+    shop_id: 8
+  },
+
+  {
+    name: "Basic Service",
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
+    price: 45,
+    shop_id: 8
+  },
+
+  {
+    name: "Bike Build",
+    description: "Complete build or frame shop",
+    price: 140,
+    shop_id: 8
+  },
+
+  {
+    name: "Wheel rebuild",
+    description: "Bespoke wheel construction service and wheel trueing",
+    price: 60,
+    shop_id:8
+  },
+
+  {
+    name: "Frame Alignment",
+    description: "Adjustment service for full frame alignment",
+    price: 20,
+    shop_id: 8
+  },
+
+  {
+    name: "Rack Fitting",
+    description: "Build and fit of bike racks",
+    price: 10,
+    shop_id: 8
+  },
+
+  {
+    name: "Enhanced Service",
+    description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
+    price: 110,
+    shop_id: 8
+  },
+
+  {
+    name: "Full Monty Service",
+    description: "Complete strip down and rebuild of cycle - replace of items if necessary",
+    price: 180,
+    shop_id: 8
+  },
+
 ]
 
 Job.create!(jobs_attributes)
@@ -403,56 +486,66 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,3,5),
-    user_id: 1,
-    job_id: 1
+    user_id: 2,
+    job_id: 1,
+    job_complete: false
+
   },
 
   {
     date: Date.new(2020,2,3),
     user_id: 2,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,12,7),
-    user_id: 1,
-    job_id: 1
+    user_id: 2,
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,3,25),
-    user_id: 1,
-    job_id: 1
+    user_id: 2,
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,6,12),
-    user_id: 1,
-    job_id: 1
+    user_id: 2,
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,12,3),
     user_id: 2,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,6,17),
     user_id: 3,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,6,1),
     user_id: 4,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
   {
     date: Date.new(2020,7,14),
     user_id: 4,
-    job_id: 1
+    job_id: 1,
+    job_complete: false
   },
 
 ]

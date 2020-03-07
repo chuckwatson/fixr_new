@@ -8,4 +8,3 @@ import "../plugins/scrollbottom";
 
 import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
-

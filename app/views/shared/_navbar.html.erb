@@ -11,11 +11,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", shops_path, class: "nav-link" %>
-        </li>
         <li class="nav-item">
-          <%= link_to "My Account", user_bookings_path(current_user), class: "nav-link", style: "color:black" %>
+          <%= link_to "Home", shops_path, class: "nav-link" %></li>
+        </li>
+    <li class="nav-item">
+
+
         </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -23,8 +24,10 @@
         <li class="nav-item dropdown">
           <%#= image_tag class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <li>
+                <%= link_to "#{current_user.first_name}'s Account", bookings_path, class: "nav-link", style: "color:black" %>
+            </li>
+
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -34,6 +37,7 @@
           <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
+
     </ul>
   </div>
 </div>
