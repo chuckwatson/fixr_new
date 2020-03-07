@@ -1,38 +1,43 @@
 class BookingsController < ApplicationController
 
-  def new
-    @shop = Shop.find(params[:shop_id])
-    @booking = Booking.new
-  end
-
-  # def create
-  #   @booking = Booking.new(booking_params)
-  #   @shop = Shop.find(params[:shop_id])
-  #   @job = Job.find(params[:job_id])
-  #   @booking.job = @job
-  #   @booking.shop = @shop
-  #   @booking.user = current_user
-
-  #   if @booking.save
-  #     redirect_to shop_booking_path(@shop, @booking)
-  #   else
-  #     render 'shops/show'
-  #   end
-  # end
 
   def index
-    @bookings = Booking.where(user: current_user)
+    @shop = Shop.find(params[:shop_id])
+    @bookings = @shop.bookings
 
+  end
+
+  def create
+    @booking = Booking.new(booking_params)
+    @job = Job.find(params[:booking][:job_id])
+    @booking.job = @job
+    @booking.user = current_user
+    @booking.state = 'pending'
+    @booking.save
+
+
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        name: @job.name,
+        amount: @job.price_cents,
+        currency: 'gbp',
+        quantity: 1
+      }],
+      success_url: shop_booking_url([:shop_id],@booking),
+      cancel_url: my_bookings_url(@booking)
+      )
+
+    @booking.update(checkout_session_id: session.id)
+    redirect_to new_shop_booking_payment_path(params[:shop_id], @booking)
   end
 
   def show
     @booking = Booking.find(params[:id])
   end
 
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to user_bookings_path(current_user)
+  def my_bookings
+    @bookings = current_user.bookings
   end
 
   private
@@ -40,6 +45,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:date, :job_id)
   end
-
 
 end
