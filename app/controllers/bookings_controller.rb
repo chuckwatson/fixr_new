@@ -24,12 +24,16 @@ class BookingsController < ApplicationController
         currency: 'gbp',
         quantity: 1
       }],
-      success_url: my_bookings_url(@booking),
+      success_url: shop_booking_url([:shop_id],@booking),
       cancel_url: my_bookings_url(@booking)
       )
 
     @booking.update(checkout_session_id: session.id)
-    redirect_to new_shop_booking_payment_path(params[:shop_id],@booking)
+    redirect_to new_shop_booking_payment_path(params[:shop_id], @booking)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def my_bookings

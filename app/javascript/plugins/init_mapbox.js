@@ -13,7 +13,8 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/kcsaba/ck6xiz8zm0jms1is210ohjkx8'
+    style: 'mapbox://styles/kcsaba/ck6xiz8zm0jms1is210ohjkx8',
+     maxZoom: 15, duration: 0
   });
 };
 
@@ -64,7 +65,9 @@ const initMapbox = () => {
 
 
 
-document.querySelector('#find-me').addEventListener('click', (event) => {
+const findBtn = document.querySelector('#find-me')
+if (findBtn) {
+  findBtn.addEventListener('click', (event) => {
   const status = document.querySelector('#status');
 
   function success(position) {
@@ -106,7 +109,7 @@ document.querySelector('#find-me').addEventListener('click', (event) => {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 });
-
+}
 
 export { initMapbox };
 
