@@ -6,7 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 // import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 
-import "../plugins/scrollbottom";
+// import "../plugins/scrollbottom";
 
 import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
@@ -16,6 +16,6 @@ initMapbox();
 // })
 
 
-import { loadDynamicBannerText } from "../plugins/bikeanimation"
-loadDynamicBannerText();
+// import { loadDynamicBannerText } from "../plugins/bikeanimation"
+// loadDynamicBannerText();
 
