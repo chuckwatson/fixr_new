@@ -10,9 +10,11 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
-  <button id = "find-me">Show my location</button><br/>
-    <p id = "status"></p>
-    <a id = "map-link" target="_blank"></a>
+    <div id="button-find-me">
+    <button id = "find-me">Show my location</button><br/>
+      <p id = "status"></p>
+      <a id = "map-link" target="_blank"></a>
+    </div>
   </div>
 
 
