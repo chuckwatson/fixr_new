@@ -11,7 +11,11 @@ import "../plugins/scrollbottom";
 import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
+// $( document ).on('turbolinks:load', function() {
+//   console.log("It works on each visit!")
+// })
 
 
-import { loadDynamicBannerText } from "../plugins/bikeanimation"
-loadDynamicBannerText();
+// import { loadDynamicBannerText } from "../plugins/bikeanimation"
+// loadDynamicBannerText();
+// >>>>>>> master
