@@ -6,12 +6,10 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 // import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 
-// 'uncomment the two below imports - they are essential!!!!!!!!!!'
+import "../plugins/scrollbottom";
 
-// import "../plugins/scrollbottom";
-
-// import { initMapbox } from '../plugins/init_mapbox';
-// initMapbox();
+import { initMapbox } from '../plugins/init_mapbox';
+initMapbox();
 
 
 
