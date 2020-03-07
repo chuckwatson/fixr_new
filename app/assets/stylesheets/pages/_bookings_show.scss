@@ -57,15 +57,20 @@
   }
 }
 
+.booking-show-buttons {
+  margin-top: 0px;
+  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
 //<<<<<<< HEAD
 
-.bookings-title {
-//=======
+
 .booking-show-title {
-  padding: 30px 0 40px 0;
+  padding: 30px 0 30px 0;
   text-transform: uppercase;
   text-align: center;
-   }
 }
 
 
@@ -136,6 +141,10 @@ flex-flow: column;
 
 .order-price {
   margin-left: auto;
+}
+
+#line {
+  opacity: 0.4;
 }
 
 // .card-link {
