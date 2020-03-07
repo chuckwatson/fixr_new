@@ -40,7 +40,7 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 25, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 35, maxZoom: 15 });
   // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
   //                                     mapboxgl: mapboxgl }));
 };
@@ -61,6 +61,54 @@ const initMapbox = () => {
     })
   }
 };
+
+
+
+document.querySelector('#find-me').addEventListener('click', (event) => {
+  const status = document.querySelector('#status');
+
+  function success(position) {
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    status.textContent = '';
+    const userMarker = [latitude, longitude]
+    const markers = JSON.parse(mapElement.dataset.markers);
+    const fullUserMarker = {
+      lat: userMarker[0],
+      lng: userMarker[1],
+      id: 100,
+      image_url: "https://www.flaticon.com/premium-icon/icons/svg/2196/2196448.svg"
+    }
+    markers.push(fullUserMarker)
+    document.querySelector('#map').innerHTML = "";
+    const map = buildMap();
+    addMarkersToMap(map, markers);
+    const bounds = new mapboxgl.LngLatBounds();
+    [fullUserMarker].forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+    map.fitBounds(bounds, { padding: 80, maxZoom: 13 });
+    document.querySelectorAll('.marker').forEach((marker) => {
+      const card = document.getElementById(`shop_${marker.dataset.id}`);
+      marker.addEventListener('click', (event) => {
+        card.classList.toggle('highlight-card');
+        card.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      })
+    })
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating…';
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+});
+
+
+export { initMapbox };
 
 
 // function geoFindMe() {
@@ -96,50 +144,3 @@ const initMapbox = () => {
 //   }
 
 // }
-
-document.querySelector('#find-me').addEventListener('click', (event) => {
-  const status = document.querySelector('#status');
-
-  function success(position) {
-    const latitude  = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    status.textContent = '';
-    const userMarker = [latitude, longitude]
-    const markers = JSON.parse(mapElement.dataset.markers);
-    const fullUserMarker = {
-      lat: userMarker[0],
-      lng: userMarker[1],
-      id: 100,
-      image_url: "https://via.placeholder.com/150"
-    }
-    markers.push(fullUserMarker)
-    document.querySelector('#map').innerHTML = "";
-    const map = buildMap();
-    addMarkersToMap(map, markers);
-    const bounds = new mapboxgl.LngLatBounds();
-    [fullUserMarker].forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 80, maxZoom: 13 });
-    document.querySelectorAll('.marker').forEach((marker) => {
-      const card = document.getElementById(`shop_${marker.dataset.id}`);
-      marker.addEventListener('click', (event) => {
-        card.classList.toggle('highlight-card');
-        card.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-      })
-    })
-  }
-
-  function error() {
-    status.textContent = 'Unable to retrieve your location';
-  }
-
-  if (!navigator.geolocation) {
-    status.textContent = 'Geolocation is not supported by your browser';
-  } else {
-    status.textContent = 'Locating…';
-    navigator.geolocation.getCurrentPosition(success, error);
-  }
-});
-
-
-export { initMapbox };
-

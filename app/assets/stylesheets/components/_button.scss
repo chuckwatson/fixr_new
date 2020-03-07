@@ -1,6 +1,6 @@
 .btn-basic {
   text-decoration: none;
-  background-color: $white;
+  background-color: white;
   color: $black;
   padding: 6px 16px;
   border-radius: 6px;
@@ -25,3 +25,15 @@
   border: 1px solid $sea-green;
 }
 
+#find-me {
+  text-decoration: none;
+  background-color: $sea-green;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid $sea-green;
+}
+
+#button-find-me {
+text-align: center;
+}
