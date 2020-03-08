@@ -20,23 +20,9 @@
 
 
   <% @shops.each do |shop| %>
-          <% if current_user == shop.user %>
-              <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
-              <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
-              <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
-              <div class="shop-card-text">
-                      <br>
-                         <h5><%= shop.name %></h5>
-                      <% if shop.reviews.blank? %>
-                          <p>No reviews yet.</p>
-                      <% else %>
-                          <p>Rating: <%= shop.reviews.average(:rating) %></p>
-                      <% end %>
-              </div>
-            <% end %>
-        <% else %>
+       <% if current_user == shop.user %>
          <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
-              <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
+            <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
               <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
               <div class="shop-card-text">
                       <br>
@@ -46,10 +32,14 @@
                       <% else %>
                           <p>Rating: <%= shop.reviews.average(:rating) %></p>
                       <% end %>
+                  <% end %>
               </div>
-          <% end %>
-<% end %>
+           <% end %>
+           <% else %>
+      <h1>"hello</h1>
       <% end %>
+<% end %>
+
 
 
 

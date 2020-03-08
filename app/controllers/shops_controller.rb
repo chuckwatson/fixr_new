@@ -41,7 +41,8 @@ class ShopsController < ApplicationController
   def show
     @booking = Booking.new
     @shop = Shop.find(params[:id])
-    @job = Job.where(shop: @shop.id)
+    @jobs = Job.where(shop: @shop.id)
+    @job = Job.new
     @review = Review.new
     @favorite_exists = Favorite.where(shop: @shop, user: current_user) == [] ? false : true
     # @bookings = Booking.where(job: @job, user: current_user)
