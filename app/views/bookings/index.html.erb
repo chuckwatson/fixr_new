@@ -10,20 +10,24 @@
           <ul>
             <% if booking.date >= Date.today %>
              <div class="bookings-order-cards">
-                <div class="order-info">
-                   <li>Bike drop-off date: <%= booking.date %></li>
-                    <div class="order-shop">
-                      <li>Name: <%= booking.user.first_name %> <%= booking.user.last_name %></li>
-                      <li>Service: <%= booking.job.name %> </li>
-                    </div>
-                </div>
-                     <div class="order-price">
-                        <li>£<%= booking.job.price %></li>
-
+                      <div class="order-info">
+                         <li>Bike drop-off date: <%= booking.date %></li>
+                          <div class="order-shop">
+                            <li>Name: <%= booking.user.first_name %> <%= booking.user.last_name %></li>
+                            <li>Service: <%= booking.job.name %></li>
+                          </div>
+                      </div>
+                  <div class="order-price">
+                      <li>£<%= booking.job.price %></li>
+                  </div>
          </ul>
-      <% end %>
-      <% end %>
+        <% end %>
+        <% end %>
                </div>
-           </div>
         </div>
+     </div>
+  <div class="btn-booking">
+    <%= link_to "#{@shop.name}", shop_path(@shop), class: "btn-show", style: "text-align:center" %>
+  </div>
+
 </div>

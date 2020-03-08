@@ -4,6 +4,7 @@ class ShopsController < ApplicationController
   # Geocode once front end begins
   def index
     @shops = Shop.geocoded
+    @user_shops = Shop.where(user: current_user)
 
     @markers = @shops.map do |shop|
       {

@@ -5,17 +5,4 @@
 @import "./components/banner";
 @import "./config/fonts";
 @import "./config/colors";
-.index-container {
-  background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
-  background-position: center center;
-  background-repeat: repeat;
-  padding: 10px 10px 10px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: -10;
-}
+
