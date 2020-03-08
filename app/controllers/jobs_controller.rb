@@ -9,7 +9,6 @@ class JobsController < ApplicationController
   end
 
   def create
-    @shop = Shop.find(params[:shop_id])
     @job = Job.new(job_params)
     @job.shop = @shop
     if @job.save

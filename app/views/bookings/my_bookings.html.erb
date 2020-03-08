@@ -1,5 +1,6 @@
 
 
+
 <div class="bookings-container">
   <div class="bookings-title">
                  <h1>Order History</h1>
@@ -11,9 +12,12 @@
           <ul>
              <div class="bookings-order-cards">
                 <div class="order-info">
-                   <li>Order Date:<%= booking.date %><%= booking.job.name %>:</li>
+                   <li>Order Date:<%= booking.date %></li>
                     <div class="order-shop">
-                      <li><%= booking.job.shop.name %></li>
+                      <li>Bike shop:<%= booking.job.shop.name %></li>
+                      <li>Service: <%= booking.job.name %></li>
+
+
                     </div>
                 </div>
                      <div class="order-price">

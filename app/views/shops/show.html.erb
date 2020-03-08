@@ -42,22 +42,21 @@
         <%= pluralize @shop.reviews.size, "review" %>
       </h2>
 
-      <% if @shop.reviews.blank? %>
+
+      <% if current_user != @shop.user && @shop.reviews.blank? %>
         Be the first to leave a review for <%= @shop.name %>
       <% else %>
         <% @shop.reviews.each do |review| %>
           <%= render 'reviews/show', review: review %>
         <% end %>
       <% end %>
+
+      <% if current_user == @shop.user %>
+      <%= render 'jobs/create' %>
+      <% end %>
           <%#= render 'reviews/form', shop: @shop, review: @review %>
 
 
     </div>
   </div>
-</div>
-
-
-
-
-
-
+- [ ] </div>
