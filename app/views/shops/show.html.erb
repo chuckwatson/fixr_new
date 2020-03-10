@@ -3,7 +3,7 @@
         <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
     <% end %>
   <div class="shop-show-title">
-    <h1><%= @shop.name %></h1>
+    <span class="rwd-line"><%= @shop.name %></span>
     <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
       <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
     <% end %>
@@ -30,12 +30,10 @@
       <% end %>
   </div>
 
-<!--
-:width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
-      :responsive=>true, :gravity=>"center", :font_size=>40, :font_weight=>"bold", -->
   <div class="review-container">
     <div class="review-info">
-      <h1><%= @shop.name %> - Have your say!</h1>
+      <span class="rwd-line"><%= @shop.name %></span>
+      <span class="rwd-line"><h1>Have your say!</h1></span>
     </div>
     <div class="reviews">
       <h2>
@@ -49,11 +47,10 @@
           <%= render 'reviews/show', review: review %>
         <% end %>
       <% end %>
-          <%#= render 'reviews/form', shop: @shop, review: @review %>
-
-
+          <%= render 'reviews/new', shop: @shop, review: @review %>
     </div>
   </div>
+
 </div>
 
 
