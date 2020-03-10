@@ -572,7 +572,7 @@ reviews_attributes = [
     description: "Quite slow but now my brakes are as good as new = no more squeaking!",
     rating: 4,
     user_id: 1,
-    shop_id: 1
+    shop_id: 2
 
   },
 
@@ -581,7 +581,7 @@ reviews_attributes = [
     description: "Didn't actually fix my bike!!",
     rating: 2,
     user_id: 3,
-    shop_id: 2
+    shop_id: 3
 
   },
 
@@ -590,7 +590,7 @@ reviews_attributes = [
     description: "Stole my bike... not ideal. Would not recommend",
     rating: 1,
     user_id: 2,
-    shop_id: 5
+    shop_id: 4
 
   },
 
@@ -599,7 +599,7 @@ reviews_attributes = [
     description: "Cost less than I thought and could pay before I brought in my bike",
     rating: 5,
     user_id: 2,
-    shop_id: 4
+    shop_id: 5
 
   },
 
@@ -608,7 +608,7 @@ reviews_attributes = [
     description: "It looks like brand new!!",
     rating: 4,
     user_id: 1,
-    shop_id: 2
+    shop_id: 6
 
   },
 
@@ -617,7 +617,16 @@ reviews_attributes = [
     description: "Fixed and cleaned - superb service",
     rating: 5,
     user_id: 3,
-    shop_id: 3
+    shop_id: 7
+
+  },
+
+    {
+
+    description: "Ran over a screw. Got puncture...shop fixed it really fast. Very pleased.",
+    rating: 5,
+    user_id: 1,
+    shop_id: 8
 
   },
 
