@@ -26,7 +26,7 @@
 
   get "my_bookings", to: "bookings#my_bookings"
 
-  root to: 'shops#index'
+  root to: 'pages#home'
 
 end
 
