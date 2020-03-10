@@ -1,0 +1,22 @@
+#shop-owner {
+  width: 100%;
+  background-size: cover;
+  border-bottom: 1px solid rgba(00, 152, 00, 1);
+  background-image: url('black-bike.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100vw;
+  height: 40px;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  h2 {
+    padding-top: 120px;
+    padding-left: 30px;
+    font-family: 'Montserrat Subrayada', ;
+    font-size: 56px;
+    color: $white;
+    z-index: 2;
+  }
+}

@@ -3,6 +3,28 @@
     <h1>Select Bike Shop</h1>
   </div> -->
 
+
+  <% if @user_shops.any? %>
+  <div id="shop-owner">
+    <p id= "owner-welcome"> Welcome to your shops</p>
+  </div>
+    <% @user_shops.each do |shop| %>
+      <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
+        <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
+              <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
+          <div class="shop-card-text">
+            <br>
+            <h5><%= shop.name %></h5>
+            <% if shop.reviews.blank? %>
+              <p>No reviews yet.</p>
+            <% else %>
+              <p>Rating: <%= shop.reviews.average(:rating) %></p>
+            <% end %>
+          </div>
+      <% end %>
+    <% end %>
+  <% else %>
+
   <div
   id="map"
   style="width: 85%;
@@ -18,22 +40,21 @@
   </div>
 
   <% @shops.each do |shop| %>
-              <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
-              <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
+    <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
+      <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
               <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
-              <div class="shop-card-text">
-                      <br>
-                         <h5><%= shop.name %></h5>
-                      <% if shop.reviews.blank? %>
-                          <p>No reviews yet.</p>
-                      <% else %>
-                          <p>Rating: <%= shop.reviews.average(:rating) %></p>
-                    <% end %>
-             </div>
-         <% end %>
-   <% end %>
-
-
+        <div class="shop-card-text">
+          <br>
+          <h5><%= shop.name %></h5>
+          <% if shop.reviews.blank? %>
+            <p>No reviews yet.</p>
+          <% else %>
+            <p>Rating: <%= shop.reviews.average(:rating) %></p>
+          <% end %>
+        </div>
+    <% end %>
+  <% end %>
+<% end %>
 
 
     </div>
