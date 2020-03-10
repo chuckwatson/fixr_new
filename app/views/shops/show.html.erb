@@ -2,6 +2,7 @@
       <% if current_user == @shop.user %>
         <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
     <% end %>
+
   <div class="shop-show-title">
     <span class="rwd-line"><%= @shop.name %></span>
     <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>

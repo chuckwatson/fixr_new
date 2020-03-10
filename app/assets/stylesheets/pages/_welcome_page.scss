@@ -13,26 +13,29 @@
   left: 0;
   top: 0;
   z-index: -10;
-  }
+  text-decoration: none !important;
   h1, h5 {
     color: white;
   }
   h1 {
-    color: white;
-    font-size: 112px;
-    font-family: 'Montserrat Subrayada', ;
-    padding: 10px 0 0 0;
+  color: white;
+  font-size: 112px;
+  font-family: 'Montserrat Subrayada', ;
+  padding: 10px 0 0 0;
+  }
+  a {
+    color: white !important;
   }
   .homepage-text {
     align-content: left;
   }
   .homepage-link {
     text-decoration: none !important;
-    color: black !important;
+    color: white !important;
     width: 100%;
   }
-  a {
-  text-decoration: none;
-  color: black !important;
 }
 
+a {
+  text-decoration: none !important;
+}
