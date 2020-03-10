@@ -71,7 +71,7 @@
             Be the first to leave a review for <%= @shop.name %>
           <% else %>
             <% @shop.reviews.each do |review| %>
-            <%= render 'reviews/show', review: @review %>
+            <%= render 'reviews/show', review: review %>
           <% end %>
           <% end %>
           <%= render 'reviews/new', shop: @shop, review: @review %>
