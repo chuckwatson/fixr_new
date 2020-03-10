@@ -1,4 +1,3 @@
-console.log("hi there");
 
 import Typed from 'typed.js';
 
@@ -9,5 +8,6 @@ const loadDynamicBannerText = () => {
     loop: true
   });
 }
+console.log("hi there");
 
 export { loadDynamicBannerText };
