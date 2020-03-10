@@ -54,29 +54,26 @@
 </div>
 
   <div class="review-container">
-
     <div class="review-info">
       <span class="rwd-line"><%= @shop.name %></span>
       <h4 align="center">Have your say!</h4>
     </div>
-
-      <div class="reviews">
-        <h2>
-          <%= pluralize @shop.reviews.size, "review" %>
-        </h2>
-          <% if @shop.reviews.blank? %>
+    <div class="reviews">
+      <h2>
+        <%= pluralize @shop.reviews.size, "review" %>
+      </h2>
+      <% if @shop.reviews.blank? %>
 <!--           the below line 70 was in place of line 67 at the bottom of this page but broke
-          the formatting, the rest of it was exactly the same as this -->
-          <!--       if current_user != @shop.user && @shop.reviews.blank? -->
-            Be the first to leave a review for <%= @shop.name %>
-          <% else %>
-            <% @shop.reviews.each do |review| %>
-            <%= render 'reviews/show', review: review %>
-          <% end %>
-          <% end %>
-          <%= render 'reviews/new', shop: @shop, review: @review %>
-      </div>
-
+      the formatting, the rest of it was exactly the same as lines 64 - 78 -->
+      <!--       if current_user != @shop.user && @shop.reviews.blank? -->
+        Be the first to leave a review for <%= @shop.name %>
+      <% else %>
+        <% @shop.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= render 'reviews/new', shop: @shop, review: @review %>
   </div>
 
 
