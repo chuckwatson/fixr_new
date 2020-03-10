@@ -1,26 +1,27 @@
 class JobsController < ApplicationController
   before_action :set_shop
-  def new
-    @job = Job.new
-  end
 
   def index
     @jobs = Job.where(shop: @shop.id)
   end
 
+  def new
+    @job = Job.new
+  end
+
   def create
-    @shop = Shop.find(params[:shop_id])
     @job = Job.new(job_params)
     @job.shop = @shop
     if @job.save
       redirect_to shop_path(@shop)
+
     else
       render "shop/show"
     end
   end
 
   def show
-    @jobs = Job.find(parmas[:id])
+    @jobs = Job.find(params[:id])
   end
 
   def edit
@@ -45,6 +46,6 @@ class JobsController < ApplicationController
   end
 
   def set_shop
-    @shop = Shop.find(params[:id])
+    @shop = Shop.find(params[:shop_id])
   end
 end

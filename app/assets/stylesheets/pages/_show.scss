@@ -95,6 +95,7 @@ label.string {
   background-color: white;
   padding: 10px 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center
 }
 
 .form-control {
@@ -142,6 +143,20 @@ label.string {
   text-decoration: none;
   cursor: pointer;
 }
+
+.show-services-title h1 {
+    width: 100%;
+    padding: 12px 24px;
+    border-color: green;
+    background: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    border-top: 2px solid rgba(00, 152, 00, 0.3);
+    text-align: center;
+}
+
+
+
 // .job-booking{
 //   text-align: center;
 // }

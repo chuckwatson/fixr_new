@@ -1,12 +1,3 @@
-// Import page-specific CSS files here.
-@import "home";
-@import "./components/shop_card";
-@import "./components/map";
-@import "./components/banner";
-@import "./config/fonts";
-@import "./config/colors";
-
-
 .index-container {
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
   background-position: center center;
@@ -21,4 +12,3 @@
   top: 0;
   z-index: -10;
 }
-
