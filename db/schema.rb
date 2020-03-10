@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_084043) do
+ActiveRecord::Schema.define(version: 2020_03_08_182447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,9 @@ ActiveRecord::Schema.define(version: 2020_03_04_084043) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "shop_id"
     t.integer "price_cents", default: 0, null: false
+    t.bigint "shop_id"
+    t.index ["shop_id"], name: "index_jobs_on_shop_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_084043) do
   add_foreign_key "bookings", "users"
   add_foreign_key "favorites", "shops"
   add_foreign_key "favorites", "users"
+  add_foreign_key "jobs", "shops"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
   add_foreign_key "shops", "users"

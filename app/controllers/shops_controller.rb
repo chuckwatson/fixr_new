@@ -4,6 +4,7 @@ class ShopsController < ApplicationController
   # Geocode once front end begins
   def index
     @shops = Shop.geocoded
+    @user_shops = Shop.where(user: current_user)
 
     @markers = @shops.map do |shop|
       {
@@ -13,8 +14,9 @@ class ShopsController < ApplicationController
         image_url: helpers.asset_url('https://image.flaticon.com/icons/svg/1473/1473250.svg')
         # infoWindow: render_to_string(partial: "info_window", locals: { shop: shop })
       }
-    end
   end
+end
+
 
 
   # Update once bookings controller is done
@@ -41,7 +43,8 @@ class ShopsController < ApplicationController
   def show
     @booking = Booking.new
     @shop = Shop.find(params[:id])
-    @job = Job.where(shop: @shop.id)
+    @jobs = Job.where(shop: @shop.id)
+    @job = Job.new
     @review = Review.new
     @favorite_exists = Favorite.where(shop: @shop, user: current_user) == [] ? false : true
     # @bookings = Booking.where(job: @job, user: current_user)
