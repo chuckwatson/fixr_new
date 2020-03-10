@@ -2,6 +2,18 @@
   justify-content: space-between;
   background: white;
   border-bottom: 1px solid rgba(00, 152, 00, 0.6);
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+  p {
+    display: inline;
+    font-size: 32px;
+    align-items: center;
+    font-family: 'Montserrat Subrayada', ;
+  }
+  .nav-link {
+    align-content: right;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,6 +22,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+.nav-items {
+  text-align: right;
 }
 
 // ALIGN TO THE RIGHT, ONE ABOVE THE OTHER
