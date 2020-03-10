@@ -40,13 +40,17 @@
   <% @shop.jobs.each do |job| %>
          <ul>
              <li>
-            <%= job.name %> <%= job.price %>
+            <%= job.name %> <%= job.price %> <%= link_to "Remove", shop_job_path(@shop, job), method: :delete, class: "btn-delete", style: "float:right" %>
              </li>
+
          </ul>
 
      <% end %>
    <% end %>
   </div>
+   <% if current_user == @shop.user %>
+      <%= render 'jobs/new' %>
+      <% end %>
 </div>
 
 <!--
@@ -75,7 +79,4 @@
     </div>
 
     </div>
-      <% if current_user == @shop.user %>
-      <%= render 'jobs/new' %>
-      <% end %>
  </div>

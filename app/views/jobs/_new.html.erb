@@ -1,6 +1,8 @@
 
  <div class="job_form">
+  <div class="btn-show">
     <p><strong>Add new service</strong></p>
+  </div>
       <%= simple_form_for [@shop, @job] do |form| %>
       <%= form.input :name, as: :string %>
       <%= form.input :description, as: :text %>
