@@ -1,24 +1,2 @@
-// Here you generate *JavaScript* that would be executed in the browser
+document.querySelector('.reviews').insertAdjacentHTML('beforeend', '<%= j render "show", review: @review %>');
 
-console.log("hello ajax peeps!");
-
-function refreshForm(innerHTML) {
-  const newReviewForm = document.getElementById('new_review');
-  newReviewForm.innerHTML = innerHTML;
-}
-
-function addReview(reviewHTML) {
-  const reviews = document.querySelector('.reviews');
-  console.log('reviews',reviews)
-  reviews.insertAdjacentHTML('beforeend', reviewHTML);
-}
-
-// addReview();
-// refreshForm();
-
-<% if @review.errors.any? %>
-  refreshForm('<%= j render "reviews/form", shop: @shop, review: @review %>');
-<% else %>
-  addReview('<%= j render "reviews/show", review: @review %>');
-  // refreshForm('<%= j render "reviews/form", shop: @shop, review: Review.new %>');
-<% end %>
