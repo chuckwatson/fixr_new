@@ -21,9 +21,8 @@ class ReviewsController < ApplicationController
         # redirect_to shop_path(@shop)
       else
         respond_to do |format|
-          format.html { render 'shops/show' }
+          format.html { render :new }
           format.js
-          render "shops/show"
         end
       end
   end

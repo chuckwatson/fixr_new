@@ -1,9 +1,8 @@
-
   <div class="review_form">
     <p><strong>Leave your review below:</strong></p>
       <%= simple_form_for([ shop, review ], remote: true) do |form| %>
       <%= form.input :description, as: :text %>
-      <%= form.input :rating, as: :integer, input_html: { min: '0', max: '5' } %>
+      <%= form.input :rating, collection: 1..5 %>
       <%= form.button :submit, class: "btn-show" %>
       <% end %>
   </div>

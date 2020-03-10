@@ -2,6 +2,7 @@
       <% if current_user == @shop.user %>
         <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
     <% end %>
+
   <div class="shop-show-title">
     <span class="rwd-line"><%= @shop.name %></span>
     <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
@@ -58,31 +59,22 @@
       <span class="rwd-line"><%= @shop.name %></span>
       <h4 align="center">Have your say!</h4>
     </div>
-
     <div class="reviews">
       <h2>
         <%= pluralize @shop.reviews.size, "review" %>
       </h2>
-
-        <% if @shop.reviews.blank? %>
-          Be the first to leave a review for <%= @shop.name %>
-        <% else %>
-          <% @shop.reviews.each do |review| %>
-          <%= render 'reviews/show', review: @review %>
-        <% end %>
-      <% end %>
-          <%= render 'reviews/new', shop: @shop, review: @review %>
-    </div>
-</div>
-
-      <% if current_user != @shop.user && @shop.reviews.blank? %>
+      <% if @shop.reviews.blank? %>
+<!--           the below line 70 was in place of line 67 at the bottom of this page but broke
+      the formatting, the rest of it was exactly the same as lines 64 - 78 -->
+      <!--       if current_user != @shop.user && @shop.reviews.blank? -->
         Be the first to leave a review for <%= @shop.name %>
       <% else %>
         <% @shop.reviews.each do |review| %>
           <%= render 'reviews/show', review: review %>
         <% end %>
       <% end %>
-          <%#= render 'reviews/form', shop: @shop, review: @review %>
-</div>
     </div>
- </div>
+    <%= render 'reviews/new', shop: @shop, review: @review %>
+  </div>
+
+

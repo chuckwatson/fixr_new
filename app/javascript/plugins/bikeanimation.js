@@ -1,5 +1,6 @@
 
-import Typed from 'typed.js';
+// import Typed from 'typed.js';
+
 
 const loadDynamicBannerText = () => {
   new Typed('#banner-typed-text', {
@@ -10,4 +11,5 @@ const loadDynamicBannerText = () => {
 }
 console.log("hi there");
 
-export { loadDynamicBannerText };
+
+// export { loadDynamicBannerText };
