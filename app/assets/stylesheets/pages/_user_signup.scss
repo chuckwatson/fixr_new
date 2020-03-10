@@ -1,4 +1,4 @@
-.container {
+.signup-container {
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
   background-position: center center;
   background-repeat: repeat;
@@ -10,21 +10,15 @@
   height: -webkit-fill-available;
   left: 0;
   top: 0;
-  z-index: -1;
-  text-align: center;
-
-}
-
-.fa-biking {
-  z-index: 4;
-  text-align: center;
-}
-
-.col h1 {
-  font-size: 24px;
+  z-index: -4;
+  h2 {
+    padding-bottom: 8%;
+  }
 }
 
 
-.col {
+
+.form-actions {
+  padding-top: 8%;
   text-align: center;
 }
