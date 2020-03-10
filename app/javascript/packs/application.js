@@ -16,6 +16,6 @@ initMapbox();
 // })
 
 
-// import { loadDynamicBannerText } from "../plugins/bikeanimation"
-// loadDynamicBannerText();
+import { loadDynamicBannerText } from "../plugins/bikeanimation"
+loadDynamicBannerText();
 

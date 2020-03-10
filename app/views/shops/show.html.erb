@@ -3,7 +3,7 @@
         <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
     <% end %>
   <div class="shop-show-title">
-    <h1><%= @shop.name %></h1>
+    <span class="rwd-line"><%= @shop.name %></span>
     <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
       <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
     <% end %>
@@ -53,18 +53,27 @@
       <% end %>
 </div>
 
-<!--
-:width=>500, :height=>350, :align=>"center", :crop=>"fill", :effect=>"shadow:20", :radius=>8,
-      :responsive=>true, :gravity=>"center", :font_size=>40, :font_weight=>"bold", -->
   <div class="review-container">
     <div class="review-info">
-      <h1><%= @shop.name %> - Have your say!</h1>
+      <span class="rwd-line"><%= @shop.name %></span>
+      <h4 align="center">Have your say!</h4>
     </div>
+
     <div class="reviews">
       <h2>
         <%= pluralize @shop.reviews.size, "review" %>
       </h2>
 
+        <% if @shop.reviews.blank? %>
+          Be the first to leave a review for <%= @shop.name %>
+        <% else %>
+          <% @shop.reviews.each do |review| %>
+          <%= render 'reviews/show', review: @review %>
+        <% end %>
+      <% end %>
+          <%= render 'reviews/new', shop: @shop, review: @review %>
+    </div>
+</div>
 
       <% if current_user != @shop.user && @shop.reviews.blank? %>
         Be the first to leave a review for <%= @shop.name %>
@@ -73,10 +82,7 @@
           <%= render 'reviews/show', review: review %>
         <% end %>
       <% end %>
-
-
           <%#= render 'reviews/form', shop: @shop, review: @review %>
-    </div>
-
+</div>
     </div>
  </div>
