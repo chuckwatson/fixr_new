@@ -40,19 +40,16 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
-  def booking_complete
-  @booking = Booking.find(params[:id])
-  if @booking.job_complete = true
-
-  respond_to do |format|
-  format.html { redirect_to my_bookings_path }
+  def toggle_status
+    @booking = Booking.find(params[:id])
+    @booking.toggle!(:job_complete)
+    if @booking.save
+    respond_to do |format|
+  format.html { redirect_to shop_path(params[:shop]) }
   format.js {}
-    end
+end
   end
 end
-
-
-
 
   #  def update
   #   @booking = Booking.find(params[:id])
@@ -64,5 +61,7 @@ end
   def booking_params
     params.require(:booking).permit(:date, :job_id)
   end
+
+
 
 end

@@ -28,32 +28,36 @@
           :label => false, :label_method => lambda { |item| "#{item.first} <br> #{Job.find_by(name: item.first[0...-4].strip).description}<br><br>".html_safe },
           input_html: {class: "rb-list", style: "font-size:10px"} %>        </div>
          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.submit 'Go To Checkout', class: "btn-show" %>
+        <%= f.submit 'Confirm Service', class: "btn-show" %>
       <% end %>
     <% end %>
   </div>
 
+    <div class="show-services-title">
+      <h2>Service Admin</h2>
+    </div>
+
   <% if current_user == @shop.user %>
   <div class="service-list">
-    <div class="show-services-title">
-      <h1>Services</h1>
-    </div>
   <% @shop.jobs.each do |job| %>
          <ul>
              <li>
-            <%= job.name %> <%= job.price %> <%= link_to "Remove", shop_job_path(@shop, job), method: :delete, class: "fa fa-trash", style: "float:right" %>
+            <%= job.name %> <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, class: "fa fa-trash", style: "float:right; color:#ff726f" %>
              </li>
-
          </ul>
-
      <% end %>
    <% end %>
-  </div>
-   <% if current_user == @shop.user %>
-      <%= render 'jobs/new' %>
-      <% end %>
+ </div>
 </div>
 
+  <% if current_user == @shop.user %>
+     <div class="new-job-container">
+        <%= render 'jobs/new' %>
+  <% end %>
+     </div>
+
+
+<% unless current_user == @shop.user %>
   <div class="review-container">
     <div class="review-info">
       <span class="rwd-line"><%= @shop.name %></span>
@@ -75,6 +79,7 @@
       <% end %>
     </div>
     <%= render 'reviews/new', shop: @shop, review: @review %>
+    <% end %>
   </div>
 
 

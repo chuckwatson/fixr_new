@@ -26,9 +26,11 @@
 
   get "my_bookings", to: "bookings#my_bookings"
 
-    get 'booking_complete', to: "bookings#booking_complete"
-    put 'booking_complete', to: "bookings#booking_complete"
-
+ resources :bookings do
+    member do
+        patch :toggle_status
+    end
+end
 
 
 

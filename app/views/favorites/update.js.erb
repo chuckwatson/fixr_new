@@ -2,3 +2,8 @@ var icon = $('#favorite_link i')
 console.log(icon)
 icon.removeClass();
 icon.addClass("<%= favorite_text %>");
+
+
+var completeStatus = $('#complete_link i')
+completeStatus.removeClass();
+completeStatus.addClass("<%= toggle_status %>");
