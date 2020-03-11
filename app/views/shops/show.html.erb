@@ -41,7 +41,7 @@
   <% @shop.jobs.each do |job| %>
          <ul>
              <li>
-            <%= job.name %> <%= job.price %> <%= link_to "Remove", shop_job_path(@shop, job), method: :delete, class: "btn-delete", style: "float:right" %>
+            <%= job.name %> <%= job.price %> <%= link_to "Remove", shop_job_path(@shop, job), method: :delete, class: "fa fa-trash", style: "float:right" %>
              </li>
 
          </ul>

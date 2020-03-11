@@ -7,7 +7,13 @@ class ApplicationController < ActionController::Base
     return @favorite_exists ? "fas fa-heart" : "far fa-heart"
   end
 
+# def complete_text
+#   return complete ? "complete" : "mark as complete"
+# end
+
   helper_method :favorite_text
+  # helper_method :complete_text
+
 
 
   def add_header_text

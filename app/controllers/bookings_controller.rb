@@ -40,6 +40,25 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def booking_complete
+  @booking = Booking.find(params[:id])
+  if @booking.job_complete = true
+
+  respond_to do |format|
+  format.html { redirect_to my_bookings_path }
+  format.js {}
+    end
+  end
+end
+
+
+
+
+  #  def update
+  #   @booking = Booking.find(params[:id])
+  #   @booking.update(job_complete: true)
+  # end
+
   private
 
   def booking_params
