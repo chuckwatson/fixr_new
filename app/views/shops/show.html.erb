@@ -33,11 +33,10 @@
     <% end %>
   </div>
 
-    <div class="show-services-title">
+  <% if current_user == @shop.user %>
+   <div class="show-services-title">
       <h2>Service Admin</h2>
     </div>
-
-  <% if current_user == @shop.user %>
   <div class="service-list">
   <% @shop.jobs.each do |job| %>
          <ul>
