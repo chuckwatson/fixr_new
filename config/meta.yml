@@ -1,0 +1,5 @@
+meta_product_name: "Fixr Bike"
+meta_title: "Connecting Cyclists with Independent Bike Shops | Fixr Bike"
+meta_description: "Bicycle maintenance made easy with Fixr. Search for independent bike shops near you or list your own shop to generate new enquiries."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
