@@ -2,16 +2,19 @@
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
   background-position: center center;
   background-repeat: repeat;
-  padding: 100px 40px 20px 40px;
+  padding: 100px 40px 48px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1 {
-    padding: 28px 0 18px 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 30px;
-  }
+
+}
+
+
+.show_reviewtext {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: right;
 }
 
 // .shop-show-title h1 {
@@ -30,7 +33,26 @@
   }
 }
 
-.show-services-title, label.string {
+.shop-show-title {
+  padding: 28px 0 0px 0;
+  text-align: center;
+  h1 {
+    text-transform: uppercase;
+    font-size: 44px;
+  }
+  .show_reviewtext {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  p {
+    font-size: 12px;
+  }
+}
+
+}
+
+.show-services-title, label.string, .review-title {
   text-align: center;
   padding: 40px 0 10px 0;
   text-transform: uppercase;
