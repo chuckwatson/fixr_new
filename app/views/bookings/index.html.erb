@@ -1,33 +1,33 @@
 <div class="bookings-container">
-  <div class="bookings-title">
-                 <h1>Service Tracker</h1>
-  </div>
-
   <br>
-    <div class="bookings-orders">
-      <% @bookings = @bookings.sort_by { |b| b.date } %>
-      <% @bookings.each do |booking| %>
-          <ul>
-            <% if booking.date >= Date.today %>
-             <div class="bookings-order-cards">
-                      <div class="order-info">
-                         <li>Bike drop-off date: <%= booking.date %></li>
-                          <div class="order-shop">
-                            <li>Name: <%= booking.user.first_name %> <%= booking.user.last_name %></li>
-                            <li>Service: <%= booking.job.name %></li>
-                          </div>
-                      </div>
-                  <div class="order-price">
-                      <li>£<%= booking.job.price %></li>
+   <div class="bookings-title">
+      <h1>Service Tracker</h1>
+   </div>
+      <div class="btn-booking">
+           <%= link_to "#{@shop.name}", shop_path(@shop), class: "btn-show", style: "text-align:center" %>
+      </div>
+        <br>
+          <div class="bookings-orders">
+            <% @bookings = @bookings.sort_by { |b| b.date } %>
+            <% @bookings.each do |booking| %>
+              <ul>
+                <% if booking.date >= Date.today %>
+                  <div class="bookings-order-cards">
+                     <div class="order-info">
+                          <li><%= booking.user.first_name %> <%= booking.user.last_name %></li>
+                     </div>
+                       <div class="order-date"><%= booking.date %>
+                       </div>
+                           <div class="service-job">
+                               <%= booking.job.name %>
+                           </div>
+                              <td class="booking-<%= booking.id %>">
+                                <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: :true, class: "btn btn-xs btn-#{ booking.job_complete ? 'success' : 'warning' }"  %>
+                              </td>
                   </div>
-         </ul>
-        <% end %>
-        <% end %>
-               </div>
+             </ul>
+                <% end %>
+                <% end %>
         </div>
-     </div>
-  <div class="btn-booking">
-    <%= link_to "#{@shop.name}", shop_path(@shop), class: "btn-show", style: "text-align:center" %>
-  </div>
-
 </div>
+

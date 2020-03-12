@@ -1,5 +1,11 @@
+
+.bookings-orders {
+  width: 95%;
+}
+
 .bookings-order-cards{
   background-color: #F0FFF0;
+  display: flex;
 }
 
 .service-list {
@@ -9,7 +15,16 @@
   }
 }
 
-
 .btn-booking {
   text-align: center;
+}
+
+
+.order-info {
+   display: block;
+   width: 95%;
+}
+
+.order-shop {
+  float: right;
 }

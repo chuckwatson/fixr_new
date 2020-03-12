@@ -152,7 +152,7 @@ flex-flow: column;
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
   background-position: center center;
   background-repeat: repeat;
-  padding: 40px 40px 20px 40px;
+  padding: 10px 10px 10px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,47 +180,4 @@ flex-flow: column;
   }
 }
 
-// .card-link {
-//   background-color: white;
-//   width: 95%;
-//   height: 140px;
-//   display: flex;
-//   flex-direction: row;
-//   border-radius: 12px;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   margin: 10px 0;
-//   text-decoration: none;
-
-//   .shop-card-text {
-//     padding: 5px 5px;
-
-//     h5, p {
-//       max-height: 70px;
-//       padding: 4px 0;
-//       margin: 0;
-//       overflow: hidden;
-//     }
-
-//     h5 {
-//       font-size: 20px;
-//       color: black !important;
-//     }
-
-//     p {
-//       color: #505050;
-//       font-size: 12px;
-//     }
-//   }
-// }
-
-
-// .bookings-title h1 {
-//   text-align: center;
-//   display: block;
-//   margin: auto;
-// }
-
-// .bookings-container {
-//   text-align: center;
-// }
 

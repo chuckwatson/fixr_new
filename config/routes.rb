@@ -14,7 +14,7 @@
   resources :shops do #index #show #new/create #delete #update
     resources :reviews, only: [:new, :create, :destroy, :show]
     resources :jobs, only: [:new, :create, :destroy, :index, :show]
-    resources :bookings, only: [:new, :create, :destroy, :index, :show] do
+    resources :bookings, only: [:new, :create, :destroy, :index, :show, :update] do
       resources :payments, only: :new
     end
   end
@@ -25,6 +25,14 @@
   resources :reviews, only: [:new, :create]
 
   get "my_bookings", to: "bookings#my_bookings"
+
+ resources :bookings do
+    member do
+        patch :toggle_status
+    end
+end
+
+
 
   root to: 'pages#home'
 

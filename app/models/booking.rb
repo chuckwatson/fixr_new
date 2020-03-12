@@ -5,7 +5,8 @@ class Booking < ApplicationRecord
   validates :date, presence: true
   monetize :amount_cents
 
-  def completed?
-    :job_complete == true
-  end
+def complete
+  self.job_complete = 'true'
+end
+
 end
