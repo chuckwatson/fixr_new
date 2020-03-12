@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
    @shops = Shop.all
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
 end
