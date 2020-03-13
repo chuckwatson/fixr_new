@@ -64,7 +64,7 @@
     </div>
     <div class="reviews">
       <h2>
-        <%= pluralize @shop.reviews.size, "review" %>
+        <%= pluralize @shop.reviews.size, "review", class: "review-count" %>
       </h2>
       <% if @shop.reviews.blank? %>
 <!--           the below line 70 was in place of line 67 at the bottom of this page but broke
