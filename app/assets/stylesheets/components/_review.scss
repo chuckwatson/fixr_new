@@ -1,50 +1,46 @@
 .review-container {
-  // width: 80%;
-  padding: 20px;
-  margin: 20px;
+  padding: 4%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 0%;
   background-color: white;
-  // height: 70vw;
+  h2, h2 {
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  h4 {
+    font-size: 16px;
+  }
 }
 
 .review-info {
-  width: 80vw;
   padding: 20px;
-  margin: 20px;
-  align: center;
-  h1 {
-    font-size: 20px;
-  }
 }
 
 .reviews {
-  width: 80vw;
-  align-content: center;
-  padding-left: 20px;
-  // width: 400px;
-  // display: flex;
-  // justify-content: space-between;
+  h6 {
+    font-size: 12px;
+  }
+//   align-content: center;
+//   padding-left: 20px;
+//   // width: 400px;
+//   // display: flex;
+//   // justify-content: space-between;
+}
+.review_form {
+//   margin-top: 15px;
+  margin-bottom: -2%;
+//   align-content: center;
+//   border-radius: 3%;
+  padding: 6% 0 4% 0;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   background-color: #e5f2e5;
+//   width: 80vw;
+//   h1 {
+//     font-size: 20px;
+//   }
 }
 
-.review_form {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  align-content: center;
-  border-radius: 3%;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: #e5f2e5;
-  width: 80vw;
-  h1 {
-    font-size: 20px;
-  }
-}
 
 .rwd-line {
-  display: block;
-  // display: inline;
-  font-size: 30px;
   font-family: "Spartan";
-  text-align: center;
 }
