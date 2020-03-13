@@ -38,13 +38,11 @@
       <h2>Service Admin</h2>
     </div>
   <div class="service-list">
+     <ul class="service-items">
   <% @shop.jobs.each do |job| %>
-         <ul>
-             <li>
-            <%= job.name %> <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, class: "fa fa-trash", style: "float:right; color:#ff726f" %>
-             </li>
-         </ul>
+            <%= render 'jobs/show', job: job %>
      <% end %>
+       </ul>
    <% end %>
  </div>
 </div>
@@ -64,7 +62,7 @@
     </div>
     <div class="reviews">
       <h2>
-        <%= pluralize @shop.reviews.size, "review", class: "review-count" %>
+        <%= pluralize @shop.reviews.size, "review" %>
       </h2>
       <% if @shop.reviews.blank? %>
 <!--           the below line 70 was in place of line 67 at the bottom of this page but broke
