@@ -4,87 +4,124 @@
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
   background-position: center center;
   background-repeat: repeat;
-  align-items: center;
+  display: flex;
   width: 100%;
   height: 100%;
 }
 
 .bookings-title {
-  padding: 60px 0 20px 0;
+  padding: 20px 0;
   text-transform: uppercase;
 }
 
-.bookings-order-cards {
+.booking-order-cards {
   background-color: rgba(0,0,0,0.1);
-  height: 14vh;
   padding: 0 0 0 10px;
   display: flex;
   flex-direction: row;
-  // align-items: center;
   border-radius: 12px;
-  border: none;
-  .order-info {
-  display: flex;
-  align-items: center;
+  margin: 16px 0;
+  .booking-button {
+    width: 35%;
   }
   .big-btn {
     // position: absolute;
     // top: 0;
     // right: 0;
-    border-radius: 0 12px 12px 0;
-    width: 24vw;
     height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 4px;
-  }
-  .service-job {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 6px;
-    margin: 0 4px;
-  }
-  li {
+    border-radius: 0 12px 12px 0;
     text-align: center;
     display: flex;
     align-items: center;
   }
 }
 
-.service-list {
-  li {
-    list-style-type: none;
+.order-info {
+  flex-grow: 1;
+  padding: 8px 0 8px 4px;
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  p {
+    margin-bottom: 0;
+  }
+  .booking-name-small {
+    font-size: 10px;
   }
 }
 
-.big-btn {
-  display: flex;
-  align-items: center;
-}
-.btn-booking {
-  text-align: center;
-  padding-bottom: 20px;}
+// .bookings-order-cards {
+//   background-color: rgba(0,0,0,0.1);
+//   // height: 14vh;
+//   padding: 0 0 0 10px;
+//   display: flex;
+//   flex-direction: row;
+//   // align-items: center;
+//   border-radius: 12px;
+//   border: none;
+//   .order-info {
+//   display: flex;
+//   align-items: center;
+//   }
+//   .big-btn {
+//     // position: absolute;
+//     // top: 0;
+//     // right: 0;
+//     border-radius: 0 12px 12px 0;
+//     width: 24vw;
+//     height: 100%;
+//     display: flex;
+//     align-items: center;
+//     padding: 4px;
+//   }
+//   .service-job {
+//     width: 40%;
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     padding-top: 6px;
+//     margin: 0 4px;
+//   }
+//   li {
+//     text-align: center;
+//     display: flex;
+//     align-items: center;
+//   }
+// }
+
+// .service-list {
+//   li {
+//     list-style-type: none;
+//   }
+// }
+
+// .big-btn {
+//   display: flex;
+//   align-items: center;
+// }
+// .btn-booking {
+//   text-align: center;
+//   padding-bottom: 20px;}
 
 
-.order-info {
-   display: flex;
-   align-items: center;
-   width: 95%;
-   padding-top: 2vh;
-}
+// .order-info {
+//    display: flex;
+//    align-items: center;
+//    width: 95%;
+//    // padding-top: 2vh;
+// }
 
 .order-shop {
   float: right;
 }
 
 .btn-warning {
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.6);
   border: 1px solid rgba(0,0,0,0.3);
   color: black;
 }
 
-.btn-success {
-  background-color: $sea-green;
-}
+// .btn-success {
+//   background-color: $sea-green;
+//   width: 20%;
+// }
