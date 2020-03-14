@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   protect_from_forgery with: :exception
   before_action :add_header_text
+  # before_filter :add_www_subdomain
 
   def favorite_text
     return @favorite_exists ? "fas fa-heart" : "far fa-heart"
@@ -29,3 +30,11 @@ class ApplicationController < ActionController::Base
     shops_path
   end
 end
+
+  # private
+  #   def add_www_subdomain
+  #     unless /^www/.match(request.host)
+  #       redirect_to("#{request.protocol}x.com#{request.request_uri}",
+  #                   :status => 301)
+  #     end
+  #   end
