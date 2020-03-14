@@ -1,7 +1,12 @@
  <div class="service-items">
   <ul style="list-style-type: none">
   <li id="<%= job.id %>">
-      <%= job.name %> <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, remote: true, class: "fa fa-trash", style: "float:right; color:#ff726f" %>
+    <div class="job-details">
+      <%= job.name %>
+    </div>
+    <div class="job-price">
+      <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, remote: true, class: "fa fa-trash", style: "float:right; color:#ff726f" %>
+    </div>
  </li>
   </ul>
 

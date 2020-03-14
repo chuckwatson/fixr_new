@@ -205,6 +205,8 @@ label.string {
 .service-items li {
  line-height: 50px;
  list-style-type: none;
+ display: flex;
+ justify-content: space-between;
 }
 
 .service-list {
@@ -213,6 +215,9 @@ label.string {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 0%;
   background-color: white;
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
 }
 
 .service-items ul {
@@ -223,6 +228,14 @@ ul {
   list-style-type: none;
 }
 
+.job-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-price {
+  float:right;
+}
 
 
 // .job-booking{
