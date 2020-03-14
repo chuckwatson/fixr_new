@@ -1,0 +1,96 @@
+.bookings-account-container {
+  background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
+  background-position: center center;
+  background-repeat: repeat;
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  h3 {
+    text-transform: uppercase;
+    padding: 0 4px;
+    text-align: center;
+  }
+}
+
+.individual-favorite-cards {
+  // background-color: rgba(0,0,0,0.1);
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+  margin: 16px 0px;
+}
+
+.card-link {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.shop-card-text {
+  padding: 4px 4px 4px 16px;
+
+  p {
+    font-size: 11px;
+    color: black !important;
+    padding: 4px 0;
+    margin: 0;
+  }
+}
+
+.favorite-name {
+  font-size: small;
+}
+
+.favorite-cards {
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.bookings-title h1 {
+  text-align: center;
+}
+
+.bookings-orders {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.bookings-order-cards {
+  background-color: rgba(0,0,0,0.1);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  margin: 16px 0;
+  width: 90%;
+    p {
+      font-size: 16px;
+    }
+}
+
+.favorite-shops-title h1 {
+  text-align: center;
+  display: block;
+}
+
+.order-history-date {
+  font-size: 10px;
+}
