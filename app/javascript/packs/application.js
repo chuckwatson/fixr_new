@@ -22,6 +22,6 @@ initMapbox();
 import { initStarRating } from '../plugins/init_star_rating';
 initStarRating();
 
-import { initStarRatingPluralize } from '../plugins/init_star_rating';
-initStarRatingPluralize();
+// import { initStarRatingPluralize } from '../plugins/init_star_rating';
+// initStarRatingPluralize();
 

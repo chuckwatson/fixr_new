@@ -1,4 +1,4 @@
-console.log("hey hey");
+
 
 import "jquery-bar-rating";
 import "jquery-bar-rating/dist/themes/css-stars.css";
@@ -13,10 +13,3 @@ const initStarRating = () => {
 export { initStarRating };
 
 
-const initStarRatingPluralize = () => {
-  $('#pluralize').barrating({
-    theme: 'css-stars'
-  });
-};
-
-export { initStarRatingPluralize };
