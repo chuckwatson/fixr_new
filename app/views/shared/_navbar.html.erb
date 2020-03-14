@@ -14,9 +14,9 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <div class="nav-items">
-          <li>
+<!--           <li>
             <%= link_to "Home", shops_path, class: "nav-link" %></li>
-          </li>
+          </li> -->
           <li>
            <%= link_to "#{current_user.first_name}'s Account", my_bookings_path, class: "nav-link", style: "color:black" %>
           </li>
