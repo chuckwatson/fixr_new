@@ -40,32 +40,16 @@
       <h2>Service Admin</h2>
     </div>
 
-    <div class="service-list">
-      <ul class="service-items">
-        <% @shop.jobs.each do |job| %>
-          <%= render 'jobs/show', job: job %>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="service-list">
-      <% @shop.jobs.each do |job| %>
-        <ul>
-          <li><%= job.name %> <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, class: "fa fa-trash", style: "float:right; color:#ff726f" %></li>
-        </ul>
-      <% end %>
-    </div>
-  <%# end %>
-
   <div class="service-list">
     <ul class="service-items">
       <% @shop.jobs.each do |job| %>
         <%= render 'jobs/show', job: job %>
      <% end %>
+     <% end %>
     </ul>
   </div>
 
-  <% if current_user == @shop.user %>
+    <% if current_user == @shop.user %>
     <div class="new-job-container">
       <%= render 'jobs/new' %>
     </div>
@@ -89,10 +73,12 @@
             <%= render 'reviews/show', review: review, class: "font-family: 'Spartan, ;" %>
           <% end %>
         <% end %>
+        <% end %>
       </div>
+      <% unless current_user == @shop.user %>
       <%= render 'reviews/new', shop: @shop, review: @review %>
+      <% end %>
     </div>
-  <% end %>
 </div>
 
 
