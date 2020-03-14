@@ -117,7 +117,8 @@ label.string {
   background-color: white;
   padding: 10px 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  text-align: center
+  text-align: center;
+  width: 100%;
 }
 
 .form-control {
@@ -200,6 +201,29 @@ label.string {
     font-size: 20px;
   }
 }
+
+.service-items li {
+ line-height: 50px;
+ list-style-type: none;
+}
+
+.service-list {
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0%;
+  background-color: white;
+}
+
+.service-items ul {
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
 
 // .job-booking{
 //   text-align: center;

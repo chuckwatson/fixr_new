@@ -2,20 +2,17 @@
   <% if current_user == @shop.user %>
     <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
   <% end %>
-
   <div class="shop-show-title">
   <h1 class="rwd-line"><%= @shop.name %></h1>
     <div class="review-fav">
       <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
         <i class="<%= favorite_text %>", style="color:red;"> </i>
       <% end %>
-
       <div id="show_review" role="alert">
         <div id="show_reviewtext"><p><%= pluralize @shop.reviews.size, "review" %> - <%= @shop.reviews.average(:rating) %> <div class="fas fa-star"></div></p></div>
       </div>
     </div>
   </div>
-
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
   <% if current_user != @shop.user %>
@@ -34,29 +31,28 @@
       <% end %>
     </div>
   <% end %>
-
   <% if current_user == @shop.user %>
+ <div class="new-job-container">
     <div class="show-services-title">
-      <h2>Service Admin</h2>
+                <h2>Service Admin</h2>
     </div>
+   <!--  <div class="service-list"> -->
+         <% @shop.jobs.each do |job| %>
+         <%= render 'jobs/show', job: job %>
+         <% end %>
 
-  <div class="service-list">
-    <ul class="service-items">
-      <% @shop.jobs.each do |job| %>
-        <%= render 'jobs/show', job: job %>
-     <% end %>
-     <% end %>
-    </ul>
-  </div>
+
+  <% end %>
+
+
+ <!--  </div> -->
 
     <% if current_user == @shop.user %>
-    <div class="new-job-container">
+
       <%= render 'jobs/new' %>
     </div>
   <% end %>
-
   <% unless current_user == @shop.user %>
-
     <div class="review-title">
       <h2>Reviews</h2>
     </div>
@@ -80,5 +76,4 @@
       <% end %>
     </div>
 </div>
-
 
