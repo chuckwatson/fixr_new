@@ -7,7 +7,6 @@
  <!--  <p id="line"> ________________________________ </p> -->
 
   <div class ="booking-show-details">
-    <br>
     <p>You have booked</p>
     <h4><%= @booking.job.name %></h4>
     <p>at</p>
@@ -17,14 +16,13 @@
   </div>
 
   <p id="line"> ________________________________ </p>
-  <br>
 
   <p>Thanks for booking with: <div class="fixr">FIXR</div></p>
-    <div class="booking-show-title">
-      <h3>
+<!--     <div class="booking-show-title"> -->
+      <p>
         <span id="banner-typed-text"></span>
-      </h3>
-    </div>
+      </p>
+<!--     </div> -->
   <div class="booking-show-buttons">
     <%= link_to "Bike shops", shops_path, class: "btn-basic" %>
     <br>
