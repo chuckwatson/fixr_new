@@ -13,9 +13,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :favorite_text
   # helper_method :complete_text
-
-
-
   def add_header_text
    @shops = Shop.all
   end
@@ -24,4 +21,11 @@ class ApplicationController < ActionController::Base
     { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 
+  def after_sign_in_path_for(resource)
+    shops_path
+  end
+
+  def after_sign_up_path_for(resource)
+    shops_path
+  end
 end

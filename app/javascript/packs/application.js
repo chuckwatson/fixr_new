@@ -19,3 +19,9 @@ initMapbox();
 // import { loadDynamicBannerText } from "../plugins/bikeanimation"
 // loadDynamicBannerText();
 
+import { initStarRating } from '../plugins/init_star_rating';
+initStarRating();
+
+import { initStarRatingPluralize } from '../plugins/init_star_rating';
+initStarRatingPluralize();
+
