@@ -1,3 +1,6 @@
+.navbar.navbar-light.navbar-lewagon.hide{
+  position: sticky;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -5,6 +8,7 @@
   position: fixed;
   width: 100vw;
   z-index: 999;
+  position: sticky;
   p {
     display: inline;
     font-size: 32px;
