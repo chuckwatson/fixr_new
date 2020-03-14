@@ -2,7 +2,7 @@
     <p><strong>Leave your review below:</strong></p>
       <%= simple_form_for([ shop, review ], remote: true) do |form| %>
       <%= form.input :description, as: :text %>
-      <%= form.input :rating, collection: 1..5 %>
+      <%= form.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
       <%= form.button :submit, class: "btn-show" %>
       <% end %>
   </div>
