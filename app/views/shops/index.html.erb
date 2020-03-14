@@ -49,7 +49,9 @@
           <% if shop.reviews.blank? %>
             <p>No reviews yet.</p>
           <% else %>
-            <p>Rating: <%= shop.reviews.average(:rating) %></p>
+            <% shop.reviews.average(:rating).to_i.times do %>
+                <i class="fas fa-star icon-3x review_stars"></i>
+              <% end %>
           <% end %>
         </div>
     <% end %>
