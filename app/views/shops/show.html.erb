@@ -3,17 +3,21 @@
     <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
   <% end %>
 
-  <div class="shop-show-title">
-  <h1 class="rwd-line"><%= @shop.name %></h1>
-    <div class="review-fav">
-      <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
-        <i class="<%= favorite_text %>", style="color:red;"> </i>
-      <% end %>
 
-      <div id="show_review" role="alert">
-        <div id="show_reviewtext"><p><%= pluralize @shop.reviews.size, "review" %> - <%= @shop.reviews.average(:rating) %> <div class="fas fa-star"></div></p></div>
+  <div class="shop-show-title">
+    <h1 class="rwd-line"><%= @shop.name %></h1>
+      <div class="review-fav">
+        <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
+          <i class="<%= favorite_text %>", style="color:red;"> </i>
+        <% end %>
+          <div id="show_review" role="alert">
+            <p><div id="show_reviewtext"><%= pluralize @shop.reviews.size, "review" %>:  </p>
+              <% @shop.reviews.average(:rating).to_i.times do %>
+                <i class="fas fa-star icon-3x review_stars"></i>
+              <% end %>
+               </div>
+          </div>
       </div>
-    </div>
   </div>
 
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
@@ -65,7 +69,7 @@
         <h4 align="center">Have your say!</h4>
       </div>
       <div class="reviews">
-        <h6><%= pluralize @shop.reviews.size, "review" %></h6>
+        <h2><%= pluralize @shop.reviews.size, "review" %></h2>
         <% if @shop.reviews.blank? %>
           <h6>Be the first to leave a review for <%= @shop.name %></h6>
         <% else %>
