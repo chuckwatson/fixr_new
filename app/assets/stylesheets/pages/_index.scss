@@ -6,6 +6,7 @@
 @import "./config/fonts";
 @import "./config/colors";
 @import "./components/review";
+@import "./pages/my_bookings";
 
 
 
@@ -22,5 +23,6 @@
   left: 0;
   top: 0;
   z-index: -10;
+// NEEDS SOMETHING THAT FIXES IT TO PAGE.
 }
 

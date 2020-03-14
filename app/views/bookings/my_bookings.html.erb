@@ -1,40 +1,49 @@
 
-<div class="bookings-container">
-  <br>
-  <br>
-  <div>
-  <div class="bookings-title">
-      <h1>Order History</h1>
+<div class="bookings-account-container">
+  <div class="account-titles">
+    <br>
+    <h3>Favourite Shops</h3>
   </div>
-       <div class="bookings-orders">
-          <% @bookings.each do |booking| %>
-            <ul>
-               <div class="bookings-order-cards">
-                  <div class="order-info">
-                      <li><%= booking.job.name %></li>
-                      <li><%= booking.date %></li>
-                  </div>
-                    <div class="order-shop">
-                      <li><%= booking.job.shop.name %></li>
-                      <li>£<%= booking.job.price.to_i %></li>
-                    </div>
-               </div>
-            </ul>
-          <% end %>
-      </div>
-
-              <h1>Top Shops</h1>
-          <div class="favorite-cards">
-                <% current_user.favorites.each do |favorite| %>
-                <%= link_to shop_path(favorite.shop), class: 'card-link', id: "shop_#{favorite.shop.id}" do %>
-                <%= cl_image_tag(favorite.shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
-                   <div class="shop-card-text">
-                     <h5><%= favorite.shop.name %></h5>
-                       <p>Open Hours: <%= favorite.shop.open_hours%></p>
-                         <p>Rating: CHANGE!</p>
-                   </div>
-              <% end %>
+  <div class="favorite-cards">
+    <% current_user.favorites.each do |favorite| %>
+      <div class="individual-favorite-cards">
+        <%= link_to shop_path(favorite.shop), class: 'card-link', id: "shop_#{favorite.shop.id}" do %>
+          <%= cl_image_tag(favorite.shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
+          <div class="shop-card-text">
+            <div class="favourite-name">
+              <p><strong><%= favorite.shop.name %></strong></p>
+            </div>
+            <div class="open-hours-card">
+              <p>Opening Hours</p>
+              <p><%= favorite.shop.open_hours %></p>
+              <p>Rating: CHANGE!</p>
+            </div>
           </div>
-          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <p style="text-align: center; color: #DCDCDC;">________________________________</p>
+
+  <div class="bookings-title">
+    <h3>Order History</h3>
+  </div>
+  <div class="bookings-orders">
+  <% @bookings.each do |booking| %>
+    <div class="bookings-order-cards">
+      <div class="order-info">
+        <p><strong><%= booking.job.shop.name %> - <%= booking.job.name %></strong></p>
+          <p><%= booking.date %></p>
+        <p style="color: #808080;">£<%= booking.job.price.to_i %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+  <br>
+  <p style="text-align: center; color: #DCDCDC;">________________________________</p>
+
 
 </div>
+
