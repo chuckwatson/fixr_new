@@ -1,38 +1,5 @@
-//<<<<<<< HEAD
 
-  .card-link {
-    background-color: white;
-    width: 95%;
-    height: 140px;
-    display: flex;
-    flex-direction: row;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin: 5px auto;
-    text-decoration: none;
-}
 
-    .shop-card-text {
-      padding: 5px 5px;
-
-      h5, p {
-        max-height: 70px;
-        padding: 4px 0;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      h5 {
-        font-size: 20px;
-        color: black !important;
-      }
-
-      p {
-        color: #505050;
-        font-size: 12px;
-      }
-    }
-//=======
 .booking-show-container {
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
   background-position: center center;
@@ -74,54 +41,8 @@
 }
 
 
-.bookings-container {
-display: flex;
-flex-flow: column;
-
-
-}
-
-.bookings-orders ul {
-  padding: 0px 0px;
-  margin: 0px 0px;
-// display: flex;
-// flex-flow: column;
-// align-items: center;
-
-}
-
-.bookings-order-cards {
-  border: 1px solid $sea-green;
-  list-style-type: none;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  margin: 10px auto;
-  width: 95%;
-  height: 5em;
-
-    p {
-      font-size: 16px;
-    }
-}
-
-.favorite-cards {
-  margin: 5px auto;
-
-}
-
-
 .order-shop li {
   margin-right: auto;
-}
-
-.bookings-title h1 {
-  text-align: center;
-}
-
-.favorite-shops-title h1 {
-  text-align: center;
-  display: block;
 }
 
 .booking-show-details {
@@ -148,36 +69,20 @@ flex-flow: column;
 }
 
 
-.bookings-container, .top-shops {
-  background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
-  background-position: center center;
-  background-repeat: repeat;
-  padding: 10px 10px 10px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: -webkit-fill-available;
-  left: 0;
-  top: 0;
-  z-index: -4;
-}
+// .bookings-container, .top-shops {
+//   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
+//   background-position: center center;
+//   background-repeat: repeat;
+//   padding: 10px 10px 10px 10px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+//   height: -webkit-fill-available;
+//   left: 0;
+//   top: 0;
+//   z-index: -4;
+// }
 
-.bookings-order-cards {
-  background-color: white;
-  padding: 4% 4%;
-  margin-bottom: 12%;
-  height: 15%;
-  display: flex;
-  width: 100%;
-  .order-info {
-    flex-direction: column;
-    width: 40%;
-  }
-  .rhs {
-    text-align: end;
-    width: 55%;
-  }
-}
 
 
