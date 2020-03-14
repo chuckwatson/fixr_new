@@ -15,15 +15,6 @@
       </div>
     </div>
   </div>
-<!--     <div class="review-fav">
-      <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
-        <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
-      <% end %>
-
-      <div id="show_review" role="alert">
-        <div id="show_reviewtext"><p><%= pluralize @shop.reviews.size, "review" %> <%= @shop.reviews.average(:rating) %><div class="fas fa-star"></div></p></div>
-      </div>
-    </div> -->
 
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
@@ -32,8 +23,6 @@
       <h2>Services</h2>
     </div>
     <div class="card-services">
-
-<!-- Trigger/Open The Modal -->
       <%= simple_form_for [@shop, @booking] do |f| %>
         <div class="service-list">
           <%= f.association :job, as: :radio_buttons, collection: @jobs_with_prices,
@@ -50,6 +39,7 @@
     <div class="show-services-title">
       <h2>Service Admin</h2>
     </div>
+
     <div class="service-list">
       <ul class="service-items">
         <% @shop.jobs.each do |job| %>
@@ -65,7 +55,15 @@
         </ul>
       <% end %>
     </div>
-  <% end %>
+  <%# end %>
+
+  <div class="service-list">
+    <ul class="service-items">
+      <% @shop.jobs.each do |job| %>
+        <%= render 'jobs/show', job: job %>
+     <% end %>
+    </ul>
+  </div>
 
   <% if current_user == @shop.user %>
     <div class="new-job-container">
@@ -85,9 +83,6 @@
       <div class="reviews">
         <h6><%= pluralize @shop.reviews.size, "review" %></h6>
         <% if @shop.reviews.blank? %>
-<!--           the below line 70 was in place of line 67 at the bottom of this page but broke
-      the formatting, the rest of it was exactly the same as lines 64 - 78 -->
-      <!--       if current_user != @shop.user && @shop.reviews.blank? -->
           <h6>Be the first to leave a review for <%= @shop.name %></h6>
         <% else %>
           <% @shop.reviews.each do |review| %>
