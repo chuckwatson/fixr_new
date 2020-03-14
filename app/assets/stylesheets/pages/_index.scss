@@ -7,8 +7,7 @@
 @import "./config/colors";
 @import "./components/review";
 @import "./pages/my_bookings";
-
-
+@import "./components/index_container";
 
 .index-container {
   background-image: linear-gradient(rgba(255,255,255,0.4)), url('line_silver_bg.jpg');
@@ -25,4 +24,5 @@
   z-index: -10;
 // NEEDS SOMETHING THAT FIXES IT TO PAGE.
 }
+
 
