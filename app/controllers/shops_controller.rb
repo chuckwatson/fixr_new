@@ -17,8 +17,6 @@ class ShopsController < ApplicationController
   end
 end
 
-
-
   # Update once bookings controller is done
   def new
     @shop = Shop.new
