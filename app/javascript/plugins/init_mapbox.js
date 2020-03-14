@@ -14,7 +14,7 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/kcsaba/ck6xiz8zm0jms1is210ohjkx8',
-     maxZoom: 15, duration: 0
+      maxZoom: 15, padding:35
   });
 };
 
@@ -41,7 +41,7 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 35, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 35, maxZoom: 15, duration: 1200});
   // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
   //                                     mapboxgl: mapboxgl }));
 };
@@ -88,7 +88,7 @@ if (findBtn) {
     addMarkersToMap(map, markers);
     const bounds = new mapboxgl.LngLatBounds();
     [fullUserMarker].forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 80, maxZoom: 13 });
+    map.fitBounds(bounds, { padding: 80, maxZoom: 13, duration: 1200 });
     document.querySelectorAll('.marker').forEach((marker) => {
       const card = document.getElementById(`shop_${marker.dataset.id}`);
       marker.addEventListener('click', (event) => {

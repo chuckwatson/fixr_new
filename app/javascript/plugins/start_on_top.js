@@ -4,3 +4,6 @@ window.onbeforeunload = function () {
 window.onbeforeunload = function () {
 
 }
+// $(window).on('beforeunload', function(){
+//   $(window).scrollTop(0);
+// });
