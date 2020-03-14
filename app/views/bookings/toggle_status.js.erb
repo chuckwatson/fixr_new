@@ -1,0 +1,5 @@
+<% if @booking.job_complete %>
+  $(".booking-<%= @booking.id %> > a").html('Complete').removeClass('btn-warning').addClass('btn-success')
+<% else %>
+  $(".booking-<%= @booking.id %> > a").html('Mark as complete').removeClass('btn-success').addClass('btn-warning')
+<% end %>
