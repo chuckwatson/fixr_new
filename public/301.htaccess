@@ -1,0 +1,7 @@
+Redirect 301 / http://www.fixrbike.com/
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^fixrbike.com
+RewriteRule (.*) http://fixrbike.com/$1 [R=301,L]
