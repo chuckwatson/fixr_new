@@ -1,84 +1,95 @@
 <div class="shop-show-container">
-      <% if current_user == @shop.user %>
-        <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
-    <% end %>
+  <% if current_user == @shop.user %>
+    <%= link_to "Service Tracker", shop_bookings_path(@shop), class: "btn-show"%>
+  <% end %>
 
   <div class="shop-show-title">
-    <span class="rwd-line"><%= @shop.name %></span>
-    <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
-      <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
-    <% end %>
-  </div>
-    <div id="show_review" role="alert">
-      <div id="show_reviewtext"><p><strong><%= pluralize @shop.reviews.size, "review" %></strong> Average Rating: <%= @shop.reviews.average(:rating) %><i><div class="fas fa-star"></div></i></p></div>
+  <h1 class="rwd-line"><%= @shop.name %></h1>
+    <div class="review-fav">
+      <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
+        <i class="<%= favorite_text %>", style="color:red;"> </i>
+      <% end %>
+
+      <div id="show_review" role="alert">
+        <div id="show_reviewtext"><p><%= pluralize @shop.reviews.size, "review" %> - <%= @shop.reviews.average(:rating) %> <div class="fas fa-star"></div></p></div>
+      </div>
     </div>
+  </div>
+<!--     <div class="review-fav">
+      <%= link_to favorites_update_path(shop: @shop), id: 'favorite_link', remote: true do %>
+        <i class="<%= favorite_text %>", style="color:red; width:100px"> </i>
+      <% end %>
+
+      <div id="show_review" role="alert">
+        <div id="show_reviewtext"><p><%= pluralize @shop.reviews.size, "review" %> <%= @shop.reviews.average(:rating) %><div class="fas fa-star"></div></p></div>
+      </div>
+    </div> -->
+
   <div class="shop-show-image" style="background-image: url('<%= cl_image_path @shop.photo.key %>'); background-size: cover; background-position: center;">
   </div>
   <% if current_user != @shop.user %>
-  <div class="show-services-title">
-    <h2>Services</h2>
-  </div>
-  <div class="card-services">
+    <div class="show-services-title">
+      <h2>Services</h2>
+    </div>
+    <div class="card-services">
 
 <!-- Trigger/Open The Modal -->
-
-         <%= simple_form_for [@shop, @booking] do |f| %>
+      <%= simple_form_for [@shop, @booking] do |f| %>
         <div class="service-list">
           <%= f.association :job, as: :radio_buttons, collection: @jobs_with_prices,
           :label => false, :label_method => lambda { |item| "#{item.first} <br> #{Job.find_by(name: item.first[0...-4].strip).description}<br><br>".html_safe },
-          input_html: {class: "rb-list", style: "font-size:10px"} %>        </div>
-         <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          input_html: {class: "rb-list", style: "font-size:10px"} %>
+        </div>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.submit 'Confirm Service', class: "btn-show" %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <% if current_user == @shop.user %>
-   <div class="show-services-title">
+    <div class="show-services-title">
       <h2>Service Admin</h2>
     </div>
-  <div class="service-list">
-  <% @shop.jobs.each do |job| %>
-         <ul>
-             <li>
-            <%= job.name %> <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, class: "fa fa-trash", style: "float:right; color:#ff726f" %>
-             </li>
-         </ul>
-     <% end %>
-   <% end %>
- </div>
-</div>
+    <div class="service-list">
+      <% @shop.jobs.each do |job| %>
+        <ul>
+          <li><%= job.name %> <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, class: "fa fa-trash", style: "float:right; color:#ff726f" %></li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
 
   <% if current_user == @shop.user %>
-     <div class="new-job-container">
-        <%= render 'jobs/new' %>
-  <% end %>
-     </div>
-
-
-<% unless current_user == @shop.user %>
-  <div class="review-container">
-    <div class="review-info">
-      <span class="rwd-line"><%= @shop.name %></span>
-      <h4 align="center">Have your say!</h4>
+    <div class="new-job-container">
+      <%= render 'jobs/new' %>
     </div>
-    <div class="reviews">
-      <h2>
-        <%= pluralize @shop.reviews.size, "review", class: "review-count" %>
-      </h2>
-      <% if @shop.reviews.blank? %>
+  <% end %>
+
+  <% unless current_user == @shop.user %>
+
+    <div class="review-title">
+      <h2>Reviews</h2>
+    </div>
+    <div class="review-container">
+      <div class="review-info">
+        <h4 align="center">Have your say!</h4>
+      </div>
+      <div class="reviews">
+        <h6><%= pluralize @shop.reviews.size, "review" %></h6>
+        <% if @shop.reviews.blank? %>
 <!--           the below line 70 was in place of line 67 at the bottom of this page but broke
       the formatting, the rest of it was exactly the same as lines 64 - 78 -->
       <!--       if current_user != @shop.user && @shop.reviews.blank? -->
-        Be the first to leave a review for <%= @shop.name %>
-      <% else %>
-        <% @shop.reviews.each do |review| %>
-          <%= render 'reviews/show', review: review %>
+          <h6>Be the first to leave a review for <%= @shop.name %></h6>
+        <% else %>
+          <% @shop.reviews.each do |review| %>
+            <%= render 'reviews/show', review: review, class: "font-family: 'Spartan, ;" %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <%= render 'reviews/new', shop: @shop, review: @review %>
     </div>
-    <%= render 'reviews/new', shop: @shop, review: @review %>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 
 
