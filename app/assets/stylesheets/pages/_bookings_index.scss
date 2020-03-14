@@ -25,9 +25,6 @@
     width: 35%;
   }
   .big-btn {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
     height: 100%;
     border-radius: 0 12px 12px 0;
     text-align: center;
@@ -39,9 +36,6 @@
 .order-info {
   flex-grow: 1;
   padding: 8px 0 8px 4px;
-  // position: absolute;
-  // top: 0;
-  // right: 0;
   p {
     margin-bottom: 0;
   }
@@ -49,67 +43,6 @@
     font-size: 10px;
   }
 }
-
-// .bookings-order-cards {
-//   background-color: rgba(0,0,0,0.1);
-//   // height: 14vh;
-//   padding: 0 0 0 10px;
-//   display: flex;
-//   flex-direction: row;
-//   // align-items: center;
-//   border-radius: 12px;
-//   border: none;
-//   .order-info {
-//   display: flex;
-//   align-items: center;
-//   }
-//   .big-btn {
-//     // position: absolute;
-//     // top: 0;
-//     // right: 0;
-//     border-radius: 0 12px 12px 0;
-//     width: 24vw;
-//     height: 100%;
-//     display: flex;
-//     align-items: center;
-//     padding: 4px;
-//   }
-//   .service-job {
-//     width: 40%;
-//     display: flex;
-//     align-items: center;
-//     flex-direction: column;
-//     padding-top: 6px;
-//     margin: 0 4px;
-//   }
-//   li {
-//     text-align: center;
-//     display: flex;
-//     align-items: center;
-//   }
-// }
-
-// .service-list {
-//   li {
-//     list-style-type: none;
-//   }
-// }
-
-// .big-btn {
-//   display: flex;
-//   align-items: center;
-// }
-// .btn-booking {
-//   text-align: center;
-//   padding-bottom: 20px;}
-
-
-// .order-info {
-//    display: flex;
-//    align-items: center;
-//    width: 95%;
-//    // padding-top: 2vh;
-// }
 
 .order-shop {
   float: right;
@@ -121,7 +54,3 @@
   color: black;
 }
 
-// .btn-success {
-//   background-color: $sea-green;
-//   width: 20%;
-// }
