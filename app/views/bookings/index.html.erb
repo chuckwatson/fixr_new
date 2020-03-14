@@ -1,12 +1,12 @@
 <div class="bookings-container">
   <br>
+  <br>
   <div class="bookings-title">
-    <h1>Service Tracker</h1>
+    <h3>Service Tracker</h3>
   </div>
   <div class="btn-booking">
-    <%= link_to "#{@shop.name}", shop_path(@shop), class: "btn-show", style: "text-align:center" %>
+    <%= link_to "Back to #{@shop.name}", shop_path(@shop), class: "btn-basic", style: "text-align:center" %>
   </div>
-  <br>
   <div class="bookings-orders">
     <% @bookings = @bookings.sort_by { |b| b.date } %>
     <% @bookings.each do |booking| %>
@@ -16,10 +16,13 @@
             <div class="order-info">
               <li><%= booking.user.first_name %> <%= booking.user.last_name %></li>
             </div>
-            <div class="order-date"><%= booking.date %></div>
-            <div class="service-job"><%= booking.job.name %></div>
-            <div class="booking-<%= booking.id %>">
-              <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: true, class: "btn btn-xs btn-#{ booking.job_complete ? 'success' : 'warning' }"  %>
+<!--             <div class="order-date"><%= booking.date %></div>
+ -->        <div class="service-job">
+              <li><%= booking.job.name %></li>
+              <li><%= booking.date %></li>
+            </div>
+            <div class="booking-<%= booking.id %> button-rhs">
+              <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: true, class: "btn btn-xs big-btn btn-#{ booking.job_complete ? 'white' : 'warning' }"  %>
             </div>
           </div>
         <% end %>
