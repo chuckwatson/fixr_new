@@ -3,7 +3,7 @@
   <div class="show-services-title">
     <h2>Update Services</h2>
   </div>
-      <%= simple_form_for [@shop, @job] do |form| %>
+      <%= simple_form_for [@shop, @job], remote: true do |form| %>
       <%= form.input :name, as: :string %>
       <%= form.input :description, as: :text %>
       <%= form.input :price, as: :integer %>

@@ -40,7 +40,7 @@ end
   end
 
   # Update show method once booking controller is done.
-  def show
+   def show
     @booking = Booking.new
     @shop = Shop.find(params[:id])
     @jobs = Job.where(shop: @shop.id)
@@ -50,8 +50,8 @@ end
     # @bookings = Booking.where(job: @job, user: current_user)
     @jobs_with_prices = Job.where(shop: @shop).map do |job|
       ["#{job.name} £#{job.price.to_i}", job.id]
-  end
-end
+    end
+   end
 
   def update
     @shop = Shop.find(params[:id])

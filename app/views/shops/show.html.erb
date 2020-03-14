@@ -50,6 +50,17 @@
     <div class="show-services-title">
       <h2>Service Admin</h2>
     </div>
+<<<<<<< HEAD
+  <div class="service-list">
+     <ul class="service-items">
+  <% @shop.jobs.each do |job| %>
+            <%= render 'jobs/show', job: job %>
+     <% end %>
+       </ul>
+   <% end %>
+ </div>
+</div>
+=======
     <div class="service-list">
       <% @shop.jobs.each do |job| %>
         <ul>
@@ -58,6 +69,7 @@
       <% end %>
     </div>
   <% end %>
+>>>>>>> master
 
   <% if current_user == @shop.user %>
     <div class="new-job-container">

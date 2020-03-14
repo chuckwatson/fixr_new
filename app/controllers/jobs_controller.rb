@@ -13,12 +13,20 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.shop = @shop
     if @job.save
-      redirect_to shop_path(@shop)
-
-    else
-      render "shop/show"
+     respond_to do |format|
+          format.html { redirect_to shop_path(@shop) }
+          format.js # <-- will render `app/views/reviews/create.js.erb`
+        # redirect_to shop_path(@shop)
+      end
+      else
+        respond_to do |format|
+          format.html { render :new }
+          format.js
+      end
     end
   end
+
+
 
   def show
     @jobs = Job.find(params[:id])
@@ -35,8 +43,18 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
-    @job.destroy
-    redirect_to shop_path(@shop)
+     if @job.destroy
+       respond_to do |format|
+          format.html { redirect_to shop_path(@shop) }
+          format.js # <-- will render `app/views/reviews/create.js.erb`
+        end
+        # redirect_to shop_path(@shop)
+      else
+        respond_to do |format|
+          format.html { redirect_shops_path }
+          format.js
+        end
+      end
   end
 
   private
