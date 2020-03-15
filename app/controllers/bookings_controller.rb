@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.state = 'pending'
     @booking.save
+    @shop = Shop.find(params[:shop_id])
 
 
     session = Stripe::Checkout::Session.create(
