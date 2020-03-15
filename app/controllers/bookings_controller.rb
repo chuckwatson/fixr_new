@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
         currency: 'gbp',
         quantity: 1
       }],
-      success_url: shop_booking_url([:shop_id],@booking),
+      success_url: shop_booking_url(@shop, @booking),
       cancel_url: my_bookings_url(@booking)
       )
 
@@ -60,6 +60,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :job_id)
+    params.require(:booking).permit(:date, :job_id, :shop_id)
   end
 end
