@@ -26,11 +26,11 @@
 
   get "my_bookings", to: "bookings#my_bookings"
 
-#  resources :bookings do
-#     member do
-#         patch :toggle_status
-#     end
-# end
+ resources :bookings do
+    member do
+        patch :toggle_status
+    end
+end
 
 
 
