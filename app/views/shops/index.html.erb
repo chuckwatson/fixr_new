@@ -49,7 +49,7 @@
           <% if shop.reviews.blank? %>
             <p>No reviews yet.</p>
           <% else %>
-          <h5 style="font-size: 10px">Avg rating</h5>
+          <h5 style="font-size: 10px">Rating</h5>
             <% shop.reviews.average(:rating).to_i.times do %>
             <i class="fas fa-star icon-3x review_stars" ></i>
               <% end %>

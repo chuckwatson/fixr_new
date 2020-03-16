@@ -11,12 +11,19 @@
           <%= cl_image_tag(favorite.shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
           <div class="shop-card-text">
             <div class="favourite-name">
-              <p><strong><%= favorite.shop.name %></strong></p>
+              <h5><strong><%= favorite.shop.name %></strong></h5>
             </div>
             <div class="open-hours-card">
               <p>Opening Hours</p>
               <p><%= favorite.shop.open_hours %></p>
-              <p>Rating: CHANGE!</p>
+                <% if favorite.shop.reviews.blank? %>
+                 <p>No reviews yet.</p>
+                <% else %>
+                 <h5 style="font-size: 10px">Rating</h5>
+                  <% favorite.shop.reviews.average(:rating).to_i.times do %>
+                   <i class="fas fa-star icon-3x review_stars" ></i>
+                <% end %>
+                  <% end %>
             </div>
           </div>
         <% end %>
