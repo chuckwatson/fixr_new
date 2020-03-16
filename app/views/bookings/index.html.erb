@@ -14,8 +14,8 @@
           <% @bookings.each do |booking| %>
               <% if booking.date >= Date.today %>
             <div class="order-info">
-                <h7><strong><%= booking.job.name %></strong></h7>
                   <div class="booking-name-small">
+                      <h7 style="font-size:16px"><strong><%= booking.job.name %></strong></h7>
                       <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
                       <br>
                       <p><%= booking.date %></p>
