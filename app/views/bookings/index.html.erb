@@ -1,17 +1,17 @@
 
   <div class="bookings-container">
-  <br>
-  <br>
-   <div class="btn-booking">
+    <br>
+    <br>
+     <div class="btn-booking">
         <%= link_to "Back to #{@shop.name}", shop_path(@shop), class: "btn-basic", style: "text-align:center" %>
-    </div>
-  <div class="bookings-title">
-    <h3>Service Tracker</h3>
-  </div>
-      <div class="bookings-orders">
+     </div>
+     <div class="bookings-title">
+      <h3>Service Tracker</h3>
+     </div>
+
+     <div class="booking-order-cards">
           <% @bookings = @bookings.sort_by { |b| b.date } %>
           <% @bookings.each do |booking| %>
-        <div class="booking-order-cards">
               <% if booking.date >= Date.today %>
             <div class="order-info">
                 <h7><strong><%= booking.job.name %></strong></h7>
@@ -21,15 +21,13 @@
                       <p><%= booking.date %></p>
                   </div>
                   <div class="booking-button booking-<%= booking.id %>">
-                    <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: true, class: "btn big-btn btn-#{ booking.job_complete ? 'success' : 'warning' }"  %>
+                      <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: true, class: "btn big-btn btn-#{ booking.job_complete ? 'success' : 'warning' }"  %>
                   </div>
+                 </div>
+            <% end %>
+          <% end %>
+     </div>
 
-               </div>
-            </div>
-        </div>
-
-         <% end %>
-        <% end %>
 </div>
 
 
