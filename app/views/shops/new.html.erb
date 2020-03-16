@@ -1,2 +1,16 @@
-<h1>Shops#new</h1>
-<p>Find me in app/views/shops/new.html.erb</p>
+
+<div class="signup-container">
+    <h2>Add your shop</h2>
+
+<div class="form-inputs">
+
+      <%= simple_form_for @shop do |form| %>
+      <%= form.input :name, as: :string %>
+      <%= form.input :address, as: :text %>
+      <%= form.input :open_hours, as: :string %>
+      <%= form.input :photo, as: :file %>
+      <%= form.button :submit, 'Add Bike Shop', class: "btn-show", style: "text-align: center" %>
+      <% end %>
+  </div>
+
+</div>

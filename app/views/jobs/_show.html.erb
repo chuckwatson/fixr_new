@@ -5,7 +5,7 @@
       <%= job.name %>
     </div>
     <div class="job-price">
-      <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, remote: true, class: "fa fa-trash", style: "float:right; color:#ff726f" %>
+      <%= job.price %> <%= link_to "", shop_job_path(@shop, job), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "fa fa-trash", style: "float:right; color:#ff726f" %>
     </div>
  </li>
   </ul>
