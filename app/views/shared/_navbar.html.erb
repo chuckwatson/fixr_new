@@ -19,6 +19,7 @@
           </li> -->
           <li>
            <%= link_to "#{current_user.first_name}'s Account", my_bookings_path, class: "nav-link", style: "color:black" %>
+           <%= link_to "Add your shop", new_shop_path, class: "nav-link", style: "color:black" %>
           </li>
           <li>
            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>

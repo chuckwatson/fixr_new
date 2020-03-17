@@ -14,12 +14,16 @@
               <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
           <div class="shop-card-text">
             <br>
-            <h5><%= shop.name %></h5>
+            <strong><h5 style="font-weight: bolder"><%= shop.name %></h5></strong>
+            <h5 style="font-size: 10px"><%= shop.open_hours %></h5>
             <% if shop.reviews.blank? %>
-              <p>No reviews yet.</p>
+            <p>No reviews yet.</p>
             <% else %>
-              <p>Rating: <%= shop.reviews.average(:rating) %></p>
-            <% end %>
+             <h5 style="font-size: 10px">Rating</h5>
+               <% shop.reviews.average(:rating).to_i.times do %>
+               <i class="fas fa-star icon-3x review_stars" ></i>
+              <% end %>
+          <% end %>
           </div>
       <% end %>
     <% end %>
@@ -49,7 +53,7 @@
           <% if shop.reviews.blank? %>
             <p>No reviews yet.</p>
           <% else %>
-          <h5 style="font-size: 10px">Avg rating</h5>
+          <h5 style="font-size: 10px">Rating</h5>
             <% shop.reviews.average(:rating).to_i.times do %>
             <i class="fas fa-star icon-3x review_stars" ></i>
               <% end %>
