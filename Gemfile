@@ -20,6 +20,7 @@ gem 'geocoder'
 gem 'jquery-rails'
 gem 'money-rails'
 gem 'stripe'
+gem 'stripe_event'
 # gem 'rating', '~> 0.11.0'
 
 group :development do

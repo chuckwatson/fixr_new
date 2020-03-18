@@ -475,6 +475,263 @@ jobs_attributes = [
     shop_id: 8
   },
 
+  {
+    name: "Puncture Repair",
+    description: "Puncture repairs (including tube)",
+    price: 15,
+    shop_id: 4
+  },
+
+  {
+    name: "Gear Service",
+    description: "Full gear service for road and racing bikes",
+    price: 20,
+    shop_id: 4
+  },
+
+  {
+    name: "Brake Service",
+    description: "Does not include parts, priced per brake",
+    price: 25,
+    shop_id: 4
+  },
+
+  {
+    name: "Basic Service",
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
+    price: 45,
+    shop_id: 4
+  },
+
+  {
+    name: "Bike Build",
+    description: "Complete build or frame shop",
+    price: 140,
+    shop_id: 4
+  },
+
+  {
+    name: "Wheel rebuild",
+    description: "Bespoke wheel construction service and wheel trueing",
+    price: 60,
+    shop_id:4
+  },
+
+  {
+    name: "Frame Alignment",
+    description: "Adjustment service for full frame alignment",
+    price: 20,
+    shop_id: 4
+  },
+
+  {
+    name: "Rack Fitting",
+    description: "Build and fit of bike racks",
+    price: 10,
+    shop_id: 4
+  },
+
+  {
+    name: "Enhanced Service",
+    description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
+    price: 110,
+    shop_id: 4
+  },
+
+
+  {
+    name: "Puncture Repair",
+    description: "Puncture repairs (including tube)",
+    price: 15,
+    shop_id: 5
+  },
+
+  {
+    name: "Gear Service",
+    description: "Full gear service for road and racing bikes",
+    price: 20,
+    shop_id: 5
+  },
+
+  {
+    name: "Brake Service",
+    description: "Does
+     not include parts, priced per brake",
+    price: 25,
+    shop_id: 5
+  },
+
+  {
+    name: "Basic Service",
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
+    price: 45,
+    shop_id: 5
+  },
+
+  {
+    name: "Bike Build",
+    description: "Complete build or frame shop",
+    price: 140,
+    shop_id: 5
+  },
+
+  {
+    name: "Wheel rebuild",
+    description: "Bespoke wheel construction service and wheel trueing",
+    price: 60,
+    shop_id: 5
+  },
+
+  {
+    name: "Frame Alignment",
+    description: "Adjustment service for full frame alignment",
+    price: 20,
+    shop_id: 5
+  },
+
+  {
+    name: "Rack Fitting",
+    description: "Build and fit of bike racks",
+    price: 10,
+    shop_id: 5
+  },
+
+  {
+    name: "Enhanced Service",
+    description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
+    price: 110,
+    shop_id: 5
+  },
+
+
+  {
+    name: "Puncture Repair",
+    description: "Puncture repairs (including tube)",
+    price: 15,
+    shop_id: 6
+  },
+
+  {
+    name: "Gear Service",
+    description: "Full gear service for road and racing bikes",
+    price: 20,
+    shop_id: 6
+  },
+
+  {
+    name: "Brake Service",
+    description: "Does
+     not include parts, priced per brake",
+    price: 25,
+    shop_id: 6
+  },
+
+  {
+    name: "Basic Service",
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
+    price: 45,
+    shop_id: 6
+  },
+
+  {
+    name: "Bike Build",
+    description: "Complete build or frame shop",
+    price: 140,
+    shop_id: 6
+  },
+
+  {
+    name: "Wheel rebuild",
+    description: "Bespoke wheel construction service and wheel trueing",
+    price: 60,
+    shop_id: 6
+  },
+
+  {
+    name: "Frame Alignment",
+    description: "Adjustment service for full frame alignment",
+    price: 20,
+    shop_id: 6
+  },
+
+  {
+    name: "Rack Fitting",
+    description: "Build and fit of bike racks",
+    price: 10,
+    shop_id: 6
+  },
+
+  {
+    name: "Enhanced Service",
+    description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
+    price: 110,
+    shop_id: 6
+  },
+
+
+  {
+    name: "Puncture Repair",
+    description: "Puncture repairs (including tube)",
+    price: 15,
+    shop_id: 6
+  },
+
+  {
+    name: "Gear Service",
+    description: "Full gear service for road and racing bikes",
+    price: 20,
+    shop_id: 6
+  },
+
+  {
+    name: "Brake Service",
+    description: "Does
+     not include parts, priced per brake",
+    price: 25,
+    shop_id: 7
+  },
+
+  {
+    name: "Basic Service",
+    description: "Tune up: Brakes, gears, wheels, tyres and chains covered",
+    price: 45,
+    shop_id: 7
+  },
+
+  {
+    name: "Bike Build",
+    description: "Complete build or frame shop",
+    price: 140,
+    shop_id: 7
+  },
+
+  {
+    name: "Wheel rebuild",
+    description: "Bespoke wheel construction service and wheel trueing",
+    price: 60,
+    shop_id: 7
+  },
+
+  {
+    name: "Frame Alignment",
+    description: "Adjustment service for full frame alignment",
+    price: 20,
+    shop_id: 7
+  },
+
+  {
+    name: "Rack Fitting",
+    description: "Build and fit of bike racks",
+    price: 10,
+    shop_id: 7
+  },
+
+  {
+    name: "Enhanced Service",
+    description: "Pads, cables. wheels, frame, fork, chains, brakes, brackets and headset covered",
+    price: 110,
+    shop_id: 7
+  },
 ]
 
 Job.create!(jobs_attributes)

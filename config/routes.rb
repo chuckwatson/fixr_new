@@ -32,6 +32,7 @@
     end
 end
 
+mount StripeEvent::Engine, at: '/stripe-webhooks'
 
 
   root to: 'pages#home'
