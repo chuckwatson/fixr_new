@@ -6,9 +6,7 @@
 
 <% if @user_shops.any? %>
   <div class="owner-index-container">
-    <div id="shop-owner">
-      <p id= "owner-welcome">The Workshop</p>
-    </div>
+      <h3 style="text-align: center; padding: 32px 0 16px 0; text-transform: uppercase;">The Workshop</h3>
     <% @user_shops.each do |shop| %>
       <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
         <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
