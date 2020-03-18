@@ -1,37 +1,40 @@
-<div class="index-container">
+
 <!--   <div>
     <h1>Select Bike Shop</h1>
   </div> -->
 
 
-  <% if @user_shops.any? %>
+<% if @user_shops.any? %>
+  <div class="owner-index-container">
     <div id="shop-owner">
-      <p id= "owner-welcome"> Welcome to your shops</p>
+      <p id= "owner-welcome">The Workshop</p>
     </div>
     <% @user_shops.each do |shop| %>
       <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
         <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
+            <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
               <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
         <div class="shop-card-text">
-          <br>
-          <strong><h5 style="font-weight: bolder"><%= shop.name %></h5></strong>
-          <h5 style="font-size: 10px"><%= shop.open_hours %></h5>
+          <div class="name-open-hours">
+            <strong><h5 style="font-weight: bolder"><%= shop.name %></h5></strong>
+            <h5 style="font-size: 10px"><%= shop.open_hours %></h5>
+          </div>
           <% if shop.reviews.blank? %>
             <p>No reviews yet.</p>
           <% else %>
-            <h5 style="font-size: 10px">Rating</h5>
-            <% shop.reviews.average(:rating).to_i.times do %>
-              <div class="rating-stars">
-                <i class="fas fa-star icon-3x review_stars" style="></i>
-              </div>
+            <div class="rating-stars">
+              <h5 style="font-size: 10px">Rating</h5>
+              <% shop.reviews.average(:rating).to_i.times do %>
+                <i class="fas fa-star icon-3x review_stars" ></i>
               <% end %>
             </div>
           <% end %>
         </div>
       <% end %>
     <% end %>
-  <% else %>
-
+  </div>
+<% else %>
+<div class="index-container">
   <div
   id="map"
   style="width: 85%;
@@ -39,11 +42,11 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
-    <div id="button-find-me">
-      <button id = "find-me">Show my location</button><br/>
-      <p id = "status"></p>
-      <a id = "map-link" target="_blank"></a>
-    </div>
+  <div id="button-find-me">
+    <button id = "find-me">Show my location</button><br/>
+    <p id = "status"></p>
+    <a id = "map-link" target="_blank"></a>
+  </div>
   </div>
 
   <% @shops.each do |shop| %>
@@ -68,11 +71,13 @@
       </div>
     <% end %>
   <% end %>
-  <div id="footer" role="alert">
-    <div id="footertext"><span><strong>Back to map</strong> 🌍</span>
-    </div>
+</div>
+<div id="footer" role="alert">
+  <div id="footertext"><span><strong>Back to map</strong> 🌍</span>
   </div>
-  <% end %>
+</div>
+<% end %>
+
 
 <!--
     </div>
@@ -81,4 +86,4 @@
       <div id="footertext"><span><strong>Back to map</strong> 🌍</span>
     </div>
   </div> -->
-</div>
+

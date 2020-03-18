@@ -25,4 +25,18 @@
 // NEEDS SOMETHING THAT FIXES IT TO PAGE.
 }
 
-
+.owner-index-container {
+  background-image: url(asset_path('line_silver_bg.jpg'));
+  background-position: center center;
+  background-repeat: repeat;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: -webkit-fill-available;
+  left: 0;
+  top: 0;
+  z-index: -10;
+// NEEDS SOMETHING THAT FIXES IT TO PAGE.
+}
