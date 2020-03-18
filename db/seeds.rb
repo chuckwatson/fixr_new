@@ -132,7 +132,7 @@ shop.save!
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582972390/Fixr/M82mVT7RzL4L74JNnT14um4w.jpg')
 shop = Shop.new(
   user_id: 1,
-  name: "Fully Charged Electric Bike Shop",
+  name: "Electric Bikes",
   address: "37 Bermondsey Street, Bermondsey, London, SE1 3JW",
   open_hours: "Mon - Fri: 10am-5.30pm,
   Sat / Sun: 10.30am-4.30pm",
