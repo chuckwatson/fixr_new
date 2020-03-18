@@ -2,7 +2,7 @@
   <div class="bookings-container">
     <br>
     <br>
-     <div class="btn-booking">
+     <div class="btn-booking" style="padding-bottom: 16px;">
         <%= link_to "Back to #{@shop.name}", shop_path(@shop), class: "btn-basic", style: "text-align:center" %>
      </div>
      <div class="bookings-title">
@@ -12,18 +12,18 @@
      <div class="booking-order-cards">
           <% @bookings = @bookings.sort_by { |b| b.date } %>
           <% @bookings.each do |booking| %>
-              <% if booking.date >= Date.today %>
-            <div class="order-info">
-                  <div class="booking-name-small">
-                      <h7 style="font-size:16px"><strong><%= booking.job.name %></strong></h7>
-                      <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
-                      <br>
-                      <p><%= booking.date %></p>
-                  </div>
-                  <div class="booking-button booking-<%= booking.id %>">
-                      <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: true, class: "btn big-btn btn-#{ booking.job_complete ? 'success' : 'warning' }"  %>
-                  </div>
-                 </div>
+            <% if booking.date >= Date.today %>
+              <div class="order-info">
+                <div class="booking-name-small">
+                    <h7 style="font-size:16px"><strong><%= booking.job.name %></strong></h7>
+                    <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+                    <br>
+                    <p><%= booking.date %></p>
+                </div>
+                <div class="booking-button booking-<%= booking.id %>">
+                  <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: true, class: "btn big-btn btn-#{ booking.job_complete ? 'success' : 'warning' }"  %>
+                </div>
+              </div>
             <% end %>
           <% end %>
      </div>
