@@ -19,9 +19,13 @@ class ApplicationController < ActionController::Base
    @shops = Shop.all
   end
 
-  def default_url_options
-    { host: ENV["DOMAIN"] || "localhost:3000" }
+ def default_url_options
+  if Rails.env.production?
+    Rails.application.routes.default_url_options = { host: "www.fixr.bike", protocol: 'https' }
+  elsif Rails.env.development?
+    Rails.application.routes.default_url_options = { host: 'localhost:3000', protocol: 'http' }
   end
+end
 
   def after_sign_in_path_for(resource)
     shops_path

@@ -1,5 +1,6 @@
 <div>
-  "<%= review.description %>"
+  <br>
+  <strong><%= review.user.first_name %>:</strong> "<%= review.description %>"
   <br>
   <%= review.rating.times do %>
   <i class="fas fa-star"></i>
