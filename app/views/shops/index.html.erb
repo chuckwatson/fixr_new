@@ -3,34 +3,32 @@
     <h1>Select Bike Shop</h1>
   </div> -->
 
-
   <% if @user_shops.any? %>
-    <div id="shop-owner">
-      <p id= "owner-welcome"> Welcome to your shops</p>
-    </div>
+      <h2>The Workshop</h2>
     <% @user_shops.each do |shop| %>
       <%= link_to shop_path(shop), class: 'card-link', id: "shop_#{shop.id}" do %>
         <%= cl_image_tag(shop.photo.key, :transformation=>[{:width=>220, :crop=>"fill", :effect=>"saturation:50", :radius=>5, :responsive => true}]) %>
               <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="shop-thumbnail" /> -->
-        <div class="shop-card-text">
-          <br>
-          <strong><h5 style="font-weight: bolder"><%= shop.name %></h5></strong>
-          <h5 style="font-size: 10px"><%= shop.open_hours %></h5>
-          <% if shop.reviews.blank? %>
-            <p>No reviews yet.</p>
-          <% else %>
+          <div class="shop-card-text">
+            <br>
+            <strong><h5 style="font-weight: bolder"><%= shop.name %></h5></strong>
+            <h5 style="font-size: 10px"><%= shop.open_hours %></h5>
+            <% if shop.reviews.blank? %>
+              <p>No reviews yet.</p>
+            <% else %>
+              <div class="rating-stars">
             <h5 style="font-size: 10px">Rating</h5>
             <% shop.reviews.average(:rating).to_i.times do %>
-              <div class="rating-stars">
-                <i class="fas fa-star icon-3x review_stars" style="></i>
-              </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+              <i class="fas fa-star icon-3x review_stars" ></i>
+            <% end %>
+          </div>
+            <% end %>
+          </div>
       <% end %>
     <% end %>
+
   <% else %>
+
 
   <div
   id="map"
