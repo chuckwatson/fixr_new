@@ -132,7 +132,7 @@ shop.save!
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582972390/Fixr/M82mVT7RzL4L74JNnT14um4w.jpg')
 shop = Shop.new(
   user_id: 1,
-  name: "Fully Charged Electric Bike Shop",
+  name: "Electric Bikes",
   address: "37 Bermondsey Street, Bermondsey, London, SE1 3JW",
   open_hours: "Mon - Fri: 10am-5.30pm,
   Sat / Sun: 10.30am-4.30pm",
@@ -744,7 +744,7 @@ puts 'Creating bookings'
 bookings_attributes = [
 
   {
-    date: Date.new(2020,3,5),
+    date: Date.new(2020,4,5),
     user_id: 2,
     job_id: 1,
     job_complete: false
@@ -752,44 +752,108 @@ bookings_attributes = [
   },
 
   {
-    date: Date.new(2020,2,3),
+    date: Date.new(2020,5,4),
     user_id: 2,
-    job_id: 1,
+    job_id: 2,
     job_complete: false
   },
 
   {
     date: Date.new(2020,12,7),
     user_id: 2,
-    job_id: 1,
+    job_id: 3,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,3,25),
+    date: Date.new(2020,4,25),
     user_id: 2,
-    job_id: 1,
+    job_id: 8,
     job_complete: false
   },
 
   {
     date: Date.new(2020,6,12),
     user_id: 2,
-    job_id: 1,
+    job_id: 9,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,12,3),
+    date: Date.new(2020,12,4),
     user_id: 2,
-    job_id: 1,
+    job_id: 10,
     job_complete: false
   },
 
   {
     date: Date.new(2020,6,17),
-    user_id: 3,
-    job_id: 1,
+    user_id: 4,
+    job_id: 11,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,6,1),
+    user_id: 4,
+    job_id: 29,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,7,14),
+    user_id: 4,
+    job_id: 34,
+    job_complete: false
+  },
+
+    {
+    date: Date.new(2020,4,5),
+    user_id: 2,
+    job_id: 15,
+    job_complete: false
+
+  },
+
+  {
+    date: Date.new(2020,2,4),
+    user_id: 2,
+    job_id: 15,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,12,7),
+    user_id: 2,
+    job_id: 17,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,4,25),
+    user_id: 2,
+    job_id: 18,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,6,12),
+    user_id: 2,
+    job_id: 21,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,12,4),
+    user_id: 2,
+    job_id: 23,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,6,17),
+    user_id: 4,
+    job_id: 35,
     job_complete: false
   },
 
@@ -802,8 +866,8 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,7,14),
-    user_id: 4,
-    job_id: 1,
+    user_id: 3,
+    job_id: 44,
     job_complete: false
   },
 
@@ -839,7 +903,7 @@ reviews_attributes = [
 
     description: "Didn't actually fix my bike!!",
     rating: 2,
-    user_id: 3,
+    user_id: 4,
     shop_id: 3
 
   },
