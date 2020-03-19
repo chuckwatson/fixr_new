@@ -252,7 +252,13 @@ ul {
 }
 
 .job-price {
-  float:right;
+  display: flex;
+  align-items: center;
+}
+
+
+.job-price a {
+  margin-left: 10px;
 }
 
 .form-group .radio-buttons {
