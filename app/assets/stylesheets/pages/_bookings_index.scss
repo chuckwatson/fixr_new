@@ -25,19 +25,21 @@
 .order-info {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80vw;
   .booking-name-small {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 75vw;
   .booking-button {
-    width: 30% !important;
     font-size: 12px;
     position: fixed;
     top: 0;
     right: 0;
   }
 }
+ a {
+  width: 25vw !important;
+ }
   // border-radius: 12px;
   // margin: 16px 0;
   // .booking-button {
