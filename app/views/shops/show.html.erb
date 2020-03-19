@@ -67,13 +67,14 @@
     </div>
     <div class="review-container">
       <div class="review-info">
-        <h4 align="center">Have your say!</h4>
+        <h4>Have your say!</h4>
       </div>
-      <div class="reviews">
-        <h2><%= pluralize @shop.reviews.size, "review" %></h2>
+        <p style="font-size: 12px;">(<%= pluralize @shop.reviews.size, "review" %>)</p>
         <% if @shop.reviews.blank? %>
           <h6>Be the first to leave a review for <%= @shop.name %></h6>
         <% else %>
+          <div class="reviews" style="text-align: center;">
+
           <% @shop.reviews.each do |review| %>
             <%= render 'reviews/show', review: review, class: "font-family: 'Spartan, ;" %>
           <% end %>

@@ -1,38 +1,60 @@
 .review-container {
-  padding: 4%;
+  padding: 4% 4% 24px 4%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h2, h2 {
     font-size: 22px;
-    text-align: center;
+    // text-align: center;
     text-transform: uppercase;
   }
   h4 {
     font-size: 16px;
   }
+  label {
+    font-size: 12px;
+    // text-align: center;
+  }
 }
 
 .review-info {
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .reviews {
   h6 {
     font-size: 12px;
+    color: #8080;
   }
 }
+
 
 .review_form {
   margin-bottom: -2%;
   padding: 6% 0 4% 0;
+  text-align: center;
 }
 
 .rwd-line {
-  font-family: "Spartan";
+  font-family: 'Spartan', ;
   h1 {
     font-weight: bolder;
   }
 
+}
+
+.new_review {
+  font-family: 'Spartan', ;
+  input {
+    font-size: 12px;
+  }
+}
+
+.br-theme-css-stars {
+  text-align: center;
+  padding-left: 8vw;
 }
 
 .review_stars {
@@ -41,4 +63,6 @@
 
 .btn-show input {
   font-size: 12px;
+  font-family: 'Spartan', ;
+  margin: 24px 0;
 }
