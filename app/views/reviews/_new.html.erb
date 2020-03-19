@@ -1,5 +1,5 @@
   <div class="review_form">
-    <p><strong>Leave your review below:</strong></p>
+    <p style="font-family: 'Spartan'; font-size: 12px; padding-top: 20px;"><strong>Leave your review below:</strong></p>
       <%= simple_form_for([ shop, review ], remote: true) do |form| %>
       <%= form.input :description, as: :text %>
       <%= form.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
