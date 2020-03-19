@@ -17,16 +17,34 @@
 }
 
 .booking-order-cards {
-  // background-color: rgba(0,0,0,0.1);
-  // padding: 0 0 0 10px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  // background-color: rgba(0,0,0,0.1);
+  // padding: 0 0 0 10px;
+}
+.order-info {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  .booking-name-small {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+  .booking-button {
+    font-size: 12px;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+}
+ a {
+  width: 25vw !important;
+ }
   // border-radius: 12px;
   // margin: 16px 0;
-  .booking-button {
-    width: 100%;
-  }
+  // .booking-button {
+  //   width: 100%;
+  // }
   .big-btn {
     height: 100%;
     border-radius: 8px 8px 8px 8px;
