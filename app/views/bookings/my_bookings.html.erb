@@ -19,10 +19,12 @@
                 <% if favorite.shop.reviews.blank? %>
                  <p>No reviews yet.</p>
                 <% else %>
-                 <h5 style="font-size: 10px">Rating</h5>
+                <div class="rating-stars">
+                    <h5 style="font-size: 10px">Rating</h5>
                   <% favorite.shop.reviews.average(:rating).to_i.times do %>
                    <i class="fas fa-star icon-3x review_stars" ></i>
                 <% end %>
+                </div>
                   <% end %>
             </div>
           </div>
