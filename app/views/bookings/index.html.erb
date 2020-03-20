@@ -10,8 +10,7 @@
      </div>
 
      <div class="booking-order-cards">
-          <% @bookings = @bookings.sort_by { |b| b.date } %>
-          <% @bookings.each do |booking| %>
+          <% @bookings.sort{|a,b| b.date <=> a.date}.each do |booking| %>
               <div class="order-info">
                 <div class="booking-name-small">
                     <h7 style="font-size:16px"><strong><%= booking.job.name %></strong></h7>
