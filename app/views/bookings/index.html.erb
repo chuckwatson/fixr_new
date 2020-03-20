@@ -12,7 +12,6 @@
      <div class="booking-order-cards">
           <% @bookings = @bookings.sort_by { |b| b.date } %>
           <% @bookings.each do |booking| %>
-            <% if booking.date >= Date.today %>
               <div class="order-info">
                 <div class="booking-name-small">
                     <h7 style="font-size:16px"><strong><%= booking.job.name %></strong></h7>
@@ -24,7 +23,6 @@
                   <%= link_to "#{ booking.job_complete ? 'Complete' : 'Mark as complete' }", toggle_status_booking_path(booking), method: :patch, remote: true, class: "btn big-btn btn-#{ booking.job_complete ? 'success' : 'warning' }"  %>
                 </div>
               </div>
-            <% end %>
           <% end %>
      </div>
 

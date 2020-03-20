@@ -744,7 +744,7 @@ puts 'Creating bookings'
 bookings_attributes = [
 
   {
-    date: Date.new(2020,4,5),
+    date: Date.new(2020,3,5),
     user_id: 2,
     job_id: 1,
     job_complete: false
@@ -752,63 +752,63 @@ bookings_attributes = [
   },
 
   {
-    date: Date.new(2020,5,4),
+    date: Date.new(2020,2,4),
     user_id: 2,
     job_id: 2,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,12,7),
+    date: Date.new(2020,2,7),
     user_id: 2,
     job_id: 3,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,4,25),
+    date: Date.new(2020,3,25),
     user_id: 2,
     job_id: 8,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,6,12),
+    date: Date.new(2020,3,12),
     user_id: 2,
     job_id: 9,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,12,4),
+    date: Date.new(2020,2,4),
     user_id: 2,
     job_id: 10,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,6,17),
+    date: Date.new(2020,3,17),
     user_id: 4,
     job_id: 11,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,6,1),
+    date: Date.new(2020,2,1),
     user_id: 4,
     job_id: 29,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,7,14),
+    date: Date.new(2020,3,14),
     user_id: 4,
     job_id: 34,
     job_complete: false
   },
 
     {
-    date: Date.new(2020,4,5),
+    date: Date.new(2020,3,5),
     user_id: 2,
     job_id: 15,
     job_complete: false
@@ -823,49 +823,113 @@ bookings_attributes = [
   },
 
   {
-    date: Date.new(2020,12,7),
+    date: Date.new(2020,2,7),
     user_id: 2,
     job_id: 17,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,4,25),
+    date: Date.new(2020,2,25),
     user_id: 2,
     job_id: 18,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,6,12),
+    date: Date.new(2020,2,12),
     user_id: 2,
     job_id: 21,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,12,4),
+    date: Date.new(2020,3,4),
     user_id: 2,
     job_id: 23,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,6,17),
+    date: Date.new(2020,3,17),
     user_id: 4,
     job_id: 35,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,6,1),
+    date: Date.new(2020,2,1),
     user_id: 4,
     job_id: 1,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,7,14),
+    date: Date.new(2020,4,14),
+    user_id: 3,
+    job_id: 44,
+    job_complete: false
+  },
+
+      {
+    date: Date.new(2020,3,5),
+    user_id: 2,
+    job_id: 15,
+    job_complete: false
+
+  },
+
+  {
+    date: Date.new(2020,2,4),
+    user_id: 2,
+    job_id: 15,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,2,7),
+    user_id: 2,
+    job_id: 17,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,1,12),
+    user_id: 4,
+    job_id: 18,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,2,1),
+    user_id: 3,
+    job_id: 21,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,3,1),
+    user_id: 3,
+    job_id: 23,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,3,1),
+    user_id: 3,
+    job_id: 35,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,2,1),
+    user_id: 2,
+    job_id: 1,
+    job_complete: false
+  },
+
+  {
+    date: Date.new(2020,1,14),
     user_id: 3,
     job_id: 44,
     job_complete: false
@@ -910,7 +974,7 @@ reviews_attributes = [
 
   {
 
-    description: "Stole my bike... not ideal. Would not recommend",
+    description: "Expensive and made the problem worse. Bad experience",
     rating: 1,
     user_id: 2,
     shop_id: 4
@@ -950,6 +1014,96 @@ reviews_attributes = [
     rating: 5,
     user_id: 1,
     shop_id: 8
+
+  },
+
+   {
+
+    description: "Reliable service, quick and reasonalbe",
+    rating: 3,
+    user_id: 3,
+    shop_id: 3
+
+  },
+
+     {
+
+    description: "They know what they're doing, good service",
+    rating: 5,
+    user_id: 4,
+    shop_id: 6
+
+  },
+
+     {
+
+    description: "Overpriced and rude",
+    rating: 1,
+    user_id: 2,
+    shop_id: 7
+
+  },
+
+     {
+
+    description: "Love this shop, always take my bike here and friendly service",
+    rating: 5,
+    user_id: 3,
+    shop_id: 2
+
+  },
+
+     {
+
+    description: "Nice and easy, brought my bike in and fixed same day",
+    rating: 4,
+    user_id: 4,
+    shop_id: 5
+
+  },
+
+     {
+
+    description: "Flat tyre fixed on the spot, got to work on time. Win",
+    rating: 5,
+    user_id: 5,
+    shop_id: 4
+
+  },
+
+     {
+
+    description: "Good service - definitley recommend",
+    rating: 4,
+    user_id: 3,
+    shop_id: 5
+
+  },
+
+     {
+
+    description: "Reliable and reasonably priced. Nothing more to add",
+    rating: 5,
+    user_id: 1,
+    shop_id: 4
+
+  },
+
+     {
+
+    description: "Mixed experiences here but overall not a bad shop",
+    rating: 3,
+    user_id: 3,
+    shop_id: 6
+
+  },
+
+     {
+
+    description: "Lots of knowledge but pricey",
+    rating: 4,
+    user_id: 3,
+    shop_id: 2
 
   },
 

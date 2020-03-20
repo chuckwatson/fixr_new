@@ -37,13 +37,13 @@
   <div class="bookings-title">
     <h3>Order History</h3>
   </div>
-  <div class="bookings-orders">
+  <div class="my-bookings-orders">
   <% @bookings.each do |booking| %>
-    <div class="bookings-order-cards">
-      <div class="order-info">
-        <p><strong><%= booking.job.shop.name %> - <%= booking.job.name %></strong></p>
+    <div class="my-bookings-order-cards">
+      <div class="my-bookings-order-info">
+        <p><strong><%= booking.job.shop.name %>:  <%= booking.job.name %></strong></p>
           <p><%= booking.date %></p>
-        <p style="color: #808080;">£<%= booking.job.price.to_i %></p>
+        <strong><p>£<%= booking.job.price.to_i %></p></strong>
       </div>
     </div>
   <% end %>
