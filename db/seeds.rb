@@ -1003,7 +1003,7 @@ reviews_attributes = [
   {
 
     description: "Fixed and cleaned - superb service",
-    rating: 5,
+    rating: 2,
     user_id: 3,
     shop_id: 7
 
