@@ -16,10 +16,10 @@ puts 'Creating users'
 users_attributes = [
 
   {
-    first_name: "Charlie",
-    last_name: "Watson",
-    email: "charlie@bricklanebikes.com",
-    password: "charlie"
+    first_name: "Pete",
+    last_name: "Williams",
+    email: "pete@bikes.com",
+    password: "bikess"
   },
 
     {
@@ -83,7 +83,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582975939/Fixr/cool-shop-2_thmf5x.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 5,
   name: "Bikefix",
   address: "48 Lamb's Conduit Street, Holborn, London, WC1N 3LH",
   open_hours: "Mon - Fri: 9am-6pm,        Sat / Sun: 10am-4pm",
@@ -95,7 +95,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582975939/Fixr/cool-shop-1_kjbbh7.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 3,
   name: "Condor Cycles",
   address: "49-53 Gray's Inn Road, Holborn, London, WC1X 8PP",
   open_hours: "Mon - Fri: 7.30am-5.30pm,        Sat / Sun: 9am-5pm",
@@ -107,7 +107,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582975939/Fixr/cool-shop-1_kjbbh7.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 3,
   name: "Brixton Cycles",
   address: "296-298 Brixton Road, Ferndale, London, SW9 6AG",
   open_hours: "Mon - Fri: 9.30am-5.30pm,        Sat / Sun: 11am-4pm",
@@ -131,7 +131,7 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582972390/Fixr/M82mVT7RzL4L74JNnT14um4w.jpg')
 shop = Shop.new(
-  user_id: 1,
+  user_id: 5,
   name: "Electric Bikes",
   address: "37 Bermondsey Street, Bermondsey, London, SE1 3JW",
   open_hours: "Mon - Fri: 10am-5.30pm,
@@ -144,9 +144,9 @@ shop.save!
 
 file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582976118/Fixr/cool-shop-4_rmxhae.jpg')
 shop = Shop.new(
-  user_id: 4,
-  name: "London Bike Kitchen",
-  address: "28 Whitmore Road, London, N1 5QA",
+  user_id: 1,
+  name: "The Bike Shack",
+  address: "Butlers Wharf, 26 Shad Thames, London SE1 2YG",
   open_hours: "Mon - Fri: 10am-6pm,
   Sat / Sun: 12am-3pm",
   email: "info@londonbikekitchen.co.uk",
@@ -745,7 +745,7 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,3,5),
-    user_id: 2,
+    user_id: 3,
     job_id: 1,
     job_complete: false
 
@@ -753,35 +753,35 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,2,4),
-    user_id: 2,
+    user_id: 3,
     job_id: 2,
     job_complete: false
   },
 
   {
     date: Date.new(2020,2,7),
-    user_id: 2,
+    user_id: 3,
     job_id: 3,
     job_complete: false
   },
 
   {
     date: Date.new(2020,3,25),
-    user_id: 2,
+    user_id: 3,
     job_id: 8,
     job_complete: false
   },
 
   {
     date: Date.new(2020,3,12),
-    user_id: 2,
+    user_id: 4,
     job_id: 9,
     job_complete: false
   },
 
   {
     date: Date.new(2020,2,4),
-    user_id: 2,
+    user_id: 4,
     job_id: 10,
     job_complete: false
   },
@@ -809,7 +809,7 @@ bookings_attributes = [
 
     {
     date: Date.new(2020,3,5),
-    user_id: 2,
+    user_id: 1,
     job_id: 15,
     job_complete: false
 
@@ -817,35 +817,35 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,2,4),
-    user_id: 2,
+    user_id: 3,
     job_id: 15,
     job_complete: false
   },
 
   {
     date: Date.new(2020,2,7),
-    user_id: 2,
+    user_id: 3,
     job_id: 17,
     job_complete: false
   },
 
   {
     date: Date.new(2020,2,25),
-    user_id: 2,
+    user_id: 4,
     job_id: 18,
     job_complete: false
   },
 
   {
     date: Date.new(2020,2,12),
-    user_id: 2,
+    user_id: 5,
     job_id: 21,
     job_complete: false
   },
 
   {
     date: Date.new(2020,3,4),
-    user_id: 2,
+    user_id: 4,
     job_id: 23,
     job_complete: false
   },
@@ -873,7 +873,7 @@ bookings_attributes = [
 
       {
     date: Date.new(2020,3,5),
-    user_id: 2,
+    user_id: 1,
     job_id: 15,
     job_complete: false
 
@@ -881,14 +881,14 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,2,4),
-    user_id: 2,
+    user_id: 1,
     job_id: 15,
     job_complete: false
   },
 
   {
     date: Date.new(2020,2,7),
-    user_id: 2,
+    user_id: 1,
     job_id: 17,
     job_complete: false
   },
@@ -923,7 +923,7 @@ bookings_attributes = [
 
   {
     date: Date.new(2020,2,1),
-    user_id: 2,
+    user_id: 4,
     job_id: 1,
     job_complete: false
   },
