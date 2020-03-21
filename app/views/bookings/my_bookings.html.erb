@@ -38,12 +38,19 @@
     <h3>Order History</h3>
   </div>
   <div class="my-bookings-orders">
+    <div class="my-bookings-order-cards">
+      <div class="my-bookings-order-info">
+        <p style="text-align: left; width: 55%"><strong>BIKE SHOP NAME: SERVICE</strong></p>
+        <p style="text-align: left; width: 30%">ORDER DATE</p>
+        <strong><p style="color: #808080; width: 15%">PRICE</p></strong>
+      </div>
+    </div>
   <% @bookings.each do |booking| %>
     <div class="my-bookings-order-cards">
       <div class="my-bookings-order-info">
-        <p><strong><%= booking.job.shop.name %>:  <%= booking.job.name %></strong></p>
-          <p><%= booking.date %></p>
-        <strong><p>£<%= booking.job.price.to_i %></p></strong>
+        <p style="text-align: left; width: 55%;"><strong><%= booking.job.shop.name %>:  <%= booking.job.name %></strong></p>
+          <p style=" text-align: left; width: 30%"><%= booking.date %></p>
+        <strong><p style="color: #808080; width: 15%;">£<%= booking.job.price.to_i %></p></strong>
       </div>
     </div>
   <% end %>
