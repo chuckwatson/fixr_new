@@ -109,22 +109,22 @@ file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582975939/
 shop = Shop.new(
   user_id: 3,
   name: "Brixton Cycles",
-  address: "296-298 Brixton Road, Ferndale, London, SW9 6AG",
+  address: "298 Brixton Road, Ferndale, London, SW9 6AG",
   open_hours: "Mon - Fri: 9.30am-5.30pm,        Sat / Sun: 11am-4pm",
   email: "info@brixtoncycles.co.uk",
   phone: '02072225555')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
-
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582974684/Fixr/dEcy9s9jouGmVdaxXjuvHtgF.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582976118/Fixr/cool-shop-4_rmxhae.jpg')
 shop = Shop.new(
   user_id: 1,
-  name: "Cloud 9 Cycles",
-  address: "38 Store Street, Bloomsbury, London, WC1E 7DB",
-  open_hours: "Mon - Fri: 9am-5pm,         Sat / Sun: 9am-5pm",
-  email: "info@cloud9bikes.co.uk",
-  phone: '02072223333')
+  name: "Bike Shack",
+  address: "Butlers Wharf, 26 Shad Thames, London SE1 2YG",
+  open_hours: "Mon - Fri: 10am-6pm,
+  Sat / Sun: 12am-3pm",
+  email: "info@londonbikekitchen.co.uk",
+  phone: '02075469795')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
@@ -141,18 +141,19 @@ shop = Shop.new(
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
 
-
-file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582976118/Fixr/cool-shop-4_rmxhae.jpg')
+file = URI.open('https://res.cloudinary.com/nationwide/image/upload/v1582974684/Fixr/dEcy9s9jouGmVdaxXjuvHtgF.jpg')
 shop = Shop.new(
   user_id: 1,
-  name: "The Bike Shack",
-  address: "Butlers Wharf, 26 Shad Thames, London SE1 2YG",
-  open_hours: "Mon - Fri: 10am-6pm,
-  Sat / Sun: 12am-3pm",
-  email: "info@londonbikekitchen.co.uk",
-  phone: '02075469795')
+  name: "Cloud 9 Cycles",
+  address: "38 Store Street, Bloomsbury, London, WC1E 7DB",
+  open_hours: "Mon - Fri: 9am-5pm,         Sat / Sun: 9am-5pm",
+  email: "info@cloud9bikes.co.uk",
+  phone: '02072223333')
 shop.photo.attach(io: file, filename: 'new-bike.jpg', content_type: 'image/jpg')
 shop.save!
+
+
+
 
 
 #   {
@@ -744,31 +745,31 @@ puts 'Creating bookings'
 bookings_attributes = [
 
   {
-    date: Date.new(2020,3,5),
+    date: Date.new(2020,3,17),
     user_id: 3,
-    job_id: 1,
+    job_id: 61,
     job_complete: false
 
   },
 
   {
-    date: Date.new(2020,2,4),
-    user_id: 3,
-    job_id: 2,
+    date: Date.new(2020,3,18),
+    user_id: 5,
+    job_id: 61,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,2,7),
-    user_id: 3,
-    job_id: 3,
+    date: Date.new(2020,3,12),
+    user_id: 4,
+    job_id: 60,
     job_complete: false
   },
 
   {
-    date: Date.new(2020,3,25),
-    user_id: 3,
-    job_id: 8,
+    date: Date.new(2020,3,18),
+    user_id: 2,
+    job_id: 64,
     job_complete: false
   },
 
