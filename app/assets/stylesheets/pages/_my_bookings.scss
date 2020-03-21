@@ -3,13 +3,13 @@
   background-position: center center;
   background-repeat: repeat;
   display: flex;
-  height: unset;
   width: 100vw;
   flex-direction: column;
   // justify-content: center;
   align-content: center;
   z-index: -999;
   padding: 16px 16px;
+  height: fit-content;
   min-height: 100vh;
   h3 {
     text-transform: uppercase;

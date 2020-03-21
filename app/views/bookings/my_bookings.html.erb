@@ -32,7 +32,7 @@
     <% end %>
   </div>
   <br>
-  <p style="text-align: center; color: #DCDCDC;">_______________________</p>
+  <p style="text-align: center; color: #DCDCDC;">___________________</p>
 
   <div class="bookings-title">
     <h3>Order History</h3>
@@ -42,7 +42,7 @@
       <div class="my-bookings-order-info">
         <p style="text-align: left; width: 55%"><strong>BIKE SHOP: SERVICE</strong></p>
         <p style="text-align: left; width: 30%">ORDER DATE</p>
-        <strong><p style="color: #808080; width: 15%">PRICE</p></strong>
+        <strong><p style="color: black; width: 15%">PRICE</p></strong>
       </div>
     </div>
   <% @bookings.each do |booking| %>
@@ -50,15 +50,14 @@
       <div class="my-bookings-order-info">
         <p style="text-align: left; width: 55%;"><strong><%= booking.job.shop.name %>:  <%= booking.job.name %></strong></p>
           <p style=" text-align: left; width: 30%"><%= booking.date %></p>
-        <strong><p style="color: #808080; width: 15%;">£<%= booking.job.price.to_i %></p></strong>
+        <strong><p style="color: black; width: 15%;">£<%= booking.job.price.to_i %></p></strong>
       </div>
     </div>
   <% end %>
   </div>
 
   <br>
-  <p style="text-align: center; color: #DCDCDC;">_______________________</p>
-
+  <p style="text-align: center; color: #DCDCDC;">___________________</p>
 
 </div>
 
